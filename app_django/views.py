@@ -4,6 +4,10 @@ import os
 import groq
 import re
 from django.conf import settings
+from dotenv import load_dotenv
+
+# Carregar les variables d'entorn des del fitxer .env
+load_dotenv()
 
 # Connexió a la IA (Groq)
 KEY = os.getenv("GROQ_API_KEY")
