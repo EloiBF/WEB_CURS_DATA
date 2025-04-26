@@ -1,0 +1,100 @@
+{
+  "curs": {
+    "nom": "SQL",
+    "descripcio": "Aprèn SQL des de zero i domina les consultes de dades com un professional.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Funcions Agregades i Grupificació de Dades",
+    "numero": 3,
+    "dificultat": "Mitjà",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Introducció a les funcions agregades",
+      "tipus": "codi",
+      "descripcio": "Les funcions agregades, com SUM, AVG, MAX, MIN i COUNT, serveixen per resumir grans conjunts de dades. Aprender a utilitzar-les és essencial per a l'anàlisi de dades.",
+      "enunciat": "Calcula la suma total de les compravendes de la taula `compravendes`.",
+      "solucio_codi": "SELECT SUM(preu) FROM compravendes;",
+      "temps_estimat_minuts": 5,
+      "pista_1": "Utilitza la funció SUM per calcular la suma.",
+      "pista_2": "Especificació de la columna sobre la qual vols calcular la suma.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Grupificació de dades amb GROUP BY",
+      "tipus": "codi",
+      "descripcio": "La clàusula GROUP BY permet agrupar files que tenen el mateix valor en una columna específica, permetent l'aplicació de funcions agregades sobre aquests grups.",
+      "enunciat": "Mostra el nombre de clients per cada païsó de la taula `clients`.",
+      "solucio_codi": "SELECT pais, COUNT(*) FROM clients GROUP BY pais;",
+      "temps_estimat_minuts": 6,
+      "pista_1": "Utilitza GROUP BY per agrupar les files.",
+      "pista_2": "Aplica la funció COUNT per comptar el nombre de files en cada grup.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Combinant HAVING amb GROUP BY",
+      "tipus": "codi",
+      "descripcio": "La clàusula HAVING permet aplicar condicions a grups de files, filtrant els resultats després de la grupificació.",
+      "enunciat": "Mostra els països amb més de 5 clients de la taula `clients`.",
+      "solucio_codi": "SELECT pais, COUNT(*) FROM clients GROUP BY pais HAVING COUNT(*) > 5;",
+      "temps_estimat_minuts": 7,
+      "pista_1": "Agrupa les files per païsó.",
+      "pista_2": "Utilitza HAVING per filtrar els grups amb més de 5 clients.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Pregunta teòrica sobre funcions agregades",
+      "tipus": "test",
+      "descripcio": "Preguntes per avaluar la comprensió de les funcions agregades.",
+      "enunciat": "Quina funció agregada es fa servir per calcular la mitjana?",
+      "solucio_codi": "AVG",
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        "SUM",
+        "AVG",
+        "MAX",
+        "MIN"
+      ],
+      "pista_1": "La mitjana es calcula sumant tots els valors i divisent per la quantitat de valors.",
+      "pista_2": "La funció AVG és l'abreviatura de 'average', que significa mitjana.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Exercici pràctic de grupificació i funcions agregades",
+      "tipus": "codi",
+      "descripcio": "Exercici per practicar la combinació de funcions agregades i grupificació.",
+      "enunciat": "Mostra la suma de les vendes per cada categoria de producte de la taula `vendes`, on cada categoria tingui més de 10 productes.",
+      "solucio_codi": "SELECT categoria, SUM(preu) FROM vendes GROUP BY categoria HAVING COUNT(*) > 10;",
+      "temps_estimat_minuts": 10,
+      "pista_1": "Agrupa les vendes per categoria.",
+      "pista_2": "Fes servir la funció SUM per calcular la suma de les vendes.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "curs": {
+    "nom": "SQL",
+    "descripcio": "Aprèn SQL des de zero i domina les consultes de dades com un professional.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Tècniques Avançades de Consulta i Optimització",
+    "numero": 10,
+    "dificultat": "Avançat",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Optimització de Consultes amb Índexs",
+      "tipus": "codi",
+      "descripcio": "Les índexs són estructures de dades que permeten accelerar les consultes. Aprengueu a crear índexs sobre columnes clau.",
+      "enunciat": "Crea un índex sobre la columna 'id_client' de la taula 'compravendes'.",
+      "solucio": "CREATE INDEX idx_id_client ON compravendes (id_client);",
+      "temps_estimat_minuts": 5,
+      "pista_1": "Utilitza la instrucció CREATE INDEX per crear un nou índex.",
+      "pista_2": "Especifica la columna sobre la qual es crearà l'índex.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    },
+    {
+      "numero": 2,
+      "titol": "Preguntes sobre Optimització de Consultes",
+      "tipus": "test",
+      "descripcio": "Preguntes per avaluar la comprensió de l'optimització de consultes.",
+      "enunciat": "Quin és l'objectiu principal de l'optimització de consultes en SQL?",
+      "solucio": "Millorar el rendiment de les consultes",
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        "Millorar el rendiment de les consultes",
+        "Reducir la complexitat de les consultes",
+        "Augmentar la quantitat de dades",
+        "Disminuir la seguretat de les dades"
+      ],
+      "pista_1": "L'objectiu principal de l'optimització de consultes és millorar el rendiment.",
+      "pista_2": "Això es pot aconseguir mitjançant diferents tècniques.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Anàlisi de l'Execució de les Consultes",
+      "tipus": "codi",
+      "descripcio": "Enteneu com analitzar l'execució de les consultes.",
+      "enunciat": "Analitza l'execució de la següent consulta: SELECT * FROM clients WHERE id_client = 10;",
+      "solucio": "EXPLAIN SELECT * FROM clients WHERE id_client = 10;",
+      "temps_estimat_minuts": 6,
+      "pista_1": "Utilitza la instrucció EXPLAIN per analitzar l'execució de la consulta.",
+      "pista_2": "Entén les diferents parts de la sortida d'EXPLAIN.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    },
+    {
+      "numero": 4,
+      "titol": "Preguntes sobre Índexs",
+      "tipus": "test",
+      "descripcio": "Preguntes per avaluar la comprensió dels índexs.",
+      "enunciat": "Quin és l'objectiu principal dels índexs en SQL?",
+      "solucio": "Accelerar les consultes",
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        "Accelerar les consultes",
+        "Desaccelerar les consultes",
+        "Augmentar la quantitat de dades",
+        "Disminuir la seguretat de les dades"
+      ],
+      "pista_1": "Els índexs serveixen per accelerar les consultes.",
+      "pista_2": "Això es fa mitjançant la creació d'una estructura de dades addicional.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Càlcul de l'Estadística de les Consultes",
+      "tipus": "codi",
+      "descripcio": "Calculeu les estadístiques de les vostres consultes SQL per entendre el rendiment.",
+      "enunciat": "Calculeu el temps de resposta mitjà de les consultes realitzades sobre la taula 'clients'.",
+      "solucio": "SELECT AVG(temp_ressona) FROM historial_consultes WHERE taula = 'clients';",
+      "temps_estimat_minuts": 6,
+      "pista_1": "Utilitzeu la funció AVG per calcular la mitjana.",
+      "pista_2": "Especifiqueu la columna que conté el temps de resposta.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "curs": {
+    "nom": "Python",
+    "descripcio": "Aprèn a programar amb Python des de zero i desenvolupa projectes pràctics.",
+    "color_fons": "#FFE5B4"
+  },
+  "capitol": {
+    "titol": "Introducció a Python",
+    "numero": 1,
+    "dificultat": "Fàcil",
+    "preu": 0.00
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Imprimir a la consola",
+      "tipus": "codi",
+      "descripcio": "Aprèn a mostrar missatges per pantalla amb Python.",
+      "enunciat": "Escriu un programa que imprimeixi 'Hola, món!' a la consola.",
+      "solucio": "print('Hola, món!')",
+      "temps_estimat_minuts": 3,
+      "respostes_test": [],
+      "pista_1": "Utilitza la funció print().",
+      "pista_2": "Els textos s'han d'escriure entre cometes.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Assignar variables",
+      "tipus": "codi",
+      "descripcio": "Practica com assignar valors a variables.",
+      "enunciat": "Crea una variable anomenada 'nom' i assigna-li el teu nom. Imprimeix-la a continuació.",
+      "solucio": "nom = 'Anna'\nprint(nom)",
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Assigna el teu nom entre cometes simples o dobles.",
+      "pista_2": "Recorda utilitzar print(nom) per mostrar-la.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Operacions matemàtiques bàsiques",
+      "tipus": "codi",
+      "descripcio": "Aprèn a fer càlculs senzills amb Python.",
+      "enunciat": "Crea dues variables amb valors numèrics i imprimeix-ne la suma.",
+      "solucio": "a = 5\nb = 3\nprint(a + b)",
+      "temps_estimat_minuts": 4,
+      "respostes_test": [],
+      "pista_1": "Pots utilitzar +, -, *, / per fer operacions.",
+      "pista_2": "Assegura't d’imprimir el resultat amb print().",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Entrada de l’usuari",
+      "tipus": "codi",
+      "descripcio": "Aprèn a demanar dades a l'usuari amb la funció input().",
+      "enunciat": "Demana a l'usuari que escrigui el seu nom i imprimeix un missatge de benvinguda.",
+      "solucio": "nom = input('Escriu el teu nom: ')\nprint('Benvingut/da, ' + nom + '!')",
+      "temps_estimat_minuts": 6,
+      "respostes_test": [],
+      "pista_1": "Utilitza input() per llegir dades de l’usuari.",
+      "pista_2": "Concatena cadenes amb + per construir el missatge.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Tipus de dades",
+      "tipus": "codi",
+      "descripcio": "Practica amb cadenes, enters i floats.",
+      "enunciat": "Crea tres variables: una amb un text, una amb un enter i una amb un número decimal. Imprimeix el tipus de cada variable.",
+      "solucio": "text = 'Hola'\nent = 10\ndecimal = 3.14\nprint(type(text))\nprint(type(ent))\nprint(type(decimal))",
+      "temps_estimat_minuts": 8,
+      "respostes_test": [],
+      "pista_1": "La funció type() et diu quin tipus de dada és una variable.",
+      "pista_2": "Recorda utilitzar print() per veure el resultat.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

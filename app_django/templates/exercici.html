@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Exercici{% endblock %}
+
+{% block content %}
+
+
+<div class="exercise">
+    <div class="exercise__container">
+        <aside class="exercise__sidebar">
+            <h3 class="exercise__number">Exercici {{ exercici.numero }}</h3>
+            <h2 class="exercise__chapter">{{ exercici.capitol.titol }}</h2>
+
+            {% if exercici.descripcio %}
+                <p class="exercise__description">{{ exercici.descripcio | safe}}</p>
+            {% endif %}
+
+            {% if exercici.imatge_1 %}
+                <figure class="exercise__figure">
+                    <img src="{{ exercici.imatge_1.url }}" alt="{{ exercici.desc_imatge_1 }}" class="exercise__image">
+                    <figcaption class="exercise__image-caption">{{ exercici.desc_imatge_1 }}</figcaption>
+                </figure>
+            {% endif %}
+
+            <div class="exercise__navigation">
+                <a href="{% url 'index_curs' exercici.curs.nom %}" class="exercise__back-button">Tornar al curs</a>
+            </div>
+        </aside>
+
+        <main class="exercise__main">
+            <div class="exercise__content">
+                <div class="exercise__statement">
+                    <h3 class="exercise__statement-title">Enunciat:</h3>
+                    <p>{{ exercici.enunciat }}</p>
+                </div>
+
+                <form method="post" class="exercise__form">
+                    {% csrf_token %}
+                    <h3 class="exercise__response-title">Resposta:</h3>
+                    {% if exercici.tipus in 'codi exe'%}
+                        <textarea name="resposta_usuari" class="exercise__code-input" rows="5" placeholder="Escriu el teu codi aquí..."></textarea>
+                    {% elif exercici.tipus == 'test' %}
+                        <div class="exercise__test-options">
+                            <h4>Selecciona la resposta correcta:</h4>
+                            {% for opcio in exercici.respostes_test %}
+                                <label class="exercise__test-option">
+                                    <input type="radio" name="resposta_usuari" value="{{ opcio }}">
+                                    <span>{{ opcio}}</span>
+                                </label>
+                            {% endfor %}
+                        </div>
+                    {% elif exercici.tipus == 'ia' %}
+                        <textarea name="resposta_usuari" class="exercise__text-input" rows="5" placeholder="Escriu la teva resposta aquí..."></textarea>
+                    {% endif %}
+                    <button type="submit" class="exercise__submit-button">Comprova la resposta</button>
+                </form>
+
+                {% if missatge %}
+                    <div class="exercise__feedback {% if resposta_correcta %}correcta{% else %}incorrecta{% endif %}">{{ missatge }}</div>
+                {% endif %}
+
+                <!-- Mostra la resposta de la IA -->
+                {% if resposta_ia %}
+                    <div class="exercise__feedback-ia">
+                        <h4>Resposta de la IA:</h4>
+                        <p>{{ resposta_ia }}</p>
+                    </div>
+                {% endif %}
+
+                <div class="exercise__hints">
+                    {% if exercici.pista_1 %}
+                        <details class="exercise__hint">
+                            <summary>Pista 1</summary>
+                            <p>{{ exercici.pista_1 }}</p>
+                        </details>
+                    {% endif %}
+                    
+                    {% if exercici.pista_2 %}
+                        <details class="exercise__hint">
+                            <summary>Pista 2</summary>
+                            <p>{{ exercici.pista_2 }}</p>
+                        </details>
+                    {% endif %}
+                </div>
+                {% if exercici.solucio_codi %}
+                    <details class="exercise__hint">
+                        <summary>Exemple solució</summary>
+                        <p>{{ exercici.solucio_codi }}</p>
+                    </details>
+                {% endif %}
+                </div>
+
+                <!-- Botons de navegació entre exercicis -->
+                <div class="exercise__navigation-buttons">
+                    {% if exercici_anterior %}
+                        <a href="{% url 'exercici' exercici.curs.nom exercici_anterior.id %}" class="exercise__previous-button">Exercici anterior</a>
+                    {% endif %}
+                    {% if exercici_seguent %}
+                        <a href="{% url 'exercici' exercici.curs.nom exercici_seguent.id %}" class="exercise__next-button" {% if not resposta_correcta %}style="pointer-events: none; opacity: 0.5;"{% endif %}>Següent exercici</a>
+                    {% endif %}
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+pandas
+django
+numpy
+groq
+python-dotenv
+Pillow

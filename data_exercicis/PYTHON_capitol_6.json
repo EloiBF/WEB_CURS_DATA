@@ -1,0 +1,105 @@
+{
+  "curs": {
+    "nom": "Python",
+    "descripcio": "Aprèn a programar amb Python des de zero i desenvolupa projectes pràctics d'anàlisi de dades i ciència de dades.",
+    "color_fons": "#FFE5B4"
+  },
+  "capitol": {
+    "titol": "Tècniques Avançades de Machine Learning amb Scikit-learn",
+    "numero": 6,
+    "dificultat": "Avançat",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Introducció a Random Forest",
+      "tipus": "codi",
+      "descripcio": "Explicació de com utilitzar Scikit-learn per realitzar una classificació amb Random Forest.",
+      "enunciat": "Crea un exemple bàsic d'entrenament d'un model de classificació amb Random Forest.",
+      "solucio_codi": "from sklearn.ensemble import RandomForestClassifier\nfrom sklearn.model_selection import train_test_split\nimport numpy as np\n\n# Dades d'exemple\nX = np.array([[1], [2], [3], [4], [5]])\nY = np.array([0, 0, 1, 1, 1])\n\n# Divideix les dades entre entrenament i prova\nX_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)\n\n# Crea i entrena el model\nmodel = RandomForestClassifier()\nmodel.fit(X_train, Y_train)",
+      "solucio": "La classe del model entrenat és de la classe 'RandomForestClassifier' i el seu atribut 'classes_' és [0 1].",
+      "temps_estimat_minuts": 10,
+      "pista_1": "Importa les llibrerias necessàries.",
+      "pista_2": "Divideix les dades en entrenament i prova.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Preguntes sobre Modelatge de Dades",
+      "tipus": "test",
+      "descripcio": "Preguntes sobre els conceptes bàsics del modelatge de dades.",
+      "enunciat": "Quin és l'objectiu principal del modelatge de dades?",
+      "solucio": "Descobrir patrons i relacions en les dades",
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        "Descobrir patrons i relacions en les dades",
+        "Realitzar prediccions",
+        "Visualitzar dades",
+        "Optimitzar algorismes"
+      ],
+      "pista_1": "El modelatge de dades serveix per entendre les dades.",
+      "pista_2": "Això ajuda a prendre decisions informades.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Introducció a Clusterització amb K-Means",
+      "tipus": "codi",
+      "descripcio": "Explicació de com utilitzar Scikit-learn per realitzar una clusterització amb K-Means.",
+      "enunciat": "Crea un exemple bàsic d'aplicació de K-Means per clusteritzar un conjunt de dades.",
+      "solucio_codi": "from sklearn.cluster import KMeans\nimport numpy as np\n\n# Dades d'exemple\nX = np.array([[1, 2], [1, 4], [1, 0], [10, 2], [10, 4], [10, 0]])\n\n# Crea i entrena el model\nmodel = KMeans(n_clusters=2)\nmodel.fit(X)",
+      "solucio": "El centres dels clusters són [[1.         2.        ]\n [10.         2.        ]].",
+      "temps_estimat_minuts": 8,
+      "pista_1": "Importa les llibrerias necessàries.",
+      "pista_2": "Defineix el nombre de clusters.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Preguntes sobre Avaluació de Models",
+      "tipus": "test",
+      "descripcio": "Preguntes sobre com avaluar els models de machine learning.",
+      "enunciat": "Quin és el propòsit de la validació creuada?",
+      "solucio": "Avaluar el rendiment d'un model en diferents particions de les dades",
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        "Avaluar el rendiment d'un model en diferents particions de les dades",
+        "Optimitzar els hiperparàmetres",
+        "Selecció de característiques",
+        "Preprocessament de les dades"
+      ],
+      "pista_1": "La validació creuada ajuda a evitar sobreajustament.",
+      "pista_2": "Això permet obtenir una estimació més precisa del rendiment del model.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Introducció a XGBoost",
+      "tipus": "codi",
+      "descripcio": "Explicació de com utilitzar XGBoost per millorar el rendiment dels models de regressió i classificació.",
+      "enunciat": "Crea un exemple bàsic d'entrenament d'un model de classificació amb XGBoost.",
+      "solucio_codi": "import xgboost as xgb\nfrom sklearn.model_selection import train_test_split\nimport numpy as np\n\n# Dades d'exemple\nX = np.array([[1], [2], [3], [4], [5]])\nY = np.array([0, 0, 1, 1, 1])\n\n# Divideix les dades entre entrenament i prova\nX_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)\n\n# Crea i entrena el model\nmodel = xgb.XGBClassifier()\nmodel.fit(X_train, Y_train)",
+      "solucio": "El model entrenat té un nombre de classes igual a 2.",
+      "temps_estimat_minuts": 10,
+      "pista_1": "Importa les llibrerias necessàries.",
+      "pista_2": "Divideix les dades en entrenament i prova.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "curs": {
+    "nom": "SQL",
+    "descripcio": "Aprèn SQL des de zero i domina les consultes de dades com un professional.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Tècniques de seguretat i privacitat en SQL",
+    "numero": 9,
+    "dificultat": "Avançat",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Implementació de la seguretat amb roles",
+      "tipus": "codi",
+      "descripcio": "Les bases de dades requereixen mecanismes de seguretat per als usuaris. La implementació de rols és essencial per restringir l'accés.",
+      "enunciat": "Crea un rol per als usuaris que tinguin permís per llegir les dades de la taula clients i permetre'ls crear procediments emmagatzemats.",
+      "solucio": "CREATE ROLE lectura_execucio; GRANT SELECT, EXECUTE ON clients TO lectura_execucio;",
+      "temps_estimat_minuts": 6,
+      "pista_1": "Crea el rol amb la instrucció CREATE ROLE.",
+      "pista_2": "Utilitza GRANT per assignar permisos de lectura i execució.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    },
+    {
+      "numero": 2,
+      "titol": "Preguntes sobre seguretat i privacitat",
+      "tipus": "test",
+      "descripcio": "Preguntes per avaluar la comprensió de la seguretat en bases de dades.",
+      "enunciat": "Què fa la funció de xifratge en bases de dades?",
+      "solucio": "Protegeix les dades sensibles transformant-les en text no llegible sense la clau adequada.",
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        "Protegeix les dades sensibles transformant-les en text no llegible sense la clau adequada",
+        "Elimina les repeticions de dades",
+        "Optimitza les consultes",
+        "Crea noves taules"
+      ],
+      "pista_1": "El xifratge assegura la confidencialitat de les dades.",
+      "pista_2": "Sense la clau adequada, les dades xifrades no poden ser llegides.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Restricció d'accés a dades sensibles",
+      "tipus": "codi",
+      "descripcio": "Restriccions per limitar l'accés a informació sensible.",
+      "enunciat": "Limita l'accés a la columna 'sou' de la taula empleats per als usuaris amb el rol 'empleado'.",
+      "solucio": "GRANT SELECT (columna1, columna2) ON empleats TO empleado; DENY SELECT (sou) ON empleats TO empleado;",
+      "temps_estimat_minuts": 5,
+      "pista_1": "Utilitza GRANT i DENY per controlar els permisos.",
+      "pista_2": "Específica les columnes a les quals vols restringir l'accés.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    },
+    {
+      "numero": 4,
+      "titol": "Preguntes sobre auditoria de seguretat",
+      "tipus": "test",
+      "descripcio": "Entendre la importància de l'auditoria de seguretat en bases de dades.",
+      "enunciat": "Per què és important realitzar una auditoria de seguretat en una base de dades?",
+      "solucio": "Per detectar i tractar possibles violacions de la seguretat.",
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        "Per detectar i tractar possibles violacions de la seguretat.",
+        "Per millorar el rendiment de les consultes",
+        "Per reduir la complexitat de les dades",
+        "Per crear nous perfils d'usuari"
+      ],
+      "pista_1": "L'auditoria ajuda a detectar amenaces de seguretat.",
+      "pista_2": "Garanteix la integritat dels sistemes.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Aplicació de polítiques de seguretat",
+      "tipus": "codi",
+      "descripcio": "Aplicació pràctica de polítiques de seguretat en un entorn de base de dades.",
+      "enunciat": "Crea una política que limiti l'accés a la taula clients només durant les hores laborals.",
+      "solucio": "CREATE FUNCTION restringirAcces() RETURNS TRIGGER AS $$ BEGIN IF CURRENT_TIME BETWEEN '08:00:00' AND '17:00:00' THEN RETURN NEW; ELSE RETURN NULL; END IF; END; $$ LANGUAGE plpgsql; CREATE TRIGGER restringirAccesTrigger BEFORE INSERT OR UPDATE ON clients FOR EACH ROW EXECUTE FUNCTION restringirAcces();",
+      "temps_estimat_minuts": 10,
+      "pista_1": "Crea una funció que serveix com a disparador.",
+      "pista_2": "Configura el disparador per executar la funció abans d'inserir o actualitzar dades.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    }
+  ]
+}

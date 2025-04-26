@@ -1,0 +1,95 @@
+{
+  "curs": {
+    "nom": "Python",
+    "descripcio": "Aprèn a programar amb Python des de zero i desenvolupa projectes pràctics.",
+    "color_fons": "#FFE5B4"
+  },
+  "capitol": {
+    "titol": "Models de Machine Learning amb scikit-learn",
+    "numero": 4,
+    "dificultat": "Mitjana",
+    "preu": 0.00
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Importació de llibreries",
+      "tipus": "codi",
+      "descripcio": "Importa les llibreries bàsiques per treballar amb models de scikit-learn.",
+      "enunciat": "Completa el codi per importar les llibreries necessàries per treballar amb regressió lineal.",
+      "solucio": "from sklearn.linear_model import LinearRegression",
+      "temps_estimat_minuts": 4,
+      "pista_1": "La classe que necessites és `LinearRegression`.",
+      "pista_2": "`linear_model` és el mòdul correcte dins de sklearn.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Entrenament d’un model",
+      "tipus": "codi",
+      "descripcio": "Entrena un model de regressió lineal amb sklearn.",
+      "enunciat": "Completa el següent codi perquè entreni un model amb les dades X i y.",
+      "solucio": "model = LinearRegression()\nmodel.fit(X, y)",
+      "temps_estimat_minuts": 7,
+      "pista_1": "Necessites instanciar l’objecte abans d’entrenar-lo.",
+      "pista_2": "El mètode `fit` s’utilitza per entrenar el model amb les dades.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Classificació amb KNN",
+      "tipus": "codi",
+      "descripcio": "Aplica un model de classificació amb KNN per predir etiquetes.",
+      "enunciat": "Escriu el codi per entrenar un classificador KNN i fer una predicció amb noves dades.",
+      "solucio": "from sklearn.neighbors import KNeighborsClassifier\nmodel = KNeighborsClassifier(n_neighbors=3)\nmodel.fit(X_train, y_train)\npred = model.predict(X_test)",
+      "temps_estimat_minuts": 10,
+      "pista_1": "La classe per a KNN es troba a `neighbors`.",
+      "pista_2": "No oblidis indicar el nombre de veïns (n_neighbors).",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Avaluació del model",
+      "tipus": "codi",
+      "descripcio": "Avalua el rendiment d’un model amb mètriques d’sklearn.",
+      "enunciat": "Completa el codi per obtenir l’exactitud del model entrenat.",
+      "solucio": "from sklearn.metrics import accuracy_score\naccuracy = accuracy_score(y_test, pred)",
+      "temps_estimat_minuts": 6,
+      "pista_1": "Busca la mètrica d’sklearn per a classificació binària.",
+      "pista_2": "El mètode `accuracy_score` compara les etiquetes reals amb les predites.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Divisió de dades",
+      "tipus": "codi",
+      "descripcio": "Divideix les dades entre conjunt d’entrenament i test amb sklearn.",
+      "enunciat": "Escriu el codi per fer una divisió 80/20 del conjunt de dades.",
+      "solucio": "from sklearn.model_selection import train_test_split\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2",
+      "temps_estimat_minuts": 8,
+      "pista_1": "`train_test_split` és la funció que busques.",
+      "pista_2": "Recorda generar 4 variables, x/y train/test.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

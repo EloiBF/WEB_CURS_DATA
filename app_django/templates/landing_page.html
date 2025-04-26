@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}DataPractiK{% endblock %}
+
+{% block content %}
+<!-- HERO -------------------------------------------------------->
+<section id="hero" class="landing_page__hero">
+    <div class="landing_page__hero-content">
+        <h1 class="landing_page__title">
+            Exercicis pràctics per dominar les eines d'un Data Analyst
+        </h1>
+        <p class="landing_page__subtitle">
+            Cursos gratuïts, pràctics i interactius.
+        </p>
+        <a href="#cursos" class="landing_page__cta-button">Veure els cursos</a>
+    </div>
+</section>
+
+<!-- CURSOS ------------------------------------------------------>
+<section id="cursos" class="landing_page__section">
+    <h2 class="landing_page__section-title">Cursos pràctics per convertir‑te en Analista de Dades</h2>
+    <div class="landing_page__courses-grid">
+        {% for curs in cursos %}
+        <a href="{% url 'index_curs' curs.nom %}" class="landing_page__course-card">
+            <img src="{% static 'images/'|add:curs.nom|lower|add:'.jpg' %}" alt="{{ curs.nom }}" class="landing_page__course-image">
+            <h4 class="landing_page__course-title">{{ curs.nom }}</h4>
+            <p class="landing_page__course-description">{{ curs.descripcio }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- SERVEIS ----------------------------------------------------->
+<section id="serveis" class="landing_page__section landing_page__section--light">
+    <div class="landing_page__section-container">
+        <h2 class="landing_page__section-title">Serveis de Consultoria i Implementació</h2>
+        <div class="landing_page__services-grid">
+            <div class="landing_page__service-card">
+                <div class="service-card__icon">🐍</div>
+                <h4 class="service-card__title">Processos en Python</h4>
+                <p class="service-card__description">Automatització i ETL robustos per escalar el teu negoci.</p>
+                <a href="#contacte" class="service-card__link">Més informació →</a>
+            </div>
+            <div class="landing_page__service-card">
+                <div class="service-card__icon">📊</div>
+                <h4 class="service-card__title">Power BI &amp; Visualització</h4>
+                <p class="service-card__description">Dashboards clars que generen decisions ràpides.</p>
+                <a href="#contacte" class="service-card__link">Més informació →</a>
+            </div>
+            <div class="landing_page__service-card">
+                <div class="service-card__icon">📈</div>
+                <h4 class="service-card__title">Modelització Predictiva</h4>
+                <p class="service-card__description">Models estadístics i ML per anticipar tendències.</p>
+                <a href="#contacte" class="service-card__link">Més informació →</a>
+            </div>
+            <div class="landing_page__service-card">
+                <div class="service-card__icon">🤖</div>
+                <h4 class="service-card__title">Anàlisi amb LLM</h4>
+                <p class="service-card__description">Explota el poder dels models de llenguatge per obtenir insights en minuts.</p>
+                <a href="#contacte" class="service-card__link">Més informació →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- QUI SOM ----------------------------------------------------->
+<section id="quisom" class="landing_page__section landing_page__section--dark">
+    <div class="landing_page__section-container">
+        <h2 class="landing_page__section-title">Qui som?</h2>
+        <div class="landing_page__team-content">
+            <div class="landing_page__team-text">
+                <p class="landing_page__text">
+                    Som un equip apassionat per les dades, amb anys d'experiència en consultoria
+                    i formació. El nostre objectiu és democratitzar el coneixement analític en català!
+                </p>
+                <ul class="landing_page__team-values">
+                    <li>✨ Experiència en projectes reals</li>
+                    <li>🎯 Focus en resultats mesurables</li>
+                    <li>🤝 Compromís amb el client</li>
+                    <li>📚 Formació contínua</li>
+                </ul>
+            </div>
+            <div class="landing_page__team-stats">
+                <div class="team-stat">
+                    <span class="team-stat__number">10+</span>
+                    <span class="team-stat__label">Anys d'experiència</span>
+                </div>
+                <div class="team-stat">
+                    <span class="team-stat__number">100+</span>
+                    <span class="team-stat__label">Projectes completats</span>
+                </div>
+                <div class="team-stat">
+                    <span class="team-stat__number">500+</span>
+                    <span class="team-stat__label">Alumnes formats</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTE ---------------------------------------------------->
+<section id="contacte" class="landing_page__section landing_page__section--dark">
+    <h2 class="landing_page__section-title">Contacte</h2>
+    <form action="{% url 'enviar_contacte' %}" method="post" class="landing_page__contact-form">
+        {% csrf_token %}
+        <input type="text"     name="nom"       placeholder="Nom"           required>
+        <input type="email"    name="email"     placeholder="Email"         required>
+        <textarea name="missatge" placeholder="El teu missatge..." rows="4" required></textarea>
+        <button type="submit" class="landing_page__cta-button">Envia</button>
+    </form>
+</section>
+{% endblock %}

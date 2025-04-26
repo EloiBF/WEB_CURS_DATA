@@ -1,0 +1,95 @@
+{
+  "curs": {
+    "nom": "SQL",
+    "descripcio": "Aprèn SQL des de zero i domina les consultes de dades com un professional.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Introducció a SQL i SELECT bàsic",
+    "numero": 1,
+    "dificultat": "Fàcil",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Consulta bàsica amb SELECT",
+      "tipus": "codi",
+      "descripcio": "La sentència SELECT és el punt de partida de qualsevol consulta SQL. Utilitzant SELECT podem dir-li al motor de bases de dades quines columnes volem recuperar i des de quina taula. Quan usem l’asterisc (*) estem indicant que volem totes les columnes disponibles. Aquesta tècnica és útil per a exploració ràpida, però en entorns de producció convé especificar els noms de columna per reduir trànsit de dades i fer el codi més llegible. A més, la comanda acaba amb punt i coma (;) per indicar al SGBD que la instrucció ha finalitzat.",
+      "enunciat": "Escriu una consulta SQL per seleccionar totes les columnes de la taula `clients`.",
+      "solucio_codi": "SELECT * FROM clients;",
+      "temps_estimat_minuts": 3,
+      "pista_1": "Utilitza l'asterisc (*) per seleccionar totes les columnes.",
+      "pista_2": "No oblidis el punt i coma al final de la consulta.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Selecciona columnes específiques",
+      "tipus": "codi",
+      "descripcio": "En consultes professionals rarament necessitem totes les columnes d'una taula. Seleccionar només els camps rellevants redueix l'amplada de banda, accelera la respuesta i fa el codi més autoexplicatiu. Per llistar columnes concretes simplement escrivim els seus noms, separats per comes, després de SELECT. L'ordre en què les especifiquem també és l'ordre en què apareixeran als resultats. Aquesta pràctica, a més, evita que la consulta trenqui si algú afegeix noves columnes innecessàries a la taula.",
+      "enunciat": "Mostra només el nom i el correu dels clients de la taula `clients`.",
+      "solucio_codi": "SELECT nom, correu FROM clients;",
+      "temps_estimat_minuts": 4,
+      "pista_1": "Les columnes es separen amb comes.",
+      "pista_2": "L'ordre de les columnes importa si vols ordenar el resultat posteriorment.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Filtra amb WHERE",
+      "tipus": "codi",
+      "descripcio": "La clàusula WHERE permet filtrar files que compleixen una condició determinada. És l'eina bàsica per interrogar grans volums de dades i recuperar només la informació rellevant. Les comparacions de text han d'anar entre cometes simples i són sensibles a l'exactitud de l'string, si no utilitzem operadors com LIKE. WHERE es pot combinar amb múltiples condicions utilitzant AND, OR i parèntesis per controlar la lògica.",
+      "enunciat": "Mostra totes les files de la taula `clients` on la ciutat sigui 'Barcelona'.",
+      "solucio_codi": "SELECT * FROM clients WHERE ciutat = 'Barcelona';",
+      "temps_estimat_minuts": 5,
+      "pista_1": "Textos entre cometes simples ('').",
+      "pista_2": "Fixa’t en el nom exacte de la columna: ciutat.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Ordena amb ORDER BY",
+      "tipus": "codi",
+      "descripcio": "ORDER BY ens permet presentar els resultats en un ordre lògic. Per defecte, ASC (ascendent) ordena de menor a major o alfabèticament de la A a la Z, mentre que DESC (descendent) fa el contrari. Ordenar abans de lliurar dades al client evita haver de fer ordenacions costoses a l'aplicació i garanteix coherència quan diversos usuaris consumeixen la mateixa API o informe.",
+      "enunciat": "Mostra tots els clients ordenats per nom en ordre ascendent.",
+      "solucio_codi": "SELECT * FROM clients ORDER BY nom ASC;",
+      "temps_estimat_minuts": 6,
+      "pista_1": "ORDER BY especifica la columna i la direcció (ASC o DESC).",
+      "pista_2": "Per defecte, ASC ja és implícit, però millor indicar-ho per claredat.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Limita resultats amb LIMIT",
+      "tipus": "codi",
+      "descripcio": "Durant la fase de desenvolupament o quan treballem amb conjunts molt grans, és habitual limitar la quantitat de files retornades per comprovar l'estructura de les dades. LIMIT redueix la càrrega sobre la xarxa i fa que la consulta sigui instantània. Algunes bases de dades també permeten OFFSET per saltar les primeres n files, facilitant la paginació.",
+      "enunciat": "Mostra només els 5 primers clients de la taula.",
+      "solucio_codi": "SELECT * FROM clients LIMIT 5;",
+      "temps_estimat_minuts": 3,
+      "pista_1": "LIMIT es posa al final de la consulta.",
+      "pista_2": "Això és molt útil per fer proves ràpides.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

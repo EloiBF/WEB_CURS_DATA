@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DataPractiK{% endblock %}</title>
+
+    <!-- Estils globals -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        html{scroll-behavior:smooth;}               /* Scroll suau */
+        section{padding:4rem 0;}                    /* Espai entre seccions */
+        .navbar__link.active{font-weight:700;}      /* Estat actiu opcional */
+    </style>
+</head>
+<body>
+<header class="header">
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="{% url 'landing_page' %}" class="navbar__logo">💻 DataPractiK</a>
+            <ul class="navbar__links">
+                <li><a href="{% url 'landing_page' %}#cursos"   class="navbar__link">Cursos</a></li>
+                <li><a href="{% url 'landing_page' %}#serveis"   class="navbar__link">Serveis</a></li>
+                <li><a href="{% url 'landing_page' %}#quisom"    class="navbar__link">Qui som?</a></li>
+                <li><a href="{% url 'landing_page' %}#contacte"  class="navbar__link">Contacte</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main class="main">
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+    <div class="footer__container">
+        <p class="footer__text">&copy; 2025 – DataPractiK. Fet amb ❤️ i Django.</p>
+    </div>
+</footer>
+</body>
+</html>
+

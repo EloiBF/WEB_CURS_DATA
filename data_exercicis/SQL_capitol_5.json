@@ -1,0 +1,105 @@
+{
+  "curs": {
+    "nom": "SQL",
+    "descripcio": "Aprèn SQL des de zero i domina les consultes de dades com un professional.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Optimització de Consultes i Millora del Rendiment",
+    "numero": 5,
+    "dificultat": "Avançat",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Indexació per a la millora del rendiment",
+      "tipus": "codi",
+      "descripcio": "L'indexació és una tècnica per accelerar les consultes. Apreneu a crear índexs sobre columnes clau.",
+      "enunciat": "Crea un índex sobre la columna 'id_client' de la taula 'compravendes'.",
+      "solucio_codi": "CREATE INDEX idx_id_client ON compravendes (id_client);",
+      "temps_estimat_minuts": 5,
+      "pista_1": "Utilitza la instrucció CREATE INDEX per crear un nou índex.",
+      "pista_2": "Especifica la columna sobre la qual es crearà l'índex.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    },
+    {
+      "numero": 2,
+      "titol": "Anàlisi d'execució de consultes",
+      "tipus": "test",
+      "descripcio": "Enteneu com analitzar la planificació d'execució de les vostres consultes.",
+      "enunciat": "Quina és la finalitat de l'ORDRE d'execució d'una consulta SQL?",
+      "solucio_codi": "Determina l'eficiència de la consulta.",
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        "Optimitzar la recuperació de dades",
+        "Reducir el temps de resposta",
+        "Determina l'eficiència de la consulta",
+        "Elimina les repeticions de dades"
+      ],
+      "pista_1": "L'ORDRE d'execució determina com s'executarà la consulta.",
+      "pista_2": "Influeix directament en l'eficiència.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Optimització de consultes amb subconsultes",
+      "tipus": "codi",
+      "descripcio": "Les subconsultes poden ser molt útils però també poden disminuir el rendiment. Aprenent a optimitzar-les.",
+      "enunciat": "Optimitza la següent consulta que utilitza una subconsultes: SELECT * FROM clients WHERE id_client IN (SELECT id_client FROM compravendes WHERE data_compra > '2020-01-01');",
+      "solucio_codi": "SELECT * FROM clients c INNER JOIN compravendes cv ON c.id_client = cv.id_client WHERE cv.data_compra > '2020-01-01';",
+      "temps_estimat_minuts": 8,
+      "pista_1": "Utilitza un JOIN en comptes de la subconsultes.",
+      "pista_2": "Això millorarà el rendiment de la consulta.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    },
+    {
+      "numero": 4,
+      "titol": "Limitacions de les transaccions",
+      "tipus": "test",
+      "descripcio": "Enteneu les limitacions de les transaccions en SQL i com afecten al rendiment.",
+      "enunciat": "Què és una de les principals restriccions de les transaccions en SQL?",
+      "solucio_codi": "El bloqueig de recursos.",
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        "L'ús excessiu de memòria",
+        "El bloqueig de recursos",
+        "La pèrdua de dades",
+        "L'increment de la càrrega de treball"
+      ],
+      "pista_1": " Les transaccions poden bloquejar recursos.",
+      "pista_2": "Això pot afectar negativament el rendiment.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Càlcul de l'estadística de consultes",
+      "tipus": "codi",
+      "descripcio": "Calculeu les estadístiques de les vostres consultes SQL per entendre el rendiment.",
+      "enunciat": "Calculeu el temps de resposta mitjà de les consultes realitzades sobre la taula 'clients'.",
+      "solucio_codi": "SELECT AVG(temp_ressona) FROM historial_consultes WHERE taula = 'clients';",
+      "temps_estimat_minuts": 6,
+      "pista_1": "Utilitzeu la funció AVG per calcular la mitjana.",
+      "pista_2": "Especifiqueu la columna que conté el temps de resposta.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    }
+  ]
+}

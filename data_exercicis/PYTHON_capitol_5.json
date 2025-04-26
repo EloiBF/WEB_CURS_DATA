@@ -1,0 +1,100 @@
+{
+  "curs": {
+    "nom": "Python",
+    "descripcio": "Aprèn a programar amb Python des de zero i desenvolupa projectes pràctics d'anàlisi de dades i ciència de dades.",
+    "color_fons": "#FFE5B4"
+  },
+  "capitol": {
+    "titol": "Anàlisi Avançat de Dades amb Machine Learning",
+    "numero": 5,
+    "dificultat": "Avançat",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Introducció a Regressió Lineal amb Scikit-learn",
+      "tipus": "codi",
+      "descripcio": "Explicació de com utilitzar Scikit-learn per realitzar una regressió lineal.",
+      "enunciat": "Crea un exemple bàsic d'entrenament d'un model de regressió lineal amb Scikit-learn.",
+      "solucio_codi": "from sklearn.linear_model import LinearRegression\nfrom sklearn.model_selection import train_test_split\nimport numpy as np\n\n# Dades d'exemple\nX = np.array([[1], [2], [3], [4], [5]])\nY = np.array([2, 3, 5, 7, 11])\n\n# Divideix les dades entre entrenament i prova\nX_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)\n\n# Crea i entrena el model\nmodel = LinearRegression()\nmodel.fit(X_train, Y_train)",
+      "solucio": "La sortida del codi anterior serà el model entrenat i les seves respectives prediccions.",
+      "temps_estimat_minuts": 10,
+      "pista_1": "Importa les llibrerias necessàries.",
+      "pista_2": "Divideix les dades en entrenament i prova.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Preguntes sobre Anàlisi de Dades",
+      "tipus": "test",
+      "descripcio": "Preguntes sobre l'anàlisi de dades.",
+      "enunciat": "Quin és el propòsit de l'anàlisi exploratòria de dades?",
+      "solucio": "Entendre les característiques bàsiques del conjunt de dades",
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        "Entendre les característiques bàsiques del conjunt de dades",
+        "Realitzar prediccions",
+        "Crear models de machine learning",
+        "Visualitzar dades"
+      ],
+      "pista_1": "L'anàlisi exploratòria serveix per conèixer les dades.",
+      "pista_2": "Això ajuda a prendre decisions informades.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Visualització de Dades amb Matplotlib",
+      "tipus": "codi",
+      "descripcio": "Explicació de com utilitzar Matplotlib per visualitzar dades.",
+      "enunciat": "Crea un gràfic de barres per mostrar la distribució dels clients per edat.",
+      "solucio_codi": "import matplotlib.pyplot as plt\nimport pandas as pd\n\ndata = {'Edat': [20, 25, 30, 20, 25, 30, 35, 40],\n        'Nombre': [5, 8, 12, 5, 8, 12, 10, 8]}\ndf = pd.DataFrame(data)\n\ndf.groupby('Edat')['Nombre'].sum().plot(kind='bar')\nplt.show()",
+      "solucio": "Un gràfic de barres on les edats de 20, 25, 30, 35 i 40 anys apareixen amb els seus respectius nombres.",
+      "temps_estimat_minuts": 8,
+      "pista_1": "Utilitza la funció groupby per agrupar les dades.",
+      "pista_2": "Utilitza Matplotlib per crear el gràfic.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Anàlisi Exploratòria de Dades",
+      "tipus": "codi",
+      "descripcio": "Explicació de com realitzar una anàlisi exploratòria de dades bàsica amb Pandas.",
+      "enunciat": "Llegeix un conjunt de dades de clients i calcula les estadístiques bàsiques (mitjana, mediana, desviació estàndard).",
+      "solucio_codi": "import pandas as pd\n\ndata = {'Edat': [20, 25, 30, 20, 25, 30, 35, 40]}\ndf = pd.DataFrame(data)\n\nprint(df.describe())",
+      "solucio": "Un resum estadístic amb les mitjanes, medianes, desviacions estàndard, valors mínims i màxims per a la variable Edat.",
+      "temps_estimat_minuts": 6,
+      "pista_1": "Utilitza la funció describe per calcular les estadístiques.",
+      "pista_2": "No oblidis importar la llibreria pandas.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Introducció a Classificació amb Scikit-learn",
+      "tipus": "codi",
+      "descripcio": "Explicació de com utilitzar Scikit-learn per realitzar una classificació.",
+      "enunciat": "Crea un exemple bàsic d'entrenament d'un model de classificació amb Scikit-learn.",
+      "solucio_codi": "from sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.metrics import accuracy_score\nimport numpy as np\n\n# Dades d'exemple\nX = np.array([[1], [2], [3], [4], [5]])\nY = np.array([0, 0, 1, 1, 1])\n\n# Divideix les dades entre entrenament i prova\nX_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)\n\n# Crea i entrena el model\nmodel = LogisticRegression()\nmodel.fit(X_train, Y_train)\n\n# Evalua el model\nY_pred = model.predict(X_test)\nprint('Precisió:', accuracy_score(Y_test, Y_pred))",
+      "solucio": "Una taxa de precisió que indica la proporció de prediccions correctes.",
+      "temps_estimat_minuts": 10,
+      "pista_1": "Importa les llibrerias necessàries.",
+      "pista_2": "Divideix les dades en entrenament i prova.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

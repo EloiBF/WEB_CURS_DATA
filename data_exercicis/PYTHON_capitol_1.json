@@ -1,0 +1,105 @@
+{
+  "curs": {
+    "nom": "Python",
+    "descripcio": "Aprèn a programar amb Python des de zero i desenvolupa projectes pràctics.",
+    "color_fons": "#FFE5B4"
+  },
+  "capitol": {
+    "titol": "Introducció a Python",
+    "numero": 1,
+    "dificultat": "Fàcil",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Imprimir a la consola",
+      "tipus": "exe",
+      "descripcio": "La funció integrada <code>print()</code> és el mitjà més senzill per comunicar‑nos amb l’usuari o inspeccionar el flux d’un programa. Quan escrivim <code>print()</code>, Python converteix l’argument a text (si cal) i l’envia al dispositiu d’sortida estàndard — normalment la consola. Aquesta instrucció no només serveix per missatges fixes; també podem concatenar textos, imprimir variables o utilitzar formats avançats (f‑strings) per mostrar informació dinàmicament. Entendre’n el funcionament és imprescindible abans de passar a operacions d’entrada o fitxers.",
+      "enunciat": "Escriu un programa que imprimeixi 'Hola, món!' a la consola.",
+      "solucio": "Hola, món!",
+      "solucio_codi": "print('Hola, món!')",
+      "temps_estimat_minuts": 3,
+      "pista_1": "Només necessites una línia amb print().",
+      "pista_2": "Els textos han d’anar entre cometes simples o dobles.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Assignar variables",
+      "tipus": "exe",
+      "descripcio": "En Python, assignar una variable és tan senzill com escriure <code>nom_variable = valor</code>. No cal declarar‑la prèviament ni indicar‑ne el tipus: el llenguatge és dinàmic i associa el tipus al valor. Les variables permeten emmagatzemar dades per reutilitzar‑les i fer el codi més llegible. A més, podem imprimir‑les o concatenar‑les amb altres cadenes utilitzant print().",
+      "enunciat": "Crea una variable anomenada 'nom' i assigna‑li el nom: Joan. Imprimeix‑la a continuació.",
+      "solucio": "Joan",
+      "solucio_codi": "nom = 'Joan'\nprint(nom)",
+      "temps_estimat_minuts": 5,
+      "pista_1": "Assigna el nom entre cometes.",
+      "pista_2": "Després imprimeix‑lo amb print(nom).",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Operacions matemàtiques bàsiques",
+      "tipus": "exe",
+      "descripcio": "Python pot actuar com a calculadora. Les variables numèriques (enters o floats) accepten operadors aritmètics (+, −, *, /, **, %) per fer càlculs ràpids. Quan combinem variables, Python calcula el resultat i retorna un nou valor. Imprimir aquest resultant ens ajuda a comprovar que el programa fa el càlcul esperat.",
+      "enunciat": "Crea dues variables amb valors numèrics 5 i 3 i imprimeix‑ne la suma.",
+      "solucio": "8",
+      "solucio_codi": "a = 5\nb = 3\nprint(a + b)",
+      "temps_estimat_minuts": 4,
+      "pista_1": "Usa els operadors bàsics de Python (= i +).",
+      "pista_2": "Recorda imprimir el resultat.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Entrada de l’usuari",
+      "tipus": "test",
+      "descripcio": "La funció <code>input()</code> suspèn l’execució i espera que l’usuari escrigui alguna cosa a la consola. Retorna una cadena (string) amb el text introduït, de manera que sovint necessitem convertir‑la a enter (int) o decimal (float) quan volem operar‑hi.",
+      "enunciat": "Quina d’aquestes opcions és correcta per demanar el nom d’un usuari i imprimir-lo a la consola?",
+      "solucio": "nom = input('Escriu el teu nom: ')\nprint(nom)",
+      "solucio_codi": null,
+      "temps_estimat_minuts": 3,
+      "pista_1": "Recorda que input() sempre retorna text.",
+      "pista_2": "Pots imprimir el contingut directament amb print().",
+      "respostes_test": [
+        "nom = input('Escriu el teu nom: ')\nprint(nom)",
+        "print(input('Escriu el teu nom: '))",
+        "input = 'Joan'\nprint('Benvingut ' + input)",
+        "print('Escriu el teu nom: ' + nom)"
+      ],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Tipus de dades",
+      "tipus": "exe",
+      "descripcio": "Python té diversos tipus bàsics: <code>str</code> per a cadenes, <code>int</code> per a enters i <code>float</code> per a decimals, entre d’altres. Identificar el tipus ens ajuda a saber quines operacions podem aplicar sobre cada variable. La funció integrada <code>type()</code> retorna la classe del valor passat per paràmetre, mostrant‑nos així el tipus a la consola.",
+      "enunciat": "Crea tres variables: una que sigui text (anomenada text_1), una que sigui número enter (anomenada num_1) i una amb un número decimal (anomenada dec_1). Imprimeix el tipus de cada variable.",
+      "solucio": "<class 'str'>\n<class 'int'>\n<class 'float'>",
+      "solucio_codi": "text = 'Hola'\nent = 10\ndecimal = 3.14\nprint(type(text))\nprint(type(ent))\nprint(type(decimal))",
+      "temps_estimat_minuts": 8,
+      "pista_1": "type() et diu el tipus d’una variable.",
+      "pista_2": "Recorda imprimir cada resultat en línies separades.",
+      "respostes_test": [],
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

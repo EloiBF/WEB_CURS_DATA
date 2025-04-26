@@ -1,0 +1,100 @@
+{
+  "curs": {
+    "nom": "SQL",
+    "descripcio": "Aprèn SQL des de zero i domina les consultes de dades com un professional.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Subconsultes i Joins",
+    "numero": 4,
+    "dificultat": "Mitjà",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Subconsultes",
+      "tipus": "codi",
+      "descripcio": "Les subconsultes són consultes emmagatzemades dins d'una altra consulta. Aprender a utilitzar-les és essencial per a la creació de consultes complexes.",
+      "enunciat": "Mostra el nom i el correu dels clients que tenen més de 100 compravendes.",
+      "solucio_codi": "SELECT nom, correu FROM clients WHERE id_client IN (SELECT id_client FROM compravendes GROUP BY id_client HAVING COUNT(*) > 100);",
+      "temps_estimat_minuts": 8,
+      "pista_1": "Utilitza una subconsultes per obtenir la llista d'ídents de clients amb més de 100 compravendes.",
+      "pista_2": "Utilitza el operador IN per seleccionar els clients que estan en la llista.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    },
+    {
+      "numero": 2,
+      "titol": "Joins interiors",
+      "tipus": "codi",
+      "descripcio": "Els Joins interiors són utilitzats per combinar files de dues o més taules basant-se en una columna comuna.",
+      "enunciat": "Mostra el nom i el correu dels clients junt amb el nom del país on viuen.",
+      "solucio_codi": "SELECT c.nom, c.correu, p.nom AS pais FROM clients c INNER JOIN pais p ON c.id_pais = p.id_pais;",
+      "temps_estimat_minuts": 6,
+      "pista_1": "Utilitza un Join interior per combinar les taules clients i pais.",
+      "pista_2": "Específica la columna comuna entre les dues taules.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    },
+    {
+      "numero": 3,
+      "titol": "Joins exteriors",
+      "tipus": "codi",
+      "descripcio": "Els Joins exteriors són utilitzats per combinar files de dues o més taules basant-se en una columna comuna, i inclouen totes les files de la taula esquerra, fins i tot si no hi ha cap coincidència a la taula dreta.",
+      "enunciat": "Mostra el nom i el correu dels clients junt amb el nom del país on viuen, inclosos els clients que no tenen país assignat.",
+      "solucio_codi": "SELECT c.nom, c.correu, p.nom AS pais FROM clients c LEFT JOIN pais p ON c.id_pais = p.id_pais;",
+      "temps_estimat_minuts": 7,
+      "pista_1": "Utilitza un Join exterior per combinar les taules clients i pais.",
+      "pista_2": "Específica la columna comuna entre les dues taules.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    },
+    {
+      "numero": 4,
+      "titol": "Pregunta teòrica sobre subconsultes",
+      "tipus": "test",
+      "descripcio": "Preguntes per avaluar la comprensió de les subconsultes.",
+      "enunciat": "Quina és la finalitat de les subconsultes en les consultes SQL?",
+      "solucio_codi": "Per obtenir dades que depenen d'altres consultes",
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        "Per combinar dades de dues taules",
+        "Per obtenir dades que depenen d'altres consultes",
+        "Per eliminar dades duplicades",
+        "Per crear noves taules"
+      ],
+      "pista_1": "Les subconsultes són utilitzades per obtenir dades que dependen d'altres consultes.",
+      "pista_2": "Són especialment útils en les consultes complexes.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Exercici de subconsultes i Joins",
+      "tipus": "codi",
+      "descripcio": "Exercici per practicar la combinació de subconsultes i Joins.",
+      "enunciat": "Mostra el nom i el correu dels clients que tenen més de 100 compravendes i que viuen en un país amb una població superior a 10 milions d'habitants.",
+      "solucio_codi": "SELECT c.nom, c.correu FROM clients c INNER JOIN pais p ON c.id_pais = p.id_pais WHERE c.id_client IN (SELECT id_client FROM compravendes GROUP BY id_client HAVING COUNT(*) > 100) AND p.poblacio > 10000000;",
+      "temps_estimat_minuts": 10,
+      "pista_1": "Utilitza una subconsultes per obtenir la llista d'ídents de clients amb més de 100 compravendes.",
+      "pista_2": "Utilitza un Join per combinar les taules clients i pais.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    }
+  ]
+}

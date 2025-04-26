@@ -1,0 +1,110 @@
+{
+  "curs": {
+    "nom": "SQL",
+    "descripcio": "Aprèn SQL des de zero i domina les consultes de dades com un professional.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Avançat: Creació i gestió de vistes i procediments emmagatzemats",
+    "numero": 7,
+    "dificultat": "Avançat",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Creació de vistes",
+      "tipus": "codi",
+      "descripcio": "Les vistes són consultes emmagatzemades que proporcionen una forma còmoda d'accés a dades complexes. Aprengueu a crear-les.",
+      "enunciat": "Crea una vista que mostri el nom i el correu dels clients de la taula `clients` que viuen a 'Barcelona'.",
+      "solucio": "CREATE VIEW clients_barcelona AS SELECT nom, correu FROM clients WHERE ciutat = 'Barcelona';",
+      "solucio_codi": "CREATE VIEW clients_barcelona AS SELECT nom, correu FROM clients WHERE ciutat = 'Barcelona';",
+      "temps_estimat_minuts": 5,
+      "pista_1": "Utilitza la instrucció CREATE VIEW per crear una nova vista.",
+      "pista_2": "Especifica la consulta que defineix la vista.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    },
+    {
+      "numero": 2,
+      "titol": "Preguntes sobre vistes",
+      "tipus": "test",
+      "descripcio": "Preguntes per avaluar la comprensió de les vistes.",
+      "enunciat": "Quin és l'objectiu principal de les vistes en SQL?",
+      "solucio": "Simplificar l'accés a dades complexes",
+      "solucio_codi": "",
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        "Simplificar l'accés a dades complexes",
+        "Millorar la seguretat de les dades",
+        "Optimitzar les consultes",
+        "Crear noves taules"
+      ],
+      "pista_1": "Les vistes proporcionen una forma còmoda d'accés a dades complexes.",
+      "pista_2": "No emmagatzemen dades, només defineixen una consulta.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Creació de procediments emmagatzemats",
+      "tipus": "codi",
+      "descripcio": "Els procediments emmagatzemats són conjunts de instruccions SQL que es poden executar repetidament. Aprengueu a crear-los.",
+      "enunciat": "Crea un procediment emmagatzemat que mostri el nom i el correu dels clients de la taula `clients` que viuen a una ciutat donada.",
+      "solucio": "CREATE PROCEDURE clients_per_ciutat @ciutat varchar(50) AS SELECT nom, correu FROM clients WHERE ciutat = @ciutat;",
+      "solucio_codi": "CREATE PROCEDURE clients_per_ciutat @ciutat varchar(50) AS SELECT nom, correu FROM clients WHERE ciutat = @ciutat;",
+      "temps_estimat_minuts": 6,
+      "pista_1": "Utilitza la instrucció CREATE PROCEDURE per crear un nou procediment.",
+      "pista_2": "Especifica els paràmetres d'entrada i la consulta que defineix el procediment.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    },
+    {
+      "numero": 4,
+      "titol": "Execució de procediments emmagatzemats",
+      "tipus": "codi",
+      "descripcio": "Els procediments emmagatzemats es poden executar emmagatzemats. Aprengueu a executar-los.",
+      "enunciat": "Executa el procediment emmagatzemat `clients_per_ciutat` amb la ciutat 'Madrid'.",
+      "solucio": "EXEC clients_per_ciutat 'Madrid';",
+      "solucio_codi": "EXEC clients_per_ciutat 'Madrid ';",
+      "temps_estimat_minuts": 3,
+      "pista_1": "Utilitza la instrucció EXEC per executar un procediment emmagatzemat.",
+      "pista_2": "Especifica els valors dels paràmetres d'entrada.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "respostes_test": []
+    },
+    {
+      "numero": 5,
+      "titol": "Preguntes sobre procediments emmagatzemats",
+      "tipus": "test",
+      "descripcio": "Preguntes per avaluar la comprensió dels procediments emmagatzemats.",
+      "enunciat": "Quin és l'avantatge principal dels procediments emmagatzemats en SQL?",
+      "solucio": "Tornar a utilitzar codi",
+      "solucio_codi": "",
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        "Tornar a utilitzar codi",
+        "Millorar la seguretat de les dades",
+        "Optimitzar les consultes",
+        "Crear noves taules"
+      ],
+      "pista_1": "Els procediments emmagatzemats permeten tornar a utilitzar codi.",
+      "pista_2": "Això pot reduir la repetició de codi i millorar la productivitat.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}
