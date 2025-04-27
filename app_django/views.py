@@ -15,7 +15,7 @@ client = groq.Groq(api_key=KEY)
 
 # Landing page general amb tots els cursos
 def landing_page(request):
-    cursos = Curs.objects.all()
+    cursos = Curs.objects.all().order_by('nom')
     return render(request, 'landing_page.html', {'cursos': cursos})
 
 
@@ -122,11 +122,17 @@ Digues si la resposta és correcta o no, començant la teva resposta amb "SI" o 
 
 
 
-def exercici(request, curs_nom, exercici_id):
-    print(f"⚙️ Inici de la vista 'exercici' per al curs: {curs_nom}, exercici ID: {exercici_id}")
+def exercici(request, curs_nom, capitol_num, exercici_num):
+    print(f"⚙️ Inici de la vista 'exercici' per al curs: {curs_nom}, capítol: {capitol_num}, exercici: {exercici_num}")
 
+    # Recuperem el curs pel nom
     curs = get_object_or_404(Curs, nom=curs_nom)
-    exercici = get_object_or_404(Exercici, id=exercici_id, curs=curs)
+    
+    # Recuperem el capítol pel número
+    capitol = get_object_or_404(Capitol, numero=capitol_num, curs=curs)
+    
+    # Recuperem l'exercici pel número dins del capítol
+    exercici = get_object_or_404(Exercici, numero=exercici_num, capitol=capitol)
 
     missatge = ''
     resposta_correcta = False
@@ -173,10 +179,13 @@ def exercici(request, curs_nom, exercici_id):
             else:
                 print(f"⚠️ Tipus d'exercici no reconegut: {tipus}")
 
-    exercici_seguent = Exercici.objects.filter(curs=curs, numero=exercici.numero + 1).first()
-    exercici_anterior = Exercici.objects.filter(curs=curs, numero=exercici.numero - 1).first()
+    # Obtenir els exercicis següents i anteriors pel seu número dins del mateix capítol
+    exercici_seguent = Exercici.objects.filter(capitol=capitol, numero=exercici.numero + 1).first()
+    exercici_anterior = Exercici.objects.filter(capitol=capitol, numero=exercici.numero - 1).first()
 
     return render(request, 'exercici.html', {
+        'curs': curs,
+        'capitol': capitol,
         'exercici': exercici,
         'missatge': missatge,
         'opcions': exercici.respostes_test if exercici.tipus == 'test' else None,

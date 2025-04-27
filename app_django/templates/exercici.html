@@ -9,8 +9,10 @@
 <div class="exercise">
     <div class="exercise__container">
         <aside class="exercise__sidebar">
+            <h3 class="exercise__chapter">{{ exercici.capitol.titol }}</h3>
             <h3 class="exercise__number">Exercici {{ exercici.numero }}</h3>
-            <h2 class="exercise__chapter">{{ exercici.capitol.titol }}</h2>
+            <h2 class="exercise__title">{{ exercici.titol }}</h2>
+
 
             {% if exercici.descripcio %}
                 <p class="exercise__description">{{ exercici.descripcio | safe}}</p>
@@ -32,7 +34,7 @@
             <div class="exercise__content">
                 <div class="exercise__statement">
                     <h3 class="exercise__statement-title">Enunciat:</h3>
-                    <p>{{ exercici.enunciat }}</p>
+                    <p>{{ exercici.enunciat | safe}}</p>
                 </div>
 
                 <form method="post" class="exercise__form">
@@ -98,10 +100,10 @@
                 <!-- Botons de navegació entre exercicis -->
                 <div class="exercise__navigation-buttons">
                     {% if exercici_anterior %}
-                        <a href="{% url 'exercici' exercici.curs.nom exercici_anterior.id %}" class="exercise__previous-button">Exercici anterior</a>
+                        <a href="{% url 'exercici' exercici.curs.nom exercici_anterior.capitol.numero exercici_anterior.numero %}" class="exercise__previous-button">Exercici anterior</a>
                     {% endif %}
                     {% if exercici_seguent %}
-                        <a href="{% url 'exercici' exercici.curs.nom exercici_seguent.id %}" class="exercise__next-button" {% if not resposta_correcta %}style="pointer-events: none; opacity: 0.5;"{% endif %}>Següent exercici</a>
+                        <a href="{% url 'exercici' exercici.curs.nom exercici_seguent.capitol.numero exercici_seguent.numero %}" class="exercise__next-button">Exercici següent</a>
                     {% endif %}
                 </div>
             </div>

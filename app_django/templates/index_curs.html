@@ -4,29 +4,30 @@
 
 {% block content %}
 <div class="course">
-    <header class="course__header" style="background-color: {{ curs.color_fons }}">
+    <header class="course__header">
         <h1 class="course__title">{{ curs.nom }}</h1>
         <p class="course__description">Tria un capítol per començar!</p>
     </header>
 
     <div class="course__content">
         {% for capitol in capitols %}
-        <section class="course__chapter">
-            <h2 class="course__chapter-title">Capítol {{ capitol.numero }}: {{ capitol.titol }}</h2>
-            <div class="course__exercises">
-                {% for exercici in capitol.exercicis.all %}
-                <a href="{% url 'exercici' curs.nom exercici.id %}" class="course__exercise-link">
-                    <div class="course__exercise-card">
-                        <h3 class="course__exercise-title">Exercici {{ exercici.numero }}: {{ exercici.titol }}</h3>
-                        <span class="course__exercise-type">{{ exercici.tipus|title }}</span>
-                    </div>
-                </a>
-                {% empty %}
-                <p class="course__no-exercises">No hi ha exercicis per aquest capítol.</p>
-                {% endfor %}
-            </div>
-        </section>
+            <section class="course__chapter">
+                <h2 class="course__chapter-title">Capítol {{ capitol.numero }}: {{ capitol.titol }}</h2>
+                <div class="course__exercises">
+                    {% for exercici in capitol.exercicis.all %}
+                        <a href="{% url 'exercici' curs.nom capitol.numero exercici.numero %}" class="course__exercise-link">
+                            <div class="course__exercise-card">
+                                <h3 class="course__exercise-title">Exercici {{ exercici.numero }}: {{ exercici.titol }}</h3>
+                                <span class="course__exercise-type">{{ exercici.tipus|title }}</span>
+                            </div>
+                        </a>
+                    {% empty %}
+                        <p class="course__no-exercises">No hi ha exercicis per aquest capítol.</p>
+                    {% endfor %}
+                </div>
+            </section>
         {% endfor %}
+
     </div>
 </div>
 {% endblock %}

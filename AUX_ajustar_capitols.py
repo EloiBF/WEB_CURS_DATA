@@ -46,7 +46,7 @@ IMPORTANT:
 context_estructura = r"""
 {
   "curs": {
-    "nom": "EXCEL", (pot ser SQL, PYTHON, EXCEL o DAX, segons el que es demani)
+    "nom": "Excel", (pot ser SQL, PYTHON, EXCEL o DAX, segons el que es demani)
     "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
     "color_fons": "#F4F8F4"
   },

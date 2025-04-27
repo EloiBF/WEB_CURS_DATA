@@ -1,6 +1,6 @@
 {
   "curs": {
-    "nom": "EXCEL",
+    "nom": "Excel",
     "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
     "color_fons": "#F4F8F4"
   },
@@ -13,24 +13,6 @@
   "exercicis": [
     {
       "numero": 1,
-      "titol": "Aplicar formats de número",
-      "tipus": "codi",
-      "descripcio": "Per aplicar un format de número a una cel·la o un rang de cel·les, selecciona les cel·les i utilitza les opcions de format de número disponibles a la pestanya 'Inici' de la cinta d'opcions. Pots seleccionar formats com 'Nombre', 'Moneda', 'Data', 'Hora', etc.",
-      "enunciat": "Formata la cel·la A1 per mostrar el valor com a 'Nombre' amb 2 decimals.",
-      "solucio": "La cel·la A1 hauria de mostrar el valor amb 2 decimals.",
-      "solucio_codi_1": "=TEXT(A1,\"0.00\")",
-      "solucio_codi_2": "=TEXTO(A1;\"0,00\")",
-      "temps_estimat_minuts": 3,
-      "respostes_test": [],
-      "pista_1": "Utilitza la funció TEXT per formatar el valor de la cel·la.",
-      "pista_2": "El codi de format \"0.00\" aplica 2 decimals.",
-      "imatge_1": null,
-      "descripcio_imatge_1": null,
-      "imatge_2": null,
-      "descripcio_imatge_2": null
-    },
-    {
-      "numero": 2,
       "titol": "Test: Quin és l'ús del pinzell de formats?",
       "tipus": "test",
       "descripcio": "El pinzell de formats s'utilitza per copiar els formats d'una cel·la o un rang de cel·les a un altre.",
@@ -53,16 +35,21 @@
       "descripcio_imatge_2": null
     },
     {
-      "numero": 3,
+      "numero": 2,
       "titol": "Ajustar amplades i alçades de cel·les",
-      "tipus": "codi",
+      "tipus": "test",
       "descripcio": "Pots ajustar l'amplada de les columnes i l'alçada de les files manualment arrossegant els límits entre les capçaleres de columna o fila, o bé fent doble clic per ajustar automàticament segons el contingut.",
-      "enunciat": "Ajusta automàticament l'amplada de la columna A.",
+      "enunciat": "Com pots ajustar automàticament l'amplada de la columna A?",
       "solucio": "La columna A hauria d'haver-se ajustat automàticament.",
-      "solucio_codi_1": "Doble clic entre la capçalera de la columna A i B.",
-      "solucio_codi_2": "Doble clic entre la capçalera de la columna A y B.",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
       "temps_estimat_minuts": 2,
-      "respostes_test": [],
+      "respostes_test": [
+        "Arrossegant la línia de la capçalera.",
+        "Fent doble clic entre la capçalera de la columna A i B.",
+        "Canviant la configuració de les opcions d'Excel.",
+        "Seleccionant la columna i prement la tecla F2."
+      ],
       "pista_1": "Utilitza la capçalera de la columna per ajustar l'amplada.",
       "pista_2": "El doble clic ajusta automàticament l'amplada de la columna.",
       "imatge_1": null,
@@ -71,16 +58,21 @@
       "descripcio_imatge_2": null
     },
     {
-      "numero": 4,
+      "numero": 3,
       "titol": "Aplicar formats ràpids de taula",
-      "tipus": "codi",
+      "tipus": "test",
       "descripcio": "Excel ofereix diverses opcions de formats ràpids de taula que permeten donar un aspecte professional a les teves dades. Pots accedir-hi seleccionant el rang de dades i anant a la pestanya 'Inici' o 'Disseny de taula' després de convertir el rang en una taula.",
-      "enunciat": "Aplica un format ràpid de taula al rang A1:C10.",
+      "enunciat": "Què has de fer per aplicar un format ràpid de taula al rang A1:C10?",
       "solucio": "El rang A1:C10 hauria de tenir un format de taula aplicat.",
-      "solucio_codi_1": "Selecciona A1:C10, vés a 'Inici' > 'Format com a taula' i selecciona un format.",
-      "solucio_codi_2": "Selecciona A1:C10, ve a 'Inicio' > 'Dar formato como tabla' y selecciona un formato.",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
       "temps_estimat_minuts": 4,
-      "respostes_test": [],
+      "respostes_test": [
+        "Selecciona A1:C10, vés a 'Inici' > 'Format com a taula' i selecciona un format.",
+        "Selecciona A1:C10 i aplica un format de taula predefinit de la configuració d'Excel.",
+        "Fes clic dret sobre A1:C10 i selecciona l'opció 'Format com a taula'.",
+        "Utilitza la funció 'Insertar' per aplicar un format a A1:C10."
+      ],
       "pista_1": "Primer, selecciona el rang de dades que vols formatar.",
       "pista_2": "Utilitza la pestanya 'Inici' per trobar l'opció de 'Format com a taula'.",
       "imatge_1": null,
@@ -89,7 +81,7 @@
       "descripcio_imatge_2": null
     },
     {
-      "numero": 5,
+      "numero": 4,
       "titol": "Test: Què és un format de data i hora?",
       "tipus": "test",
       "descripcio": "Els formats de data i hora permeten presentar les dades temporals de manera llegible i entenedora. Excel ofereix una àmplia varietat de formats per mostrar dates i hores.",
@@ -110,6 +102,24 @@
       "descripcio_imatge_1": null,
       "imatge_2": null,
       "descripcio_imatge_2": null
-    }
+    },
+    {
+      "numero": 5,
+      "titol": "Funció TEXT per donar format a números",
+      "tipus": "codi",
+      "descripcio": "La funció <strong>TEXT</strong> d'Excel s'utilitza per convertir un valor numèric o de data en un text amb un format específic. Aquesta funció permet aplicar formats personalitzats a números, dates o hores. Per exemple, si vols mostrar un número amb un nombre fix de decimals, pots utilitzar el codi de format <strong>0.00</strong>. Si vols mostrar una data en un format específic, com <strong>aaaa-mm</strong>, pots utilitzar el codi <strong>yyyy-mm</strong>. Alguns exemples de codi de format són:\n- <strong>0.00</strong> per mostrar 2 decimals.\n- <strong>dddd, dd mmmm yyyy</strong> per mostrar una data completa.\n- <strong>yyyy-mm</strong> per mostrar només l'any i el mes.\n- <strong>$0.00</strong> per formatar com a moneda.",
+      "enunciat": "Escriu una funció per mostrar el valor de la cel·la A1 com a <strong>Nombre amb 2 decimals</strong>.",
+      "solucio": "La cel·la A1 hauria de mostrar el valor amb 2 decimals.",
+      "solucio_codi_1": "=TEXT(A1,\"0.00\")",
+      "solucio_codi_2": "=TEXTO(A1;\"0,00\")",
+      "temps_estimat_minuts": 3,
+      "respostes_test": [],
+      "pista_1": "Utilitza la funció TEXT per formatar el valor de la cel·la.",
+      "pista_2": "El codi de format \"0.00\" aplica 2 decimals.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }    
   ]
 }

@@ -1,6 +1,6 @@
 {
   "curs": {
-    "nom": "EXCEL",
+    "nom": "Excel",
     "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
     "color_fons": "#F4F8F4"
   },
@@ -22,8 +22,8 @@
       "solucio_codi_2": "=A1",
       "temps_estimat_minuts": 5,
       "respostes_test": [],
-      "pista_1": "Utilitza el pegat especial per enganxar només els valors.",
-      "pista_2": "Selecciona la cel·la destí i utilitza el menú contextual per seleccionar 'Pegat especial' i després 'Valors'.",
+      "pista_1": "Utilitza l'enganxar especial per enganxar només els valors.",
+      "pista_2": "Selecciona la cel·la destí i utilitza el menú contextual per seleccionar 'Enganxar especial' i després 'Valors'.",
       "imatge_1": null,
       "descripcio_imatge_1": null,
       "imatge_2": null,
@@ -34,8 +34,8 @@
       "titol": "Pregunta sobre copiar i enganxar",
       "tipus": "test",
       "descripcio": "Quan copiem i enganxem cel·les a Excel, podem triar entre enganxar fórmules o valors. Què passa quan enganxem fórmules?",
-      "enunciat": "Què passa quan s'enganxen fórmules des d'una cel·la a una altra?",
-      "solucio": "Les fórmules es copien tal qual a la nova ubicació i poden referir-se a les cel·les relatives.",
+      "enunciat": "Què passa quan copiem fórmules des d'una cel·la a una altra?",
+      "solucio": "Les fórmules es copien tal qual a la nova ubicació, però fan referència a noves cel·les, de forma relativa.",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
       "temps_estimat_minuts": 2,
@@ -45,15 +45,15 @@
           "correcta": false
         },
         {
-          "opcio": "Les fórmules es modifiquen per referir-se a les cel·les absolutes.",
+          "opcio": "Les fórmules no canvien.",
           "correcta": false
         },
         {
-          "opcio": "Les fórmules es copien tal qual a la nova ubicació i poden referir-se a les cel·les relatives.",
+          "opcio": "Les fórmules es copien tal qual a la nova ubicació, però fan referència a noves cel·les, de forma relativa.",
           "correcta": true
         },
         {
-          "opcio": "Les fórmules s'esborren de la cel·la d'origen.",
+          "opcio": "Les fórmules es copien tal qual a la nova ubicació, però fan referència a noves cel·les, de forma absoluta.",
           "correcta": false
         }
       ],
@@ -66,17 +66,22 @@
     },
     {
       "numero": 3,
-      "titol": "Transposar dades",
-      "tipus": "codi",
-      "descripcio": "Excel permet transposar dades, és a dir, canviar files per columnes i viceversa. Això es pot fer mitjançant el pegat especial.",
-      "enunciat": "Transposa la següent taula: \n\n| A | B | C |\n| 1  | 2 | 3 |\n\nDe manera que quedi com:\n\n| 1 |\n| 2 |\n| 3 |\n",
-      "solucio": "La taula resultant hauria de tenir els valors en una columna.",
-      "solucio_codi_1": "Copia la taula, després selecciona la cel·la destí i vés a 'Pegat especial' > 'Transposar'.",
-      "solucio_codi_2": "Copia la taula, després selecciona la cel·la destí i vés a 'Pegar especial' > 'Transponer'.",
+      "titol": "Tipus d'enganxar especial",
+      "tipus": "test",
+      "descripcio": "Excel ofereix diverses opcions d'enganxar especial per treballar amb les dades copiant-les i enganxant-les de diferents maneres. Tria la millor opció segons cada cas.",
+      "enunciat": "Quina opció d'enganxar especial utilitzaries per enganxar només els valors d'una taula sense copiar les fórmules?",
+      "solucio": "La resposta correcta és 'Enganxar especial' > 'Valors'. Això enganxa només els valors sense les fórmules.",
+      "solucio_codi_1": "Utilitza l'opció 'Enganxar especial' > 'Valors' per enganxar només els valors.",
+      "solucio_codi_2": "Selecciona 'Enganxar especial' > 'Valors' per enganxar només els resultats calculats.",
       "temps_estimat_minuts": 5,
-      "respostes_test": [],
-      "pista_1": "Utilitza l'opció de transposar al pegar les cel·les.",
-      "pista_2": "Assegura't de seleccionar tota la taula abans de copiar.",
+      "respostes_test": [
+        "Enganxar especial > Valors",
+        "Enganxar especial > Transposar",
+        "Enganxar especial > Formats",
+        "Enganxar especial > Fòrmules"
+      ],
+      "pista_1": "L'enganxar especial et permet seleccionar què vols copiar, com els valors o les fórmules.",
+      "pista_2": "Busca l'opció que permet copiar només els valors i no les fórmules o formats.",
       "imatge_1": null,
       "descripcio_imatge_1": null,
       "imatge_2": null,
@@ -86,7 +91,7 @@
       "numero": 4,
       "titol": "Pregunta sobre Buscar i reemplaçar",
       "tipus": "test",
-      "descripcio": "Excel té una eina per buscar i reemplaçar contingut. Aquesta eina també permet utilitzar caràcters comodí per fer cerques més flexibles.",
+      "descripcio": "Excel disposa d'una eina anomenada 'Buscar i reemplaçar' que permet cercar valors específics dins d'un document i substituir-los per altres. Aquesta eina també suporta l'ús de caràcters comodí, com '*' i '?', per fer cerques més flexibles i ajustades a patrons de text. Els caràcters comodí permeten cercar textos amb més variabilitat, com per exemple buscar qualsevol paraula que comenci amb una lletra específica o que tinguin una longitud determinada.",
       "enunciat": "Què permet fer l'ús de caràcters comodí com '*' o '?' en una cerca?",
       "solucio": "Permet cercar patrons de text més flexibles.",
       "solucio_codi_1": null,
@@ -94,7 +99,7 @@
       "temps_estimat_minuts": 2,
       "respostes_test": [
         {
-          "opcio": "Cercar només números.",
+          "opcio": "Cercar caràcters i números concrets.",
           "correcta": false
         },
         {
@@ -102,7 +107,7 @@
           "correcta": false
         },
         {
-          "opcio": "Permet cercar patrons de text més flexibles.",
+          "opcio": "Permet cercar patrons de text més flexibles a l'eina de Buscar i dins de fòrmules.",
           "correcta": true
         },
         {
@@ -119,17 +124,17 @@
     },
     {
       "numero": 5,
-      "titol": "Reemplaçar valors amb comodins",
+      "titol": "Caràcters comodí",
       "tipus": "codi",
-      "descripcio": "Utilitza l'eina 'Buscar i reemplaçar' per reemplaçar tots els valors que comencen per 'pre' en una llista.",
-      "enunciat": "Reemplaça tots els valors que comencen per 'pre' per 'nou' en la llista: \n\n| A     |\n|-------|\n| prefix |\n| preu   |\n| text   |\n",
-      "solucio": "Tots els valors que comencen per 'pre' haurien de ser reemplaçats per 'nou'.",
-      "solucio_codi_1": "Utilitza 'Buscar i reemplaçar' amb 'pre*' per trobar tots els valors que comencen per 'pre'.",
-      "solucio_codi_2": "Utilitza 'Buscar y reemplazar' con 'pre*' para encontrar todos los valores que comienzan por 'pre'.",
+      "descripcio": "L'eina 'Buscar i reemplaçar' d'Excel permet utilitzar caràcters comodí per trobar valors dins d'un text. Els dos principals caràcters comodí són:\n\n- El caràcter '*' (asterisc) que substitueix qualsevol nombre de caràcters, inclòs cap caràcter.\n- El caràcter '?' (interrogant) que substitueix exactament un caràcter.\n\nPer exemple, si busques 'A?', trobaràs totes les paraules que comencen per 'A' i tenen exactament 2 lletres. En canvi, si busques '*s', trobaràs totes les paraules que acaben per s' independentment de la longitud de la paraula.",
+      "enunciat": "Quin text ens trobaria tots els valors que comencen per 'A' i tenen exactament 3 lletres?",
+      "solucio": "A???",
+      "solucio_codi_1": "A???",
+      "solucio_codi_2": null,
       "temps_estimat_minuts": 5,
       "respostes_test": [],
-      "pista_1": "Utilitza el caràcter '*' per representar qualsevol nombre de caràcters després de 'pre'.",
-      "pista_2": "Obre l'eina 'Buscar i reemplaçar' i activa l'ús de comodins.",
+      "pista_1": "Utilitza el comodí '?' per representar una lletra individual.",
+      "pista_2": "Fixa't que necessites exactament 3 lletres després de la 'A'.",
       "imatge_1": null,
       "descripcio_imatge_1": null,
       "imatge_2": null,
