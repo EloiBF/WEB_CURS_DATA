@@ -1,0 +1,138 @@
+{
+  "curs": {
+    "nom": "EXCEL",
+    "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Més utilitats d'Excel per a dades",
+    "numero": 13,
+    "dificultat": "Mitjà",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Text en columnes",
+      "tipus": "codi",
+      "descripcio": "Aquest exercici vol ensenyar-te a utilitzar la funció TEXT en columns per a formats de dates, números i text en general.**",
+      "enunciat": "Given a column of dates in the format 'mm/dd/yyyy', convert them to 'dd/mm/yyyy' using the TEXT function.",
+      "solucio": "31/12/2023",
+      "solucio_codi_1": "=TEXT(A1,\"dd/mm/yyyy\")",
+      "solucio_codi_2": "=TEXTO(A1,\"dd/mm/yyyy\")",
+      "temps_estimat_minuts": 10,
+      "respostes_test": [],
+      "pista_1": "Trieu la funció adient per format de dates.",
+      "pista_2": "Donar un format específic a la data en Excel.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Importar y limpiar CSV",
+      "tipus": "codi",
+      "descripcio": "En aquest exercici ens concentrarà a netejar-lo i prepararlo per a l'anàlisi.",
+      "enunciat": "Create a new Excel workbook and import a CSV file containing sales data. The data should include columns for customer name, product name, quantity, and price.  Clean the data, removing any duplicate entries and handling missing values.",
+      "solucio": "The solution is complex and requires user interaction with the Excel Import Data tool and data cleaning features.",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 20,
+      "respostes_test": [
+        {
+          "pregunta": "What function should you use to remove duplicate entries?",
+          "opcions": [
+            "UNIQUE",
+            "COUNTIF",
+            "SUMIF",
+            "IF"
+          ],
+          "resposta_correcta": "UNIQUE"
+        }
+      ],
+      "pista_1": "Google 'Importar archivos CSV en Excel'.",
+      "pista_2": "Look for the option to 'Remove Duplicates' in the Data tab.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Identificar la función UNICOS ",
+      "tipus": "test",
+      "descripcio": "Aquest exercici revisa la comprenssió de la funció `UNIQUE` i la seva utilitat per eliminar duplicats.",
+      "enunciat": "¿Cuál de las siguientes funciones Excel  utilizaba para eliminar duplicados?",
+      "solucio": "UNIQUE",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 5,
+      "respostes_test": [
+        {
+          "pregunta": "¿Cuál de las siguientes funciones Excel  utilizada para eliminar duplicados?",
+          "opcions": [
+            "COUNTIF",
+            "UNIQUE",
+            "FILTER",
+            "SUBTOTAL"
+          ],
+          "resposta_correcta": "UNIQUE"
+        }
+      ],
+      "pista_1": "Penseu en la forma més directa de eliminar dues eentrades exactament iguals.",
+      "pista_2": "FUNCIONALITAT AVANZADA",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Búsqueda de valores",
+      "tipus": "codi",
+      "descripcio": "Aquí praticeu la utilització de `BuscarV` i `BuscarH` per a la recerca de valors en fulls de càlcul.",
+      "enunciat": "Se desea buscar el precio de un producto específico en una hoja de cálculo. La hoja contiene dos columnas: 'Producto' y 'Precio'. Escriba la fórmula utilizando la función `BUSCARV` o `BUSCARH` para recuperar el precio dado un nombre de producto específico.",
+      "solucio": "=BUSCARV(\"Producto A\",´A:B´,2)",
+      "solucio_codi_1": "=BUSCARV(\"Producto A\",´A:B´,2)",
+      "solucio_codi_2": "=BUSCARH(\"Producto A\",´A:B´,2,FALSE)",
+      "temps_estimat_minuts": 15,
+      "respostes_test": [],
+      "pista_1": "La funció `BUSCARV` cerca horitzontalment, `BUSCARH` verticalment.",
+      "pista_2": "Assaigui amb diferents combinacions de valor i posició.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Solver for optimization",
+      "tipus": "test",
+      "descripcio": "Aquesta prova et permet provar la comprensió de l'eina Solver per a l'optimització de funcions.",
+      "enunciat": "What tool in Excel can be used to solve for optimal values in a model?",
+      "solucio": "Solver",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 5,
+      "respostes_test": [
+        {
+          "pregunta": "What tool in Excel can be used to solve for optimal values in a model?",
+          "opcions": [
+            "Data Analysis Tools",
+            "Formulas",
+            "Solver",
+            "Conditional Formatting"
+          ],
+          "resposta_correcta": "Solver"
+        }
+      ],
+      "pista_1": "Pensant a qualsevol pla o model que necessiti ajustar per obtenir el millor resultat.",
+      "pista_2": "Ferrament d'optimització.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

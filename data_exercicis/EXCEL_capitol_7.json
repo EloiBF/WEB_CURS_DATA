@@ -1,0 +1,139 @@
+{
+  "curs": {
+    "nom": "EXCEL",
+    "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Anàlisi de dades amb Gràfics",
+    "numero": 7,
+    "dificultat": "Mitjà",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Crear un gràfic de barres",
+      "tipus": "codi",
+      "descripcio": "Per crear un gràfic de barres a Excel, primer selecciona les dades que vols representar. Després, vés a la pestanya 'Inserir' del menú superior i selecciona 'Gràfic de barres' dins del grup 'Gràfics'. Excel crearà un gràfic bàsic que pots personalitzar segons les teves necessitats.",
+      "enunciat": "Crea un gràfic de barres amb les dades següents: Categoria1: 10, Categoria2: 20, Categoria3: 30.",
+      "solucio": "Un gràfic de barres amb tres categories i els seus respectius valors.",
+      "solucio_codi_1": "=SELECT(A1:B3); INSERT > COLUMN CHART",
+      "solucio_codi_2": "=SELECCIONAR(A1:B3); INSERTAR > GRÁFICO DE COLUMNAS",
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Recorda seleccionar les dades abans de crear el gràfic.",
+      "pista_2": "Utilitza la pestanya 'Inserir' per accedir als diferents tipus de gràfics.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Tipus de gràfics",
+      "tipus": "test",
+      "descripcio": "Excel ofereix diversos tipus de gràfics per representar dades, com ara gràfics de barres, línies, circulars, etc. Cada tipus és adequat per a diferents tipus de dades i necessitats d'anàlisi.",
+      "enunciat": "Quin tipus de gràfic és més adequat per mostrar la distribució percentual de diferents categories?",
+      "solucio": "Gràfic circular",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        {
+          "text": "Gràfic de barres",
+          "correcte": false
+        },
+        {
+          "text": "Gràfic de línies",
+          "correcte": false
+        },
+        {
+          "text": "Gràfic circular",
+          "correcte": true
+        },
+        {
+          "text": "Gràfic de dispersió",
+          "correcte": false
+        }
+      ],
+      "pista_1": "Pensa en com es representen millor les parts d'un tot.",
+      "pista_2": "El gràfic circular és molt útil per mostrar percentatges.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Crear un gràfic combinat",
+      "tipus": "codi",
+      "descripcio": "Un gràfic combinat permet combinar diferents tipus de gràfics (com barres i línies) per representar diferents sèries de dades de manera efectiva. Per crear-lo, selecciona les dades, vés a 'Inserir' > 'Gràfics' i tria l'opció 'Combinat'.",
+      "enunciat": "Crea un gràfic combinat que mostri les vendes mensuals com a barres i la mitjana anual com a línia.",
+      "solucio": "Un gràfic amb barres per a les vendes mensuals i una línia per a la mitjana anual.",
+      "solucio_codi_1": "=SELECT(A1:B12); INSERT > COMBO CHART; SELECT 'Clustered Column' for vendes and 'Line' for mitjana",
+      "solucio_codi_2": "=SELECCIONAR(A1:B12); INSERTAR > GRÁFICO COMBINADO; SELECCIONAR 'Columna agrupada' para vendes y 'Línea' para mitjana",
+      "temps_estimat_minuts": 7,
+      "respostes_test": [],
+      "pista_1": "Utilitza l'opció 'Combinat' per fusionar diferents tipus de gràfics.",
+      "pista_2": "Asegura't de seleccionar les sèries de dades adequades per a cada tipus de gràfic.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Minigràfics",
+      "tipus": "test",
+      "descripcio": "Els minigràfics són petits gràfics que es poden inserir dins d'una cel·la per mostrar tendències o variacions en les dades. Són útils per a visualitzar dades de manera compacta.",
+      "enunciat": "Què són els minigràfics a Excel?",
+      "solucio": "Petits gràfics dins d'una cel·la",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        {
+          "text": "Gràfics grans que ocupen diverses cel·les",
+          "correcte": false
+        },
+        {
+          "text": "Petits gràfics dins d'una cel·la",
+          "correcte": true
+        },
+        {
+          "text": "Fórmules complexes per analitzar dades",
+          "correcte": false
+        },
+        {
+          "text": "Taules dinàmiques per resumir dades",
+          "correcte": false
+        }
+      ],
+      "pista_1": "Pensa en la funció dels minigràfics com a eines de visualització compacta.",
+      "pista_2": "Els minigràfics són molt útils per a una visualització ràpida de tendències.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Format visual d'un gràfic",
+      "tipus": "codi",
+      "descripcio": "Per millorar la presentació d'un gràfic, pots modificar-ne el format visual canviant colors, afegint títols, ajustant els eixos, etc. Això ajuda a comunicar més efectivament els teus missatges de dades.",
+      "enunciat": "Canvia el color de les barres d'un gràfic de barres a blau i afegeix un títol 'Vendes Mensuals'.",
+      "solucio": "Un gràfic de barres amb barres blaves i el títol 'Vendes Mensuals'.",
+      "solucio_codi_1": "SELECT CHART > FORMAT > SERIES 'Vendes' > FILL > BLUE; CHART TOOLS > LAYOUT > CHART TITLE > 'Vendes Mensuals'",
+      "solucio_codi_2": "SELECCIONAR GRÁFICO > FORMATO > SERIE 'Vendes' > RELLENO > AZUL; HERRAMIENTAS DE GRÁFICOS > DISEÑO > TÍTULO DEL GRÁFICO > 'Vendes Mensuals'",
+      "temps_estimat_minuts": 6,
+      "respostes_test": [],
+      "pista_1": "Utilitza les opcions de 'Format' per canviar els colors de les barres.",
+      "pista_2": "No oblidis afegir un títol al gràfic per a una millor comprensió.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

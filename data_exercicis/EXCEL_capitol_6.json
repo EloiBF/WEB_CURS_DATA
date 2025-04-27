@@ -1,0 +1,115 @@
+{
+  "curs": {
+    "nom": "EXCEL",
+    "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Fórmules de text i neteja de dades",
+    "numero": 6,
+    "dificultat": "Mitjà",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Concatenació de textos",
+      "tipus": "codi",
+      "descripcio": "La concatenació de textos és una operació bàsica que permet combinar dues o més cadenes de text en una sola. En Excel, podem utilitzar l'operador '&' o la funció CONCATENA per aconseguir això.",
+      "enunciat": "Donats els textos 'Hola' a la cel·la A1 i 'Món' a la cel·la B1, concatena'ls per obtenir 'HolaMón'.",
+      "solucio": "=A1&B1",
+      "solucio_codi_1": "=CONCATENATE(A1, B1)",
+      "solucio_codi_2": "=CONCATENAR(A1; B1)",
+      "temps_estimat_minuts": 3,
+      "respostes_test": [],
+      "pista_1": "Utilitza l'operador '&' per concatenar.",
+      "pista_2": "També pots utilitzar la funció CONCATENA.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Ús de la funció IZQUIERDA",
+      "tipus": "test",
+      "descripcio": "La funció IZQUIERDA (o LEFT en anglès) permet extreure un cert nombre de caràcters des de l'inici d'una cadena de text.",
+      "enunciat": "Quina és la funció per obtenir els 3 primers caràcters de la cadena 'Excelente'?",
+      "solucio": "=LEFT(\"Excelente\", 3)",
+      "solucio_codi_1": "=LEFT(\"Excelente\", 3)",
+      "solucio_codi_2": "=IZQUIERDA(\"Excelente\"; 3)",
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        "=LEFT(\"Excelente\", 1)",
+        "=RIGHT(\"Excelente\", 3)",
+        "=LEFT(\"Excelente\", 3)",
+        "=LEN(\"Excelente\")"
+      ],
+      "pista_1": "La funció cerca els caràcters des de l'inici.",
+      "pista_2": "El primer argument és la cadena de text.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Neteja d'espais amb la funció TRIM",
+      "tipus": "codi",
+      "descripcio": "La funció TRIM elimina els espais en blanc sobrants d'una cadena de text, deixant només un espai entre les paraules.",
+      "enunciat": "Donada la cadena '   Hola   Món   ' a la cel·la A1, utilitza la funció TRIM per netejar-la.",
+      "solucio": "=TRIM(A1)",
+      "solucio_codi_1": "=TRIM(A1)",
+      "solucio_codi_2": "=ESPACIOS(A1)",
+      "temps_estimat_minuts": 2,
+      "respostes_test": [],
+      "pista_1": "La funció TRIM és molt útil per netejar dades.",
+      "pista_2": "Aplica la funció directament a la cel·la que conté el text.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Reemplaçar text amb SUBSTITUTE",
+      "tipus": "codi",
+      "descripcio": "La funció SUBSTITUTE permet reemplaçar una cadena de text per una altra dins d'un text determinat.",
+      "enunciat": "Donada la cadena 'Hola Món' a la cel·la A1, reemplaça 'Món' per 'Excel' utilitzant la funció SUBSTITUTE.",
+      "solucio": "=SUBSTITUTE(A1, \"Món\", \"Excel\")",
+      "solucio_codi_1": "=SUBSTITUTE(A1, \"Món\", \"Excel\")",
+      "solucio_codi_2": "=SUSTITUIR(A1; \"Món\"; \"Excel\")",
+      "temps_estimat_minuts": 4,
+      "respostes_test": [],
+      "pista_1": "Especifica el text original, el text a reemplaçar i el nou text.",
+      "pista_2": "La funció és sensible a majúscules i minúscules.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Extracció de text amb EXTRAER",
+      "tipus": "test",
+      "descripcio": "La funció EXTRAER (o MID en anglès) permet extreure un cert nombre de caràcters des d'una posició específica dins d'una cadena de text.",
+      "enunciat": "Quina és la funció per obtenir 'caden' de la cadena 'AcadenaR' que està a la cel·la A1?",
+      "solucio": "=MID(A1, 2, 5)",
+      "solucio_codi_1": "=MID(A1, 2, 5)",
+      "solucio_codi_2": "=EXTRAE(A1; 2; 5)",
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        "=LEFT(A1, 5)",
+        "=RIGHT(A1, 5)",
+        "=MID(A1, 1, 5)",
+        "=MID(A1, 2, 5)"
+      ],
+      "pista_1": "La funció EXTRAER requereix la posició inicial i el nombre de caràcters.",
+      "pista_2": "El primer caràcter és la posició 1.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

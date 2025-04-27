@@ -1,0 +1,115 @@
+{
+  "curs": {
+    "nom": "EXCEL",
+    "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Gestió de Dates i Temps",
+    "numero": 9,
+    "dificultat": "Mitjà",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Calcula l'edat",
+      "tipus": "codi",
+      "descripcio": "En aquest exercici, aprendràs a calcular l'edat d'una persona donada la seva data de naixement. La funció DIA, MES i ANY seran fonamentals per resoldre aquest exercici.",
+      "enunciat": "Quina fórmula has de utilitzar per calcular l'edat d'una persona el 2024, si la seva data de naixement és el 12/02/1990?",
+      "solucio": "Edat = ANY(HOY()) - ANY(data_de_naixement)",
+      "solucio_codi_1": "=YEAR(TODAY())-YEAR(A2)",
+      "solucio_codi_2": "=AÑO(HOY())-AÑO(A2)",
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Utilitza la funció YEAR per obtenir l'any de la data de naixement.",
+      "pista_2": "Utilitza la funció TODAY per obtenir la data actual.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Identificar el trimestre",
+      "tipus": "test",
+      "descripcio": "En aquest exercici, aprendràs a identificar el trimestre d'una data determinada. La funció MES serà clau per resoldre aquest exercici.",
+      "enunciat": "Si la data és el 15/06/2024, quin trimestre és?",
+      "solucio": "2",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "pista_1": "El primer trimestre és de gener a març.",
+      "pista_2": "El segon trimestre és d'abril a juny.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Calcula la diferència horària",
+      "tipus": "codi",
+      "descripcio": "En aquest exercici, aprendràs a calcular la diferència horària entre dues dates. La funció HORA i MINUT seran essencials per resoldre aquest exercici.",
+      "enunciat": "Quina fórmula has de utilitzar per calcular la diferència horària entre 08:00 i 12:00?",
+      "solucio": "Diferència = HORA2 - HORA1",
+      "solucio_codi_1": "=HOUR(A2)-HOUR(A1)",
+      "solucio_codi_2": "=HORA(A2)-HORA(A1)",
+      "temps_estimat_minuts": 4,
+      "respostes_test": [],
+      "pista_1": "Utilitza la funció HOUR per obtenir les hores de les dates.",
+      "pista_2": "Resta les hores per obtenir la diferència.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Identificar el dia de la setmana",
+      "tipus": "test",
+      "descripcio": "En aquest exercici, aprendràs a identificar el dia de la setmana d'una data determinada. La funció DIA serà clau per resoldre aquest exercici.",
+      "enunciat": "Si la data és el 20/06/2024, quin dia de la setmana és?",
+      "solucio": "Dijous",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        "Dilluns",
+        "Dimarts",
+        "Dijous",
+        "Divendres"
+      ],
+      "pista_1": "El dijous és el quart dia de la setmana.",
+      "pista_2": "La funció DAY podeu ajudar a determinar el dia de la setmana.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Calcula el període entre dues dates",
+      "tipus": "codi",
+      "descripcio": "En aquest exercici, aprendràs a calcular el període entre dues dates. La funció ANY i MES seran fonamentals per resoldre aquest exercici.",
+      "enunciat": "Quina fórmula has de utilitzar per calcular el període entre el 01/01/2020 i el 31/12/2020?",
+      "solucio": "Període = (ANY2 - ANY1) * 12 + (MES2 - MES1)",
+      "solucio_codi_1": "=(YEAR(A2)-YEAR(A1))*12+(MONTH(A2)-MONTH(A1))",
+      "solucio_codi_2": "=(AÑO(A2)-AÑO(A1))*12+(MES(A2)-MES(A1))",
+      "temps_estimat_minuts": 6,
+      "respostes_test": [],
+      "pista_1": "Utilitza les funcions YEAR i MONTH per obtenir els anys i mesos de les dates.",
+      "pista_2": "Calcula la diferència en anys i mesos per obtenir el període.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "curs": {
+    "nom": "EXCEL",
+    "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Automatització amb Macros (VBA Bàsic)",
+    "numero": 15,
+    "dificultat": "Avançat",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Gravar una macro simple",
+      "tipus": "codi",
+      "descripcio": "Aprenent què són les macros i VBA, enregistra una macro que suma dues cel·les",
+      "enunciat": "Tens dues cel·les amb nombres, A1 i A2. Enregistra una macro que suma els valors de les dues cel·les i escriu el resultat a la cel·la A3.",
+      "solucio": "LA MACRO ES INICIDA AUTOMATICAMENT DESDE EL MOMENT!",
+      "solucio_codi_1": "=SUM(A1:A2)",
+      "solucio_codi_2": "=SUM(A1:A2)",
+      "temps_estimat_minuts": 10,
+      "respostes_test": [
+        {
+          "text": "La macro gravarà les accions de seleccionar A1 i A2, sumant els seus valors i escrivint el resultat a A3",
+          "is_correct": true
+        },
+        {
+          "text": "La macro necessitarà codi VBA per afegir el resultat a la cel·la A3",
+          "is_correct": false
+        },
+        {
+          "text": "La macro no podrà ser enregistrada ja que Excel no té macros",
+          "is_correct": false
+        },
+        {
+          "text": "La macro pot ser autoexecutada",
+          "is_correct": false
+        }
+      ],
+      "pista_1": "Recorda com enregistres d'una forma física un vídeo d'alguna cosa, una macro guarda les teves accions.",
+      "pista_2": "El codi per sumar cel·les existeix ja a Excel, no cal programar-ho des de zero.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Executar una macro enregistrada",
+      "tipus": "codi",
+      "descripcio": "Executa una macro que ja tenim enregistrada",
+      "enunciat": "Observa el fitxer [fitxer_alumnes].xls, troba la macro enregistrada que suma les cel·les A1 i A2 i escriu el resultat a A3. Executa la macro",
+      "solucio": "LA MACRO ES INICIDA AUTOMATICAMENT DESDE EL MOMENT!",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "La macro s'activa mitjançant un botó o menú.",
+      "pista_2": "Per executar la macro necessitaràs accedir al menú Desenvolupador.",
+      "imatge_1": "fitxer_nombre_macro.jpg",
+      "descripcio_imatge_1": "Mostra un exemple de macro reproduïda a Excel",
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Editar una macro",
+      "tipus": "codi",
+      "descripcio": "Aprenent a editar macros estàtiques, canvia el sufix del nombre a afegir.",
+      "enunciat": "Tens una macro enregistrada que suma les cel·les A1 i A2. Edita la macro perquè la suma realitzada sigui A1 x A2.",
+      "solucio": "LA MACRO ES INICIDA AUTOMATICAMENT DESDE EL MOMENT!",
+      "solucio_codi_1": "=A1\\*A2",
+      "solucio_codi_2": "=A1\\*A2",
+      "temps_estimat_minuts": 15,
+      "respostes_test": [
+        {
+          "text": "La macro no pot ser modificada, només enregistrada",
+          "is_correct": false
+        },
+        {
+          "text": "El VBA utilitzat en les macros és obligatoriament en català",
+          "is_correct": false
+        },
+        {
+          "text": "La macro pot ser modificada per sumar dues cel·les",
+          "is_correct": false
+        },
+        {
+          "text": "Per modificar la macro, cal editar el codi manualment",
+          "is_correct": true
+        }
+      ],
+      "pista_1": "Visualitza el codi VBA la macro per modificar la operació.",
+      "pista_2": "El codi VBA permet intercanviar operadors matemàtics.",
+      "imatge_1": "editor_vba.jpg",
+      "descripcio_imatge_1": "Mostra el editor VBA a Excel",
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Aplicar macro a un rang de cel·les",
+      "tipus": "EX",
+      "descripcio": "Utilitza la macro per aplicar una operació a un rang de cel·les. Projecta el resultat.",
+      "enunciat": "Fem servir la macro que suma dues cel·les, però en un rang ampli de cel·les. Modifiqueu el següent codi VBA incloent un rang de cel·les que vulguiés utilitzar.",
+      "solucio": "LAREGLADOES  DE CEL.LAS ES INICIALIZADAS DESDE EL PROGRAMA!",
+      "solucio_codi_1": "Sub SumaCelIles()",
+      "solucio_codi_2": "Sub SumaCelIles()",
+      "temps_estimat_minuts": 20,
+      "respostes_test": [],
+      "pista_1": "Especifica la vostra macro per a un rang de cel·les on es vol aplicar l'operació.",
+      "pista_2": "Reviseu com definir rang a VBA y utilitzeu-ho en la macro.",
+      "imatge_1": "rang_vba.jpg",
+      "descripcio_imatge_1": "Mostra un mètode per definir rang a VBA",
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Aplicar macro a un fitxer",
+      "tipus": "test",
+      "descripcio": "Com pot automatitzar les operacions manual repetitives a Excel.",
+      "enunciat": "Què permet la funcionalitat d'ampliar la macro a un fitxer complet d'Excel?",
+      "solucio": "LA MACRO ES INICIDA AUTOMATICAMENT DESDE EL MOMENT!",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 5,
+      "respostes_test": [
+        {
+          "text": "Permet a la macro repetir la seva funcions anònimament sense interaccció.",
+          "is_correct": false
+        },
+        {
+          "text": "Permet a la macro editar dades ocultes al fitxer",
+          "is_correct": false
+        },
+        {
+          "text": "Permet a la macro realitzar operacions específiques en tot el fitxer",
+          "is_correct": true
+        },
+        {
+          "text": "No és possible aplicar macros a fitxers complets",
+          "is_correct": false
+        }
+      ],
+      "pista_1": "Com se'n beneficia una tasca repetitiva?",
+      "pista_2": "Si la mateixa operació s'ha d'aplicar a tot un fitxer, la macro ajuda.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

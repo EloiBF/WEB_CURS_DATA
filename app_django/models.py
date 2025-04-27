@@ -44,8 +44,9 @@ class Exercici(models.Model):
     descripcio = models.TextField(_("Descripció"), null=True, blank=True)
     enunciat = models.TextField(_("Enunciat"))
     resposta_usuari = models.TextField(_("Resposta de l'usuari"), null=True, blank=True)
-    solucio = models.TextField(_("Solució correcta"))
-    solucio_codi = models.TextField(_("Solució en codi"), null=True, blank=True)
+    solucio = models.TextField(_("Solució correcta"), null=True, blank=True)
+    solucio_codi_1 = models.TextField(_("Solució en codi 1"), null=True, blank=True)
+    solucio_codi_2 = models.TextField(_("Solució en codi 2"), null=True, blank=True)
 
     imatge_1 = models.ImageField(_("Imatge 1"), upload_to='exercicis/imatges/', null=True, blank=True)
     descripcio_imatge_1 = models.CharField(_("Descripció imatge 1"), max_length=255, null=True, blank=True)

@@ -1,0 +1,110 @@
+{
+  "curs": {
+    "nom": "EXCEL",
+    "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Fórmules per a Cerca i Filtrat",
+    "numero": 12,
+    "dificultat": "Mitjà",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Buscar valor en una taula amb BUSCARX",
+      "tipus": "codi",
+      "descripcio": "La fórmula BUSCARX permet buscar un valor en una taula i retornar un altre valor relacionat. En aquest exercici, aprendràs a utilitzar la fórmula BUSCARX per buscar un valor en una taula i retornar el valor corresponent.",
+      "enunciat": "Utilitza la fórmula BUSCARX per buscar el valor 'Juan' en la columna A d'una taula i retornar el valor corresponent de la columna B.",
+      "solucio": "=BUSCARX(\"Juan\",A:B,2,FALSE)",
+      "solucio_codi_1": "=VLOOKUP(\"Juan\",A:B,2,FALSE)",
+      "solucio_codi_2": "=BUSCARV(\"Juan\",A:B,2,FALSE)",
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Utilitza la fórmula BUSCARX amb el paràmetre FALSE per buscar un valor exacte.",
+      "pista_2": "Verifica que la columna A sigui la columna que conté els valors que vols buscar.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Filtrar rangs segons condicions amb FILTRAR",
+      "tipus": "codi",
+      "descripcio": "La fórmula FILTRAR permet filtrar un rang de dades segons una condició específica. En aquest exercici, aprendràs a utilitzar la fórmula FILTRAR per filtrar un rang de dades.",
+      "enunciat": "Utilitza la fórmula FILTRAR per filtrar els valors de la columna A que siguin majors que 10.",
+      "solucio": "=FILTRAR(A:A, A:A > 10)",
+      "solucio_codi_1": "=FILTER(A:A, A:A > 10)",
+      "solucio_codi_2": "=FILTRAR(A:A, A:A > 10)",
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Utilitza el paràmetre A:A per seleccionar el rang de dades que vols filtrar.",
+      "pista_2": "Verifica que la condició A:A > 10 sigui la condició correcta per al teu cas.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Diferències entre BUSCARX i BUSCARV",
+      "tipus": "test",
+      "descripcio": "Les fórmules BUSCARX i BUSCARV són utilitzades per buscar valors en una taula, però tenen algunes diferències importants. En aquest exercici, aprendràs a identificar les diferències entre aquestes dues fórmules.",
+      "enunciat": "Quina és la diferència principal entre les fórmules BUSCARX i BUSCARV?",
+      "solucio": "La fórmula BUSCARX busca un valor en una columna i retorna un altre valor relacionat, mentre que la fórmula BUSCARV busca un valor en una fila i retorna un altre valor relacionat.",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 5,
+      "respostes_test": [
+        "La fórmula BUSCARX és més ràpida que la fórmula BUSCARV",
+        "La fórmula BUSCARV és més senzilla que la fórmula BUSCARX",
+        "La fórmula BUSCARX busca un valor en una columna i retorna un altre valor relacionat, mentre que la fórmula BUSCARV busca un valor en una fila i retorna un altre valor relacionat",
+        "La fórmula BUSCARX i la fórmula BUSCARV són idèntiques"
+      ],
+      "pista_1": "Verifica les característiques de cada fórmula per identificar les diferències.",
+      "pista_2": "Les fórmules BUSCARX i BUSCARV tenen diferents paràmetres i funcions.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Buscar dins del text amb la fórmula BUSCARX",
+      "tipus": "codi",
+      "descripcio": "La fórmula BUSCARX també pot ser utilitzada per buscar dins del text. En aquest exercici, aprendràs a utilitzar la fórmula BUSCARX per buscar un text específic dins d'una columna.",
+      "enunciat": "Utilitza la fórmula BUSCARX per buscar el text 'EXCEL' dins de la columna A.",
+      "solucio": "=BUSCARX(\"*EXCEL*\",A:A,1,FALSE)",
+      "solucio_codi_1": "=VLOOKUP(\"*EXCEL*\",A:A,1,FALSE)",
+      "solucio_codi_2": "=BUSCARV(\"*EXCEL*\",A:A,1,FALSE)",
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Utilitza el paràmetre \"*EXCEL*\" per buscar el text 'EXCEL' dins de la columna A.",
+      "pista_2": "Verifica que la columna A sigui la columna que conté els textos que vols buscar.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Creuar taules amb BUSCARX complexos",
+      "tipus": "codi",
+      "descripcio": "La fórmula BUSCARX pot ser utilitzada per creuar taules i buscar valors relacionats. En aquest exercici, aprendràs a utilitzar la fórmula BUSCARX per creuar dues taules i buscar valors relacionats.",
+      "enunciat": "Utilitza la fórmula BUSCARX per buscar el valor 'Juan' en la taula A i retornar el valor corresponent de la taula B.",
+      "solucio": "=BUSCARX(\"Juan\",A:B,2,FALSE)",
+      "solucio_codi_1": "=VLOOKUP(\"Juan\",A:B,2,FALSE)",
+      "solucio_codi_2": "=BUSCARV(\"Juan\",A:B,2,FALSE)",
+      "temps_estimat_minuts": 10,
+      "respostes_test": [],
+      "pista_1": "Utilitza la fórmula BUSCARX amb el paràmetre FALSE per buscar un valor exacte.",
+      "pista_2": "Verifica que les taules A i B estiguin relacionades pel valor 'Juan'.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

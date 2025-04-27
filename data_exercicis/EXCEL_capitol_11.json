@@ -1,0 +1,115 @@
+{
+  "curs": {
+    "nom": "EXCEL",
+    "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Eficiència amb Excel: Trucs i optimització",
+    "numero": 11,
+    "dificultat": "Mitjà",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Shortcuts de teclat essencials",
+      "tipus": "codi",
+      "descripcio": "Els shortcuts de teclat són essencials per augmentar la productivitat en Excel. En aquest exercici, has de recordar els shortcuts de teclat més comuns per realitzar accions bàsiques com selecció, edició i navegació.",
+      "enunciat": "Quin és el shortcut de teclat per seleccionar tot el contingut de la fulla de càlcul?",
+      "solucio": "Ctrl + A",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 2,
+      "respostes_test": [],
+      "pista_1": "El shortcut comença amb la tecla Ctrl.",
+      "pista_2": "La tecla A és la segona part del shortcut.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Enllaços dins del full",
+      "tipus": "test",
+      "descripcio": "Els enllaços dins del full permeten vincular cèl·lules i crear referències a altres parts de la fulla de càlcul. En aquest exercici, has de conèixer la sintaxi correcta per crear un enllaç dins del full.",
+      "enunciat": "Quina és la sintaxi correcta per crear un enllaç a una cèl·lula anomenada 'Total' en la fulla de càlcul actual?",
+      "solucio": "#Total",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        "#Total",
+        "=Total",
+        "Total",
+        "Hyperlink Total"
+      ],
+      "pista_1": "La sintaxi comença amb el símbol #.",
+      "pista_2": "El nom de la cèl·lula 'Total' és el que segueix al símbol #.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Rastrejar valors",
+      "tipus": "codi",
+      "descripcio": "El rastreig de valors és una eina essencial per trobar errors en les fórmules i entendre la lògica de càlcul de les cèl·lules. En aquest exercici, has de recordar la fórmula per activar el rastreig de valors.",
+      "enunciat": "Quina és la fórmula per activar el rastreig de valors en una cèl·lula?",
+      "solucio": "F2",
+      "solucio_codi_1": "F2",
+      "solucio_codi_2": "F2",
+      "temps_estimat_minuts": 2,
+      "respostes_test": [],
+      "pista_1": "La fórmula és una sola tecla.",
+      "pista_2": "La tecla és F2.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Accesos directes a utilitats amagades",
+      "tipus": "test",
+      "descripcio": "Excel té moltes utilitats amagades que poden ser accessibles mitjançant accions específiques. En aquest exercici, has de conèixer l'accés directe a la finestra 'Depuració'",
+      "enunciat": "Quina és l'accés directe a la finestra 'Depuració'?",
+      "solucio": "Alt + F11",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        "Alt + F11",
+        "Ctrl + F11",
+        "F11",
+        "Shift + F11"
+      ],
+      "pista_1": "L'accés directe implica la tecla Alt.",
+      "pista_2": "La tecla F11 és la segona part de l'accés directe.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Enllaços entre fulls",
+      "tipus": "codi",
+      "descripcio": "Els enllaços entre fulls permeten vincular cèl·lules entre diferents fulls de càlcul. En aquest exercici, has de recordar la sintaxi correcta per crear un enllaç entre fulls.",
+      "enunciat": "Quina és la sintaxi correcta per crear un enllaç a una cèl·lula anomenada 'Dades' en un full anomenat 'Full2'?",
+      "solucio": "=Full2!Dades",
+      "solucio_codi_1": "=Sheet2!Data",
+      "solucio_codi_2": "=Full2!Datos",
+      "temps_estimat_minuts": 4,
+      "respostes_test": [],
+      "pista_1": "La sintaxi comença amb el símbol =.",
+      "pista_2": "El nom del full i la cèl·lula estan separats per un símbol !.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

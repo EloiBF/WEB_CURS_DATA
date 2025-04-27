@@ -1,0 +1,115 @@
+{
+  "curs": {
+    "nom": "EXCEL",
+    "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Gestió de Taules i Filtres",
+    "numero": 5,
+    "dificultat": "Mitjà",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Crear una taula a partir d'un rang",
+      "tipus": "codi",
+      "descripcio": "Excel permet convertir un rang de dades en una taula, facilitant la gestió i l'anàlisi de les dades. Per crear una taula, selecciona el rang de dades i prem Ctrl + T. La fórmula per comprovar si un rang està en format de taula és utilitzant la funció 'ÉsTaula' no està disponible directament, però podem comprovar la seva existència mitjançant codi VBA o comprovant si el nom de la taula existeix.",
+      "enunciat": "Donat el rang A1:C4 amb dades, crea una taula i comprova si s'ha creat correctament.",
+      "solucio": "La taula s'ha creat correctament si el rang A1:C4 està seleccionat i s'ha premut Ctrl + T.",
+      "solucio_codi_1": "=TABLE(A1:C4)",
+      "solucio_codi_2": "=TABLA(A1:C4)",
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Selecciona el rang A1:C4 i prem Ctrl + T per crear la taula.",
+      "pista_2": "Comprova si la taula s'ha creat correctament verificant que el rang tingui els caps de columna amb filtres.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Aplicar filtres a una taula",
+      "tipus": "test",
+      "descripcio": "Un cop creada la taula, pots aplicar filtres per visualitzar només les dades que t'interessen. Pots filtrar per valors específics en una o més columnes.",
+      "enunciat": "Quina és la manera més senzilla d'aplicar un filtre a una taula a Excel?",
+      "solucio": "Clicar al cap de columna i seleccionar el valor desitjat.",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        "Clicar al cap de columna i seleccionar el valor desitjat.",
+        "Utilitzar la fórmula FILTER.",
+        "Crear una macro per aplicar el filtre.",
+        "Copiar les dades a una altra hoja i filtrar-les manualment."
+      ],
+      "pista_1": "Els filtres es poden aplicar de manera senzilla sense necessitat de fórmules complexes.",
+      "pista_2": "La majoria de les tasques de filtratge es poden realitzar directament des dels caps de columna.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Utilitzar la segmentació de dades",
+      "tipus": "codi",
+      "descripcio": "La segmentació de dades és una eina que permet filtrar les dades d'una taula de manera interactiva. Per afegir una segmentació de dades, ves a la pestanya 'Disseny de taula' i selecciona 'Afegir segmentació de dades'.",
+      "enunciat": "Crea una segmentació de dades per a la columna 'Categoria' de la taula creada a l'exercici 1.",
+      "solucio": "La segmentació de dades s'ha creat correctament si apareix una nova finestra amb les diferents categories.",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 4,
+      "respostes_test": [],
+      "pista_1": "Selecciona la taula i ves a la pestanya 'Disseny de taula'.",
+      "pista_2": "Clica a 'Afegir segmentació de dades' i selecciona la columna 'Categoria'.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Filtrar dades amb la funció FILTER",
+      "tipus": "test",
+      "descripcio": "La funció FILTER permet filtrar un rang de dades segons uns criteris especificats. La sintaxi de la funció FILTER és =FILTER(rang; criteri).",
+      "enunciat": "Quina és la funció correcta per filtrar les files on la columna 'Vendes' és superior a 100?",
+      "solucio": "=FILTER(A1:C4; C1:C4>100)",
+      "solucio_codi_1": "=FILTER(A1:C4, C1:C4>100)",
+      "solucio_codi_2": "=FILTRAR(A1:C4; C1:C4>100)",
+      "temps_estimat_minuts": 4,
+      "respostes_test": [
+        "=FILTER(A1:C4; C1:C4>100)",
+        "=FILTER(A1:C4; C1:C4<100)",
+        "=FILTER(A1:C4, B1:B4>100)",
+        "=FILTER(A1:C4, A1:A4>100)"
+      ],
+      "pista_1": "La funció FILTER requereix indicar el rang a filtrar i el criteri de filtratge.",
+      "pista_2": "Assegura't de seleccionar la columna correcta ('Vendes') per aplicar el filtre.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Convertir un rang en taula i aplicar filtre",
+      "tipus": "codi",
+      "descripcio": "Excel permet convertir un rang en taula i aplicar filtres per visualitzar les dades de manera més efectiva. Primer, converteix el rang en taula mitjançant Ctrl + T, i després aplica un filtre a la columna desitjada.",
+      "enunciat": "Donat el rang A1:C4 amb dades, converteix-lo en taula i aplica un filtre per mostrar només les files on la columna 'Vendes' (C) és superior a 100.",
+      "solucio": "La taula està filtrada correctament si només mostra les files on 'Vendes' és superior a 100.",
+      "solucio_codi_1": "=FILTER(Table1; Table1[Vendes]>100)",
+      "solucio_codi_2": "=FILTRAR(Tabla1; Tabla1[Vendes]>100)",
+      "temps_estimat_minuts": 6,
+      "respostes_test": [],
+      "pista_1": "Primer converteix el rang A1:C4 en taula mitjançant Ctrl + T.",
+      "pista_2": "Després, aplica un filtre a la columna 'Vendes' per mostrar només els valors superiors a 100.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

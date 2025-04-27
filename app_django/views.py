@@ -137,8 +137,9 @@ def exercici(request, curs_nom, exercici_id):
         if not resposta_usuari:
             missatge = "Si us plau, escriu una resposta abans d'enviar-la ✏️"
         else:
-            solucio = exercici.solucio.strip() if exercici.solucio else exercici.solucio_codi.strip() if exercici.solucio_codi else ''
-            solucio_codi = exercici.solucio_codi.strip() if exercici.solucio_codi else ''
+            solucio = exercici.solucio.strip() if exercici.solucio else ''
+            solucio_codi_1 = exercici.solucio_codi_1.strip() if exercici.solucio_codi_1 else ''
+            solucio_codi_2 = exercici.solucio_codi_2.strip() if exercici.solucio_codi_2 else ''
             tipus = exercici.tipus
             enunciat = exercici.enunciat
             descripcio = exercici.descripcio
@@ -146,18 +147,26 @@ def exercici(request, curs_nom, exercici_id):
             print(f"📨 Resposta rebuda: {resposta_usuari}")
             print(f"📘 Tipus d'exercici: {tipus}")
             print(f"📘 Solucio: {solucio}")
-            print(f"📘 Solucio_codi: {solucio_codi}")
+            print(f"📘 Solucio_codi_1: {solucio_codi_1}")
+            print(f"📘 Solucio_codi_2: {solucio_codi_2}")
 
             if tipus == 'test':
                 print("🔍 Cridant correcció per a TEST")
                 resposta_correcta, missatge = correccio_test(resposta_usuari, solucio)
             elif tipus == 'codi':
                 print("🔍 Cridant correcció per a CODI")
-                resposta_correcta, missatge = correccio_codi(resposta_usuari, solucio_codi)
+                # Comprovem tant solucio_codi_1 com solucio_codi_2
+                if solucio_codi_1:
+                    resposta_correcta, missatge = correccio_codi(resposta_usuari, solucio_codi_1)
+                elif solucio_codi_2:
+                    resposta_correcta, missatge = correccio_codi(resposta_usuari, solucio_codi_2)
+                else:
+                    resposta_correcta = False
+                    missatge = "No s'ha trobat cap solució vàlida per al codi."
             elif tipus == 'exe':
                 print("🔍 Cridant correcció per a EXE amb execució i output")
                 print(f"📤 Resultat esperat: {solucio}")
-                resposta_correcta, missatge = correccio_exe(resposta_usuari, solucio, solucio_codi)
+                resposta_correcta, missatge = correccio_exe(resposta_usuari, solucio, solucio_codi_1)
             elif tipus == 'ia':
                 print("🤖 Cridant correcció per a IA")
                 resposta_correcta, missatge, resposta_ia = correccio_ia(resposta_usuari, solucio, enunciat, descripcio)

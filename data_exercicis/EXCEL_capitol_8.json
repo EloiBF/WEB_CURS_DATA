@@ -1,0 +1,110 @@
+{
+  "curs": {
+    "nom": "EXCEL",
+    "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Fórmules lògiques i condicionals",
+    "numero": 8,
+    "dificultat": "Mitjà",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Funció SI",
+      "tipus": "codi",
+      "descripcio": "La funció SI permet realitzar condicions lògiques en les nostres fórmules. La sintaxi bàsica és SI(condició, valor_si_veritat, valor_si_fals). En aquest exercici, volem comprovar si un nombre és major que 10.",
+      "enunciat": "Crea una fórmula que mostri 'Major que 10' si el valor de la cèl·lula A1 és major que 10, i 'Menor o igual a 10' en cas contrari.",
+      "solucio": "Major que 10",
+      "solucio_codi_1": "=SI(A1>10,\"Major que 10\",\"Menor o igual a 10\")",
+      "solucio_codi_2": "=SI(A1>10,\"Mayor que 10\",\"Menor o igual a 10\")",
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Utilitza la funció SI amb la condició A1>10.",
+      "pista_2": "No oblidis els cometes dobles per als texts de resultat.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Funció SI.ERROR",
+      "tipus": "codi",
+      "descripcio": "La funció SI.ERROR permet capturar els errors en les nostres fórmules. La sintaxi bàsica és SI.ERROR(valor, valor_si_error). En aquest exercici, volem evitar que aparegui un missatge d'error si la cèl·lula A1 és buida.",
+      "enunciat": "Crea una fórmula que mostri el text 'Valor no disponible' si la cèl·lula A1 és buida.",
+      "solucio": "Valor no disponible",
+      "solucio_codi_1": "=SI.ERROR(A1,\"Valor no disponible\")",
+      "solucio_codi_2": "=SI.ERROR(A1,\"Valor no disponible\")",
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Utilitza la funció SI.ERROR amb el valor de la cèl·lula A1.",
+      "pista_2": "No oblidis el text de resultat per quan hi hagi un error.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Test sobre Funcions Y i O",
+      "tipus": "test",
+      "descripcio": "Les funcions Y i O són bàsiques en la lògica condicional. La funció Y retorna verdader si totes les condicions són vertaderes, mentre que la funció O retorna verdader si almenys una de les condicions és vertadera.",
+      "enunciat": "Què fa la funció Y en Excel?",
+      "solucio": "Retorna verdader si totes les condicions són vertaderes",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 5,
+      "respostes_test": [
+        "Retorna verdader si totes les condicions són vertaderes",
+        "Retorna verdader si almenys una de les condicions és vertadera",
+        "Retorna fals sempre",
+        "No té cap funció"
+      ],
+      "pista_1": "La funció Y es utilitza per combinar condicions.",
+      "pista_2": "La resposta correcta és la primera opció.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "SUMAR.SI",
+      "tipus": "codi",
+      "descripcio": "La funció SUMAR.SI permet sumar valors en una columna segons una condició especificada. La sintaxi bàsica és SUMAR.SI(interval, condició, [interval_suma]). En aquest exercici, volem sumar tots els valors de la columna B que corresponguin a la categoria 'A' en la columna A.",
+      "enunciat": "Crea una fórmula que sumi tots els valors de la columna B que corresponguin a la categoria 'A' en la columna A.",
+      "solucio": "La suma dels valors",
+      "solucio_codi_1": "=SUMAR.SI(A:A,\"A\",B:B)",
+      "solucio_codi_2": "=SUMAR.SI(A:A,\"A\",B:B)",
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Utilitza la funció SUMAR.SI amb l'interval de la columna A i el valor 'A' com a condició.",
+      "pista_2": "No oblidis especificar l'interval de suma, que en aquest cas és la columna B.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Fórmula amb condicions complexes",
+      "tipus": "codi",
+      "descripcio": "Les fórmules amb condicions complexes permeten combinar diverses condicions per obtenir resultats més precisos. En aquest exercici, volem crear una fórmula que mostri 'Alta' si el valor de la cèl·lula A1 és major que 10 i la cèl·lula B1 és major que 5, i 'Baixa' en cas contrari.",
+      "enunciat": "Crea una fórmula que mostri 'Alta' si el valor de la cèl·lula A1 és major que 10 i la cèl·lula B1 és major que 5, i 'Baixa' en cas contrari.",
+      "solucio": "Alta",
+      "solucio_codi_1": "=SI(I(A1>10;B1>5);\"Alta\";\"Baixa\")",
+      "solucio_codi_2": "=SI(Y(A1>10;B1>5);\"Alta\";\"Baixa\")",
+      "temps_estimat_minuts": 10,
+      "respostes_test": [],
+      "pista_1": "Utilitza la funció SI amb la condició complexa.",
+      "pista_2": "No oblidis combinar les condicions amb la funció Y.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

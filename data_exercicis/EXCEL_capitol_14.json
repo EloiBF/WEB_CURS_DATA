@@ -1,0 +1,124 @@
+{
+  "curs": {
+    "nom": "EXCEL",
+    "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Formats personalitzats i condicions avançades",
+    "numero": 14,
+    "dificultat": "Avançat",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Format d'moneda personalitzat",
+      "tipus": "codi",
+      "descripcio": "Crea un format personalitzat de moneda que indiqui el símbol del euro (€) i el número amb dos decimals. Aquest format es pot utilitzar per desenvolupar formats per a monedes diferents.",
+      "enunciat": "Crea un format personalitzat de moneda que indique el símbol del euro (€) i el número amb dos decimals. Guarda el format com a 'Euro'.",
+      "solucio": null,
+      "solucio_codi_1": "=€(#,,##0.00)",
+      "solucio_codi_2": "=€(#,,##0.00)",
+      "temps_estimat_minuts": 10,
+      "respostes_test": [],
+      "pista_1": "Asegúrate de definir el símbol del euro (€) en el format.",
+      "pista_2": "Utiliza el format de número estándar (#,,##0.00) como base.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Format de data personalizada",
+      "tipus": "codi",
+      "descripcio": "Crea un format de data que mostri el dia de la setmana, el mes (amb nom complet) i l'any. Guarda el format com a 'FechaCompleta'.",
+      "enunciat": "Crea un format personalizado de data que mostri el dia de la setmana, el mes (amb nom complet) i l'any. Guarda el format com a 'FechaCompleta'.",
+      "solucio": null,
+      "solucio_codi_1": "dddd, mmm yyyy",
+      "solucio_codi_2": "dddd, mmm yyyy",
+      "temps_estimat_minuts": 10,
+      "respostes_test": [],
+      "pista_1": " Consulta la llista de especifiers de dates en ajuda d'Excel.",
+      "pista_2": "Recuerda que 'dddd' representa el día completo de la semana y 'mmm' el nombre corto del mes.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Test: Formats condicionals",
+      "tipus": "test",
+      "descripcio": "Selecciona la fórmula correcta que aplica un format condicional a una celda si el número es mayor que 100.",
+      "enunciat": "Cuál es la fórmula correcta que aplica un formato condicional a una celda si el número es mayor que 100:",
+      "solucio": null,
+      "solucio_codi_1": "=",
+      "solucio_codi_2": "=A1>100",
+      "temps_estimat_minuts": 5,
+      "respostes_test": [
+        {
+          "text": "=A1>100",
+          "correcto": true
+        },
+        {
+          "text": "=A1<100",
+          "correcto": false
+        },
+        {
+          "text": "=A1=100",
+          "correcto": false
+        },
+        {
+          "text": "=A1",
+          "correcto": false
+        }
+      ],
+      "pista_1": "Recuerda que la fórmula debe evaluar a verdadero o falso dependiendo del valor de la celda.",
+      "pista_2": "Utiliza el operador mayor que (>) para comparar el valor de la celda con 100.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Validación de texto con fórmula",
+      "tipus": "exe",
+      "descripcio": "Ajusta la fórmula para validar que la celda contenga solo letras.",
+      "enunciat": "Asegúrate de que la siguiente fórmula vuelva a estar activa y que valide que una celda contenga solo letras. Recuerda que la fórmula debe ser estable cuando se aplique a una celda con contenido ya existente.",
+      "solucio": "=ISALPHA(A1)",
+      "solucio_codi_1": "=ISALPHA(A1)",
+      "solucio_codi_2": "=ISALPHA(A1)",
+      "temps_estimat_minuts": 15,
+      "respostes_test": [],
+      "pista_1": "Utiliza la función ISALPHA() para comprobar si una cadena de texto contiene solo letras.",
+      "pista_2": "Recuerda que la función ISALPHA() devuelve verdadero si la cadena solo contiene letras y falso si contiene otros caracteres.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Filtrat dinàmic amb taules dinàmiques",
+      "tipus": "test",
+      "descripcio": "Una taula dinàmica és una eina molt potent d'Excel que permet resumir i analitzar grans quantitats de dades. Per filtrar la informació, es poden utilitzar els filtres que permeten als usuaris seleccionar dades específiques, com per exemple, un dia de la setmana. Entendre com utilitzar els filtres correctament és fonamental per a la visualització eficaç de les dades.",
+      "enunciat": "Quin dels següents passos és necessari per aplicar un filtre de dia de la setmana en una taula dinàmica d'Excel?",
+      "solucio": "1",
+      "respostes_test": [
+        "1. Afegir un camp de 'Dia de la setmana' com a fila i després utilitzar el filtre en la columna per seleccionar els dies.",
+        "2. Afegir un camp de 'Dia de la setmana' com a columna i utilitzar el filtre dins del conjunt de dades per modificar les dates.",
+        "3. Utilitzar un gràfic dinàmic per mostrar les vendes per dia i afegir un filtre de dia de la setmana a les opcions del gràfic.",
+        "4. Afegir un filtre a la taula dinàmica seleccionant les dates i després triar l'ítem 'Dia de la setmana' per filtrar les dades."
+      ],
+      "pista_1": "Pensa com s'utilitzen els camps a les files i columnes d'una taula dinàmica per filtrar les dades.",
+      "pista_2": "Recorda que el filtre de dia de la setmana ha d'estar relacionat amb un camp que classifiqui les dades per data.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

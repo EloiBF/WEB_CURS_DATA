@@ -1,0 +1,115 @@
+{
+  "curs": {
+    "nom": "EXCEL",
+    "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Formats i primera personalització",
+    "numero": 2,
+    "dificultat": "Fàcil",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Aplicar formats de número",
+      "tipus": "codi",
+      "descripcio": "Per aplicar un format de número a una cel·la o un rang de cel·les, selecciona les cel·les i utilitza les opcions de format de número disponibles a la pestanya 'Inici' de la cinta d'opcions. Pots seleccionar formats com 'Nombre', 'Moneda', 'Data', 'Hora', etc.",
+      "enunciat": "Formata la cel·la A1 per mostrar el valor com a 'Nombre' amb 2 decimals.",
+      "solucio": "La cel·la A1 hauria de mostrar el valor amb 2 decimals.",
+      "solucio_codi_1": "=TEXT(A1,\"0.00\")",
+      "solucio_codi_2": "=TEXTO(A1;\"0,00\")",
+      "temps_estimat_minuts": 3,
+      "respostes_test": [],
+      "pista_1": "Utilitza la funció TEXT per formatar el valor de la cel·la.",
+      "pista_2": "El codi de format \"0.00\" aplica 2 decimals.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Test: Quin és l'ús del pinzell de formats?",
+      "tipus": "test",
+      "descripcio": "El pinzell de formats s'utilitza per copiar els formats d'una cel·la o un rang de cel·les a un altre.",
+      "enunciat": "Què fa el pinzell de formats en Excel?",
+      "solucio": "Copia els formats d'una cel·la o rang de cel·les a un altre.",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        "Copia els valors d'una cel·la a una altra.",
+        "Copia els formats d'una cel·la o rang de cel·les a un altre.",
+        "Elimina els formats de les cel·les seleccionades.",
+        "Canvia el color de fons de les cel·les."
+      ],
+      "pista_1": "Pensa en com pots aplicar ràpidament els mateixos formats a diferents parts del teu full de càlcul.",
+      "pista_2": "El pinzell és una eina molt útil per mantenir la coherència en els formats.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Ajustar amplades i alçades de cel·les",
+      "tipus": "codi",
+      "descripcio": "Pots ajustar l'amplada de les columnes i l'alçada de les files manualment arrossegant els límits entre les capçaleres de columna o fila, o bé fent doble clic per ajustar automàticament segons el contingut.",
+      "enunciat": "Ajusta automàticament l'amplada de la columna A.",
+      "solucio": "La columna A hauria d'haver-se ajustat automàticament.",
+      "solucio_codi_1": "Doble clic entre la capçalera de la columna A i B.",
+      "solucio_codi_2": "Doble clic entre la capçalera de la columna A y B.",
+      "temps_estimat_minuts": 2,
+      "respostes_test": [],
+      "pista_1": "Utilitza la capçalera de la columna per ajustar l'amplada.",
+      "pista_2": "El doble clic ajusta automàticament l'amplada de la columna.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Aplicar formats ràpids de taula",
+      "tipus": "codi",
+      "descripcio": "Excel ofereix diverses opcions de formats ràpids de taula que permeten donar un aspecte professional a les teves dades. Pots accedir-hi seleccionant el rang de dades i anant a la pestanya 'Inici' o 'Disseny de taula' després de convertir el rang en una taula.",
+      "enunciat": "Aplica un format ràpid de taula al rang A1:C10.",
+      "solucio": "El rang A1:C10 hauria de tenir un format de taula aplicat.",
+      "solucio_codi_1": "Selecciona A1:C10, vés a 'Inici' > 'Format com a taula' i selecciona un format.",
+      "solucio_codi_2": "Selecciona A1:C10, ve a 'Inicio' > 'Dar formato como tabla' y selecciona un formato.",
+      "temps_estimat_minuts": 4,
+      "respostes_test": [],
+      "pista_1": "Primer, selecciona el rang de dades que vols formatar.",
+      "pista_2": "Utilitza la pestanya 'Inici' per trobar l'opció de 'Format com a taula'.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Test: Què és un format de data i hora?",
+      "tipus": "test",
+      "descripcio": "Els formats de data i hora permeten presentar les dades temporals de manera llegible i entenedora. Excel ofereix una àmplia varietat de formats per mostrar dates i hores.",
+      "enunciat": "Què és un format de data i hora en Excel?",
+      "solucio": "Un format que permet presentar les dates i hores de diverses maneres.",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        "Un tipus de dada que només mostra números.",
+        "Un format que permet presentar les dates i hores de diverses maneres.",
+        "Una funció per calcular dates futures.",
+        "Una eina per convertir text en números."
+      ],
+      "pista_1": "Pensa en com les dates i hores es poden presentar de diferents maneres.",
+      "pista_2": "Excel ofereix moltes opcions per formatar dates i hores.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

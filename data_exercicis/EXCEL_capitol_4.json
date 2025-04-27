@@ -1,0 +1,120 @@
+{
+  "curs": {
+    "nom": "EXCEL",
+    "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Fórmules inicials i operacions bàsiques",
+    "numero": 4,
+    "dificultat": "Fàcil",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Suma de valors en Excel",
+      "tipus": "codi",
+      "descripcio": "Per sumar valors en Excel, pots utilitzar la funció SUMA. La sintaxi bàsica és =SUMA(rango), on 'rango' és el rang de cel·les que vols sumar. Per exemple, =SUM(A1:A5) suma els valors de les cel·les A1 fins a A5.",
+      "enunciat": "Suma els valors de les cel·les A1 a A5 que contenen els valors 1, 2, 3, 4, 5.",
+      "solucio": "15",
+      "solucio_codi_1": "=SUM(A1:A5)",
+      "solucio_codi_2": "=SUMA(A1:A5)",
+      "temps_estimat_minuts": 2,
+      "respostes_test": [],
+      "pista_1": "Utilitza la funció SUMA per sumar els valors.",
+      "pista_2": "El rang de cel·les és A1:A5.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Referències relatives i absolutes",
+      "tipus": "test",
+      "descripcio": "En Excel, les referències relatives canvien quan copies una fórmula a una altra cel·la, mentre que les referències absolutes romanen iguals. Per exemple, $A$1 és una referència absoluta a la cel·la A1.",
+      "enunciat": "Què és $A$1 en la fórmula =A1*$A$1?",
+      "solucio": "Una referència absoluta",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        "Una referència relativa",
+        "Una referència absoluta",
+        "Una funció",
+        "Un error"
+      ],
+      "pista_1": "Recorda què significa el símbol $ en una referència.",
+      "pista_2": "Les referències absolutes no canvien quan copies la fórmula.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Operació de multiplicació",
+      "tipus": "test",
+      "descripcio": "Per multiplicar dos valors en Excel, pots utilitzar l'operador *. La fórmula =A1*B1 multiplica els valors de les cel·les A1 i B1.",
+      "enunciat": "Quina és la fórmula per multiplicar A1 i B1?",
+      "solucio": "=A1*B1",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        "=A1+B1",
+        "=A1*B1",
+        "=A1/B1",
+        "=A1-B1"
+      ],
+      "pista_1": "Recorda l'operador per a la multiplicació.",
+      "pista_2": "L'operador de multiplicació és diferent de la suma.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Operador $ en referències absolutes",
+      "tipus": "test",
+      "descripcio": "L'operador $ en Excel s'utilitza per fer referències absolutes, bloquejant la fila o la columna. Per exemple, $A$1 és una referència absoluta a la cel·la A1, mentre que A1 és una referència relativa.",
+      "enunciat": "Quina és la funció del símbol $ en una fórmula d'Excel?",
+      "solucio": "Blocatge de la fila i/o columna en una referència.",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 3,
+      "respostes_test": [
+        "Bloqueja la referència a la fila i/o columna.",
+        "Bloqueja només la fila.",
+        "Bloqueja només la columna.",
+        "Permet referències relatives."
+      ],
+      "pista_1": "El símbol $ bloqueja la fila o la columna.",
+      "pista_2": "Quan copiem la fórmula, les referències amb $ no canviaran.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Resta de valors",
+      "tipus": "codi",
+      "descripcio": "Per restar valors en Excel, pots utilitzar l'operador -. La fórmula =A1-B1 resta el valor de B1 del valor de A1.",
+      "enunciat": "Resta el valor de la cel·la B1 (5) del valor de la cel·la A1 (10).",
+      "solucio": "5",
+      "solucio_codi_1": "=A1-B1",
+      "solucio_codi_2": "=A1-B1",
+      "temps_estimat_minuts": 2,
+      "respostes_test": [],
+      "pista_1": "Utilitza l'operador de resta.",
+      "pista_2": "El valor a restar és a la cel·la B1.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

@@ -83,13 +83,17 @@
                         </details>
                     {% endif %}
                 </div>
-                {% if exercici.solucio_codi %}
-                    <details class="exercise__hint">
-                        <summary>Exemple solució</summary>
-                        <p>{{ exercici.solucio_codi }}</p>
-                    </details>
-                {% endif %}
-                </div>
+                {% if exercici.solucio_codi_1 or exercici.solucio_codi_2 %}
+                <details class="exercise__hint">
+                    <summary>Exemple solució</summary>
+                    {% if exercici.solucio_codi_1 %}
+                        <p><strong>Solució 1:</strong> {{ exercici.solucio_codi_1 }}</p>
+                    {% endif %}
+                    {% if exercici.solucio_codi_2 %}
+                        <p><strong>Solució 2:</strong> {{ exercici.solucio_codi_2 }}</p>
+                    {% endif %}
+                </details>
+            {% endif %}
 
                 <!-- Botons de navegació entre exercicis -->
                 <div class="exercise__navigation-buttons">

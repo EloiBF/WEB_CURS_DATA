@@ -1,0 +1,139 @@
+{
+  "curs": {
+    "nom": "EXCEL",
+    "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Operacions bàsiques i Pegat especial",
+    "numero": 3,
+    "dificultat": "Fàcil",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Copiar i enganxar valors",
+      "tipus": "codi",
+      "descripcio": "En aquest exercici aprendrem a copiar i enganxar valors en una fulla de càlcul d'Excel. El pegat especial permet enganxar només els valors, sense les fórmules.",
+      "enunciat": "Copia els valors de la columna A a la columna B, sense les fórmules. La taula inicial és la següent: \n\n| A | B |\n| --- | --- |\n| 1  |   |\n| =2+2 |   |\n\nDesprés de copiar i enganxar valors, la taula hauria de quedar: \n\n| A | B |\n| --- | --- |\n| 1  | 1 |\n| =2+2 | 4 |\n",
+      "solucio": "La columna B hauria de contenir els valors 1 i 4.",
+      "solucio_codi_1": "=A1",
+      "solucio_codi_2": "=A1",
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Utilitza el pegat especial per enganxar només els valors.",
+      "pista_2": "Selecciona la cel·la destí i utilitza el menú contextual per seleccionar 'Pegat especial' i després 'Valors'.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Pregunta sobre copiar i enganxar",
+      "tipus": "test",
+      "descripcio": "Quan copiem i enganxem cel·les a Excel, podem triar entre enganxar fórmules o valors. Què passa quan enganxem fórmules?",
+      "enunciat": "Què passa quan s'enganxen fórmules des d'una cel·la a una altra?",
+      "solucio": "Les fórmules es copien tal qual a la nova ubicació i poden referir-se a les cel·les relatives.",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        {
+          "opcio": "Les fórmules es converteixen en valors a la nova ubicació.",
+          "correcta": false
+        },
+        {
+          "opcio": "Les fórmules es modifiquen per referir-se a les cel·les absolutes.",
+          "correcta": false
+        },
+        {
+          "opcio": "Les fórmules es copien tal qual a la nova ubicació i poden referir-se a les cel·les relatives.",
+          "correcta": true
+        },
+        {
+          "opcio": "Les fórmules s'esborren de la cel·la d'origen.",
+          "correcta": false
+        }
+      ],
+      "pista_1": "Recorda que quan s'enganxen fórmules, aquestes mantenen la seva referència relativa.",
+      "pista_2": "Les fórmules no es converteixen automàticament en valors.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Transposar dades",
+      "tipus": "codi",
+      "descripcio": "Excel permet transposar dades, és a dir, canviar files per columnes i viceversa. Això es pot fer mitjançant el pegat especial.",
+      "enunciat": "Transposa la següent taula: \n\n| A | B | C |\n| 1  | 2 | 3 |\n\nDe manera que quedi com:\n\n| 1 |\n| 2 |\n| 3 |\n",
+      "solucio": "La taula resultant hauria de tenir els valors en una columna.",
+      "solucio_codi_1": "Copia la taula, després selecciona la cel·la destí i vés a 'Pegat especial' > 'Transposar'.",
+      "solucio_codi_2": "Copia la taula, després selecciona la cel·la destí i vés a 'Pegar especial' > 'Transponer'.",
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Utilitza l'opció de transposar al pegar les cel·les.",
+      "pista_2": "Assegura't de seleccionar tota la taula abans de copiar.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Pregunta sobre Buscar i reemplaçar",
+      "tipus": "test",
+      "descripcio": "Excel té una eina per buscar i reemplaçar contingut. Aquesta eina també permet utilitzar caràcters comodí per fer cerques més flexibles.",
+      "enunciat": "Què permet fer l'ús de caràcters comodí com '*' o '?' en una cerca?",
+      "solucio": "Permet cercar patrons de text més flexibles.",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        {
+          "opcio": "Cercar només números.",
+          "correcta": false
+        },
+        {
+          "opcio": "Reemplaçar tots els valors per un sol valor.",
+          "correcta": false
+        },
+        {
+          "opcio": "Permet cercar patrons de text més flexibles.",
+          "correcta": true
+        },
+        {
+          "opcio": "Limitar la cerca a cel·les amb fórmules.",
+          "correcta": false
+        }
+      ],
+      "pista_1": "Els caràcters comodí substitueixen caràcters en una cadena de text per afinar la cerca.",
+      "pista_2": "Utilitza '*' per a qualsevol nombre de caràcters i '?' per a un caràcter.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Reemplaçar valors amb comodins",
+      "tipus": "codi",
+      "descripcio": "Utilitza l'eina 'Buscar i reemplaçar' per reemplaçar tots els valors que comencen per 'pre' en una llista.",
+      "enunciat": "Reemplaça tots els valors que comencen per 'pre' per 'nou' en la llista: \n\n| A     |\n|-------|\n| prefix |\n| preu   |\n| text   |\n",
+      "solucio": "Tots els valors que comencen per 'pre' haurien de ser reemplaçats per 'nou'.",
+      "solucio_codi_1": "Utilitza 'Buscar i reemplaçar' amb 'pre*' per trobar tots els valors que comencen per 'pre'.",
+      "solucio_codi_2": "Utilitza 'Buscar y reemplazar' con 'pre*' para encontrar todos los valores que comienzan por 'pre'.",
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Utilitza el caràcter '*' per representar qualsevol nombre de caràcters després de 'pre'.",
+      "pista_2": "Obre l'eina 'Buscar i reemplaçar' i activa l'ús de comodins.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

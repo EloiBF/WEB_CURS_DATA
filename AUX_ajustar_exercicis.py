@@ -19,8 +19,7 @@ Et passo el contingut actual dels exercicis del capítol. Revisa’ls perquè:
 1. El camp `"descripcio"` sigui clar, explicatiu i útil.
 2. Els enunciats siguin coherents amb les taules de la base de dades.
 3. La `"solució"` utilitzi columnes i taules que existeixen. 
-4. La `"solució"`ha de fer servir la paraula <VARIABLE> mantenint els <> per tots aquells elements en que l'usuari pot decidir el nom (com ara noves variables), per facilitar la correcció automàtica.
-5. El format final sigui un JSON amb la mateixa estructura.
+4. El format final sigui un JSON amb la mateixa estructura.
 
 Contingut actual del capítol {capitol}:
 
