@@ -12,6 +12,7 @@
         {% for capitol in capitols %}
             <section class="course__chapter">
                 <h2 class="course__chapter-title" onclick="toggleChapter(this)">
+                    <span class="toggle-icon">▶️</span>
                     Capítol {{ capitol.numero }}: {{ capitol.titol }}
                 </h2>
                 <div class="course__exercises" style="display: none;">
@@ -34,10 +35,13 @@
 <script>
 function toggleChapter(titleElement) {
     const exercisesDiv = titleElement.nextElementSibling;
+    const icon = titleElement.querySelector('.toggle-icon');
     if (exercisesDiv.style.display === "none") {
         exercisesDiv.style.display = "block";
+        icon.textContent = "▼";  // cap avall quan està obert
     } else {
         exercisesDiv.style.display = "none";
+        icon.textContent = "▶️"; // cap a la dreta quan està tancat
     }
 }
 </script>

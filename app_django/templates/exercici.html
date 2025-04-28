@@ -24,10 +24,6 @@
                     <figcaption class="exercise__image-caption">{{ exercici.desc_imatge_1 }}</figcaption>
                 </figure>
             {% endif %}
-
-            <div class="exercise__navigation">
-                <a href="{% url 'index_curs' exercici.curs.nom %}" class="exercise__back-button">Tornar al curs</a>
-            </div>
         </aside>
 
         <main class="exercise__main">
@@ -97,17 +93,18 @@
                 </details>
             {% endif %}
 
-                <!-- Botons de navegació entre exercicis -->
-                <div class="exercise__navigation-buttons">
-                    {% if exercici_anterior %}
-                        <a href="{% url 'exercici' exercici.curs.nom exercici_anterior.capitol.numero exercici_anterior.numero %}" class="exercise__previous-button">Exercici anterior</a>
-                    {% endif %}
-                    {% if exercici_seguent %}
-                        <a href="{% url 'exercici' exercici.curs.nom exercici_seguent.capitol.numero exercici_seguent.numero %}" class="exercise__next-button">Exercici següent</a>
-                    {% endif %}
-                </div>
             </div>
         </main>
+    </div>
+
+    <div class="exercise__navigation-buttons">
+        {% if exercici_anterior %}
+            <a href="{% url 'exercici' exercici.curs.nom exercici_anterior.capitol.numero exercici_anterior.numero %}" class="exercise__nav-button">⬅️ Exercici anterior</a>
+        {% endif %}
+        <a href="{% url 'index_curs' exercici.curs.nom %}" class="exercise__nav-button">🏠 Tornar al curs</a>
+        {% if exercici_seguent %}
+            <a href="{% url 'exercici' exercici.curs.nom exercici_seguent.capitol.numero exercici_seguent.numero %}" class="exercise__nav-button">Exercici següent ➡️</a>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

@@ -519,15 +519,17 @@ body {
   border: 1px solid #ccc;
 }
 
-/* Navigation buttons */
+/* Navigation buttons Exercici */
 .exercise__navigation-buttons {
   display: flex;
-  justify-content: space-between;
-  margin-top: var(--spacing-md);
+  justify-content: center; /* Centra tots els botons */
+  align-items: center;
+  gap: 20px; /* Espai entre els botons */
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-md);
 }
 
-.exercise__previous-button,
-.exercise__next-button {
+.exercise__nav-button {
   display: inline-block;
   padding: var(--spacing-xs) var(--spacing-sm);
   background-color: var(--color-primary);
@@ -535,26 +537,12 @@ body {
   text-decoration: none;
   border-radius: var(--border-radius);
   transition: opacity 0.3s ease;
-  margin-right: var(--spacing-md); /* Afegeix espai entre els botons */
+  font-weight: bold;
+  font-size: 1rem;
 }
 
-.exercise__previous-button:last-child {
-  margin-right: 0; /* Elimina el marge del darrer botó */
-}
-
-.exercise__previous-button:hover,
-.exercise__next-button:hover {
-  opacity: 0.9;
-}
-
-.exercise__back-button {
-  display: inline-block;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  text-decoration: none;
-  border-radius: var(--border-radius);
-  margin-top: var(--spacing-md);
+.exercise__nav-button:hover {
+  opacity: 0.85;
 }
 
 .exercise__form {
