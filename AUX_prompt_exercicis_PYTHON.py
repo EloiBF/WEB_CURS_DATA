@@ -180,7 +180,7 @@ def desa(nom_fitxer: str, raw: str):
 context_estructura = r"""
 {
   "curs": {
-    "nom": "PYTHON",
+    "nom": "Python",
     "descripcio": "Domina Python per a l'anàlisi de dades, des de programació bàsica fins a models de Machine Learning aplicats.",
     "color_fons": "#F4F8F4"
   },
