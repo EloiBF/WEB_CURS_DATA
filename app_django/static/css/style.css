@@ -18,6 +18,12 @@
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --max-width: 1600px;
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 1rem; /* 14px */
+  --font-size-md: 1.25rem; /* 16px */
+  --font-size-md: 1.25rem; /* 16px */
+  --font-size-md-lg: 1.5rem; /* 16px */
+  --font-size-lg: 2.5rem; /* 20px */
 }
 
 /* Reset i estils base */
@@ -119,12 +125,12 @@ body {
 }
 
 .landing_page__title {
-  font-size: 2.5rem;
+  font-size: var(--font-size-lg);
   margin-bottom: var(--spacing-sm);
 }
 
 .landing_page__subtitle {
-  font-size: 1.2rem;
+  font-size: var(--font-size-md);
   opacity: 0.9;
   margin-bottom: var(--spacing-md);
 }
@@ -144,7 +150,7 @@ body {
   text-decoration: none;
   border-radius: var(--border-radius);
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: var(--font-size-md);
   transition: transform 0.3s ease;
   width: auto;
   height: auto;
@@ -217,14 +223,14 @@ body {
 }
 
 .service-card__icon {
-  font-size: 2.5rem;
+  font-size: var(--font-size-lg);
   margin-bottom: var(--spacing-sm);
 }
 
 .service-card__title {
   color: var(--color-text);
   margin-bottom: var(--spacing-sm);
-  font-size: 1.2rem;
+  font-size: var(--font-size-md)
 }
 
 .service-card__description {
@@ -277,7 +283,8 @@ body {
 
 /* Team Section */
 .landing_page__team-grid {
-  display: grid;
+  display: flex;
+  flex-direction: row;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-lg);
   align-items: center;
@@ -292,16 +299,6 @@ body {
   line-height: 1.6;
   color: var(--color-text);
   text-align: left;
-}
-
-
-
-/* Secció Qui Som */
-.landing_page__team-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-lg);
 }
 
 .landing_page__team-card {
@@ -336,21 +333,21 @@ body {
 }
 
 .landing_page__team-name {
-  font-size: 1.5rem;
+  font-size: var(--font-size-md-lg);
   font-weight: bold;
   margin-bottom: var(--spacing-sm);
   color: var(--color-text);
 }
 
 .landing_page__team-description {
-  font-size: 1.1rem;
+  font-size: var(--font-size-sm);
   line-height: 1.6;
   margin-bottom: var(--spacing-sm);
   color: var(--color-text-light);
 }
 
 .landing_page__text {
-  font-size: 1rem;
+  font-size: var(--font-size-sm);
   color: var(--color-text);
 }
 
@@ -366,7 +363,13 @@ body {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .landing_page__team-content,
+  .landing_page__team-grid {
+    flex-direction: column;
+  }
+  .landing_page__team-card {
+    flex-direction: column;
+  }
+
   .landing_page__services-grid {
     grid-template-columns: 1fr;
   }
@@ -413,8 +416,9 @@ body {
 }
 
 .course__exercises {
-  display: grid;
-  gap: var(--spacing-sm);
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-md);
 }
 
 .course__exercise-card {
@@ -422,6 +426,7 @@ body {
   padding: var(--spacing-sm);
   border-radius: var(--border-radius);
   transition: transform 0.3s ease;
+  margin: var(--spacing-xs);
 }
 
 .course__exercise-link {
@@ -648,7 +653,7 @@ body {
     margin-bottom: var(--spacing-sm);
     border: 1px solid #ddd;
     border-radius: var(--border-radius);
-    font-size: 1rem;
+    font-size: var(--font-size-sm);
     transition: border-color 0.3s ease;
 }
 
@@ -670,7 +675,7 @@ body {
     color: var(--color-white);
     border: none;
     border-radius: var(--border-radius);
-    font-size: 1.1rem;
+    font-size: var(--font-size-sm);
     cursor: pointer;
     transition: background-color 0.3s ease;
 }

@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% block title %}{{ curs.nom }}{% endblock %}
 
@@ -12,8 +11,10 @@
     <div class="course__content">
         {% for capitol in capitols %}
             <section class="course__chapter">
-                <h2 class="course__chapter-title">Capítol {{ capitol.numero }}: {{ capitol.titol }}</h2>
-                <div class="course__exercises">
+                <h2 class="course__chapter-title" onclick="toggleChapter(this)">
+                    Capítol {{ capitol.numero }}: {{ capitol.titol }}
+                </h2>
+                <div class="course__exercises" style="display: none;">
                     {% for exercici in capitol.exercicis.all %}
                         <a href="{% url 'exercici' curs.nom capitol.numero exercici.numero %}" class="course__exercise-link">
                             <div class="course__exercise-card">
@@ -27,7 +28,17 @@
                 </div>
             </section>
         {% endfor %}
-
     </div>
 </div>
+
+<script>
+function toggleChapter(titleElement) {
+    const exercisesDiv = titleElement.nextElementSibling;
+    if (exercisesDiv.style.display === "none") {
+        exercisesDiv.style.display = "block";
+    } else {
+        exercisesDiv.style.display = "none";
+    }
+}
+</script>
 {% endblock %}

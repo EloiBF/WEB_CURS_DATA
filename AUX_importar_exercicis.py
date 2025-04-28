@@ -20,6 +20,11 @@ def importar_exercicis_des_de_fitxer(path_fitxer):
         "color_fons": curs_data['color_fons'],
     })
 
+    # 🔥 Eliminem TOTS els exercicis i capítols d'aquest curs
+    print(f"🗑️ Esborrant exercicis i capítols existents del curs '{curs.nom}'...")
+    Exercici.objects.filter(curs=curs).delete()
+    Capitol.objects.filter(curs=curs).delete()
+
     # Creem o obtenim el capítol
     capitol_data = dades['capitol']
     capitol, _ = Capitol.objects.get_or_create(

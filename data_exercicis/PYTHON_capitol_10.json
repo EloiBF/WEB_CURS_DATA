@@ -1,0 +1,110 @@
+{
+  "curs": {
+    "nom": "PYTHON",
+    "descripcio": "Domina Python per a l'anàlisi de dades, des de programació bàsica fins a models de Machine Learning aplicats.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Clustering amb Scikit-learn",
+    "numero": 10,
+    "dificultat": "Avançat",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Introducció al K-means clustering",
+      "tipus": "exe",
+      "descripcio": "El K-means clustering és una tècnica de clustering no supervisat que divideix els punts de dades en k grups basats en la seva similitud. En aquest exercici, aprendràs a implementar el K-means clustering amb Scikit-learn. Per exemple, si tenim un conjunt de dades bidimensionals, podem utilitzar el K-means per dividir-les en grups. Un exemple de codi per a això seria: `from sklearn.cluster import KMeans; kmeans = KMeans(n_clusters=3); kmeans.fit(X)` on X és el conjunt de dades.",
+      "enunciat": "Implementa el K-means clustering per a un conjunt de dades bidimensionals amb 5 punts de dades i 2 característiques, i divideix-los en 3 grups.",
+      "solucio": "K-means clustering amb 3 grups",
+      "solucio_codi_1": "from sklearn.cluster import KMeans; import numpy as np; X = np.array([[1, 2], [1, 4], [1, 0], [10, 2], [10, 4]]); kmeans = KMeans(n_clusters=3); kmeans.fit(X); print(kmeans.labels_)",
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Importa les libraries necessàries i defineix el conjunt de dades",
+      "pista_2": "Crea un objecte KMeans amb el nombre de grups desitjats i ajusta'l als datos",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 2,
+      "titol": "Elbow method per a la selecció del nombre de grups",
+      "tipus": "exe",
+      "descripcio": "L'Elbow method és una tècnica per a determinar el nombre òptim de grups en el K-means clustering. Aquest mètode consisteix a calcular la suma de les distàncies entre els punts de dades i els seus respectius centres de grups, i a seleccionar el nombre de grups que correspon a la 'cotxera' de la corba. Per exemple, podem utilitzar el codi següent per a calcular la suma de les distàncies: `from sklearn.cluster import KMeans; kmeans = KMeans(n_clusters=k); kmeans.fit(X); distància = kmeans.inertia_`",
+      "enunciat": "Implementa l'Elbow method per a determinar el nombre òptim de grups per a un conjunt de dades bidimensionals amb 10 punts de dades i 2 característiques.",
+      "solucio": "Gràfica amb la suma de les distàncies en funció del nombre de grups",
+      "solucio_codi_1": "from sklearn.cluster import KMeans; import numpy as np; import matplotlib.pyplot as plt; X = np.array([[1, 2], [1, 4], [1, 0], [10, 2], [10, 4], [1, 1], [1, 3], [10, 1], [10, 3], [5, 5]]); sumes_distancies = []; for k in range(1, 11): kmeans = KMeans(n_clusters=k); kmeans.fit(X); sumes_distancies.append(kmeans.inertia_); plt.plot(range(1, 11), sumes_distancies); plt.show()",
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 10,
+      "respostes_test": [],
+      "pista_1": "Itinera sobre diferents nombres de grups i calcula la suma de les distàncies",
+      "pista_2": "Crea una gràfica per a visualitzar la suma de les distàncies en funció del nombre de grups",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 3,
+      "titol": "Interpretació dels resultats de clustering",
+      "tipus": "test",
+      "descripcio": "Una vegada s'ha realitzat el clustering, és important interpretar els resultats. Això inclou comprendre la distribució de les dades dins de cada grup i identificar patrons o tendències. Per exemple, si estem analitzant dades sobre clients, el clustering pot ajudar a identificar segments de clients amb característiques similars. Preguntem-nos què pots fer amb els resultats del clustering.",
+      "enunciat": "Què pots fer amb els resultats del clustering?",
+      "solucio": "Identificar segments de clients",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 2,
+      "respostes_test": [
+        "Preveure el comportament futur dels clients",
+        "Identificar segments de clients",
+        "Crear models de regressió lineal",
+        "Realitzar anàlisi de components principals"
+      ],
+      "pista_1": "Entén el propòsit i les aplicacions del clustering",
+      "pista_2": "Considera com els resultats poden ser útils en el món real",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 4,
+      "titol": "Aplicacions pràctiques del clustering",
+      "tipus": "IA",
+      "descripcio": "El clustering té un ampli rang d'aplicacions pràctiques, des de la segmentació de clients fins a l'anàlisi de dades d'imatges. En aquest exercici, s'analitzaran dades sobre clients d'una botiga en línia i es realitzarà un clustering per a identificar segments de clients. Després, s'analitzaran les característiques de cada segment per a comprendre millor les necessitats dels clients.",
+      "enunciat": "Realitza un clustering sobre les dades dels clients d'una botiga en línia per a identificar segments de clients amb característiques similars.",
+      "solucio": "Grups de clients amb característiques similars",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 20,
+      "respostes_test": [],
+      "pista_1": "Càrrega les dades dels clients i preprocessa-les",
+      "pista_2": "Aplica el clustering i analitza els resultats",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    },
+    {
+      "numero": 5,
+      "titol": "Avaluació del rendiment del clustering",
+      "tipus": "exe",
+      "descripcio": "La selecció del nombre de grups i la inicialització dels centres de grups poden tenir un impacte significatiu en la qualitat del clustering. Per avaluar el rendiment del clustering, podem utilitzar mètriques com la silueta o el coeficient de Davies-Bouldin. Per exemple, podem utilitzar el codi següent per a calcular la silueta: `from sklearn.metrics import silhouette_score; silhouette = silhouette_score(X, kmeans.labels_)`",
+      "enunciat": "Implementa la mètrica de silueta per a avaluar el rendiment del clustering sobre un conjunt de dades bidimensionals.",
+      "solucio": "Valor de la silueta",
+      "solucio_codi_1": "from sklearn.cluster import KMeans; from sklearn.metrics import silhouette_score; import numpy as np; X = np.array([[1, 2], [1, 4], [1, 0], [10, 2], [10, 4]]); kmeans = KMeans(n_clusters=3); kmeans.fit(X); silhouette = silhouette_score(X, kmeans.labels_); print(silhouette)",
+      "solucio_codi_2": null,
+      "temps_estimat_minuts": 5,
+      "respostes_test": [],
+      "pista_1": "Importa les libraries necessàries i defineix el conjunt de dades",
+      "pista_2": "Crea un objecte KMeans i ajusta'l als datos, llavors calcula la silueta",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null
+    }
+  ]
+}

@@ -16,10 +16,8 @@ A més, tots els exercicis han de basar-se en les taules següents de la base de
 
 Et passo el contingut actual dels exercicis del capítol. Revisa’ls perquè:
 
-1. El camp `"descripcio"` sigui clar, explicatiu i útil.
-2. Els enunciats siguin coherents amb les taules de la base de dades.
-3. La `"solució"` utilitzi columnes i taules que existeixen. 
-4. El format final sigui un JSON amb la mateixa estructura.
+1. El camp "descripcio" dels exercicis ha de ser **més pedagògic** i **més complet**. Cal ensenyar un exemple de com resoldre el problema i explicar els conceptes que s'han d'aprendre. No donguis directament el resultat, però sí una pista de com resoldre'l. La descripció ha de tenir entre 100 i 300 paraules.
+
 
 Contingut actual del capítol {capitol}:
 
