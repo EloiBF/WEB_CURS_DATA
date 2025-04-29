@@ -3,6 +3,7 @@ from django.utils.translation import gettext_lazy as _  # Per suport multilingü
 
 class Curs(models.Model):
     nom = models.CharField(_("Nom del curs"), max_length=100)
+    subnom = models.CharField(_("Subnom del curs"), max_length=100, null=True, blank=True)
     descripcio = models.TextField(_("Descripció"), null=True, blank=True)
     color_fons = models.CharField(_("Color de fons"), max_length=7, default='#FFFFFF')
 
@@ -47,6 +48,7 @@ class Exercici(models.Model):
     solucio = models.TextField(_("Solució correcta"), null=True, blank=True)
     solucio_codi_1 = models.TextField(_("Solució en codi 1"), null=True, blank=True)
     solucio_codi_2 = models.TextField(_("Solució en codi 2"), null=True, blank=True)
+    codi_a_completar = models.TextField(_("Codi a completar"), null=True, blank=True)
 
     imatge_1 = models.ImageField(_("Imatge 1"), upload_to='exercicis/imatges/', null=True, blank=True)
     descripcio_imatge_1 = models.CharField(_("Descripció imatge 1"), max_length=255, null=True, blank=True)

@@ -20,6 +20,7 @@
       "solucio": "Emmagatzemar, organitzar i manipular dades numèriques i alfanumèriques",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 2,
       "respostes_test": [
         "Crear gràfics i imatges",
@@ -43,6 +44,7 @@
       "solucio": "Les columnes amb lletres i les files amb números",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 2,
       "respostes_test": [
         "Les columnes amb números i les files amb lletres",
@@ -66,6 +68,7 @@
       "solucio": "A1:A5",
       "solucio_codi_1": "=A1:A5",
       "solucio_codi_2": "=A1:A5",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 3,
       "respostes_test": [],
       "pista_1": "Utilitza la notació de rang de cel·les, començant per '='.",
@@ -90,6 +93,7 @@
         "Ctrl + Shift + fletxes per desplaçar-se i Ctrl + fletxes per seleccionar",
         "Ctrl + fletxes per seleccionar i Shift + fletxes per moure's"
       ],
+      "codi_a_completar":null,
       "temps_estimat_minuts": 2,
       "pista_1": "Utilitza Ctrl + fletxes per desplaçar-te i Ctrl + Shift + fletxes per seleccionar un rang de cel·les.",
       "pista_2": "Les fletxes sense la tecla Ctrl només desplacen una cel·la a la vegada, però amb Ctrl es mou ràpidament.",
@@ -113,6 +117,7 @@
         "Ctrl + Alt + E per seleccionar tot el rang de dades",
         "Ctrl + Shift + * per seleccionar tot el rang de dades"
       ],
+      "codi_a_completar":null,
       "temps_estimat_minuts": 2,
       "pista_1": "Utilitza Ctrl + * o Ctrl + E per seleccionar totes les cel·les amb dades de forma ràpida.",
       "pista_2": "Ctrl + A selecciona tot el full, mentre que Ctrl + * selecciona només el rang de dades.",

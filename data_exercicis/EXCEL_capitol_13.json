@@ -20,6 +20,7 @@
       "solucio": "31/12/2023",
       "solucio_codi_1": "=TEXT(A1,\"dd/mm/yyyy\")",
       "solucio_codi_2": "=TEXTO(A1,\"dd/mm/yyyy\")",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 10,
       "respostes_test": [],
       "pista_1": "Trieu la funció adient per format de dates.",
@@ -38,6 +39,7 @@
       "solucio": "The solution is complex and requires user interaction with the Excel Import Data tool and data cleaning features.",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 20,
       "respostes_test": [
         {
@@ -67,6 +69,7 @@
       "solucio": "UNIQUE",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 5,
       "respostes_test": [
         {
@@ -96,6 +99,7 @@
       "solucio": "=BUSCARV(\"Producto A\",´A:B´,2)",
       "solucio_codi_1": "=BUSCARV(\"Producto A\",´A:B´,2)",
       "solucio_codi_2": "=BUSCARH(\"Producto A\",´A:B´,2,FALSE)",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 15,
       "respostes_test": [],
       "pista_1": "La funció `BUSCARV` cerca horitzontalment, `BUSCARH` verticalment.",
@@ -114,6 +118,7 @@
       "solucio": "Solver",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 5,
       "respostes_test": [
         {

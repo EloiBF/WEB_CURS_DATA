@@ -20,6 +20,7 @@
       "solucio": "Copia els formats d'una cel·la o rang de cel·les a un altre.",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 2,
       "respostes_test": [
         "Copia els valors d'una cel·la a una altra.",
@@ -43,6 +44,7 @@
       "solucio": "La columna A hauria d'haver-se ajustat automàticament.",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 2,
       "respostes_test": [
         "Arrossegant la línia de la capçalera.",
@@ -66,6 +68,7 @@
       "solucio": "El rang A1:C10 hauria de tenir un format de taula aplicat.",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 4,
       "respostes_test": [
         "Selecciona A1:C10, vés a 'Inici' > 'Format com a taula' i selecciona un format.",
@@ -89,6 +92,7 @@
       "solucio": "Un format que permet presentar les dates i hores de diverses maneres.",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 3,
       "respostes_test": [
         "Un tipus de dada que només mostra números.",
@@ -112,6 +116,7 @@
       "solucio": "La cel·la A1 hauria de mostrar el valor amb 2 decimals.",
       "solucio_codi_1": "=TEXT(A1,\"0.00\")",
       "solucio_codi_2": "=TEXTO(A1;\"0,00\")",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 3,
       "respostes_test": [],
       "pista_1": "Utilitza la funció TEXT per formatar el valor de la cel·la.",

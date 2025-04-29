@@ -281,6 +281,34 @@ body {
   margin-bottom: var(--spacing-sm);
 }
 
+
+.course-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalment */
+  align-items: center;     /* Opcional: centra horitzontalment també */
+  text-align: center;
+  min-height: 60px;
+}
+
+.landing_page__course-title {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-dark);
+  font-weight: bold;
+}
+
+.landing_page__course-title-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-dark);
+  font-weight: bold;
+}
+
+.landing_page__course-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-xs);
+}
+
 /* Team Section */
 .landing_page__team-grid {
   display: flex;

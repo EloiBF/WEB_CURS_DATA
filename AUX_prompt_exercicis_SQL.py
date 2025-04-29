@@ -4,131 +4,133 @@ import os, json, groq
 DIRECTORI = "data_exercicis"
 os.makedirs(DIRECTORI, exist_ok=True)
 
-CURS = "SQL"
+CURS = "XXXXXXXXXXXXXXXX"
 
 CAPITOLS = [
     {
         "numero": 1,
-        "titol": "Introducció a SQL i primeres consultes",
+        "titol": "Introducció a SQL i selecció de dades",
         "dificultat": "Fàcil",
         "temes": [
-            "Què és SQL",
-            "Bases de dades i taules",
-            "Com funciona SELECT",
-            "Primers SELECT * FROM taula"
+            "Entendre què és SQL",
+            "Estructures bàsiques de base de dades: taules i columnes",
+            "SELECT bàsic",
+            "Filtres amb WHERE i operadors lògics"
         ]
     },
     {
         "numero": 2,
-        "titol": "Filtrar dades amb WHERE",
+        "titol": "Ordenació, limitació i alias",
         "dificultat": "Fàcil",
         "temes": [
-            "Clàusula WHERE",
-            "Operadors lògics (=, <>, >, <, >=, <=)",
-            "Operadors booleans (AND, OR, NOT)",
-            "Filtrar text, números i dates"
+            "ORDER BY per ordenar resultats",
+            "LIMIT per restringir files retornades",
+            "Ús d'AS per alias de columnes i taules",
+            "Comentaris en SQL"
         ]
     },
     {
         "numero": 3,
-        "titol": "Ordenar i limitar resultats",
+        "titol": "Funcions d'agregació i agrupació",
         "dificultat": "Fàcil",
         "temes": [
-            "ORDER BY ascendent i descendent",
-            "LIMIT per limitar files",
-            "OFFSET per saltar files",
-            "Casos pràctics amb ordenació"
+            "Funcions COUNT, SUM, AVG, MIN, MAX",
+            "GROUP BY per agrupar resultats",
+            "HAVING per filtrar agregacions",
+            "Conceptes bàsics d'agrupació avançada"
         ]
     },
     {
         "numero": 4,
-        "titol": "Treballar amb funcions d'agregació",
+        "titol": "Joins entre taules",
         "dificultat": "Mitjà",
         "temes": [
-            "Funcions COUNT, SUM, AVG, MIN, MAX",
-            "GROUP BY per agrupar resultats",
-            "HAVING per filtrar grups",
-            "Diferència entre WHERE i HAVING"
+            "INNER JOIN: combinar taules relacionades",
+            "LEFT JOIN i RIGHT JOIN",
+            "FULL JOIN",
+            "Aliasing en joins complexos"
         ]
     },
     {
         "numero": 5,
-        "titol": "Joins: combinar taules",
+        "titol": "Subconsultes i consultes anidades",
         "dificultat": "Mitjà",
         "temes": [
-            "INNER JOIN: obtenir coincidències",
-            "LEFT JOIN: incloure totes les files d'una taula",
-            "RIGHT JOIN i FULL JOIN",
-            "Entendre claus primàries i estrangeres"
+            "Subqueries a SELECT",
+            "Subqueries a WHERE i FROM",
+            "Comparació entre JOINs i Subqueries",
+            "Subqueries correlacionades"
         ]
     },
     {
         "numero": 6,
-        "titol": "Subconsultes i consultes avançades",
+        "titol": "Operadors avançats i filtres",
         "dificultat": "Mitjà",
         "temes": [
-            "Subconsultes a SELECT, WHERE i FROM",
-            "Operadors IN, ANY, ALL, EXISTS",
-            "Consultes amb agregacions dins subconsultes",
-            "Casos pràctics de subconsultes"
+            "Ús de IN, NOT IN",
+            "Ús de BETWEEN, LIKE i ILIKE",
+            "Wildcard: %, _ en LIKE",
+            "CASE WHEN per condicions dins SELECT"
         ]
     },
     {
         "numero": 7,
-        "titol": "Crear i modificar estructures de dades",
+        "titol": "Funcions de text i data",
         "dificultat": "Mitjà",
         "temes": [
-            "CREATE TABLE: crear taules",
-            "ALTER TABLE: modificar columnes",
-            "DROP TABLE: eliminar taules",
-            "Tipus de dades bàsics (INTEGER, VARCHAR, DATE...)"
+            "Manipulació de cadenes: LENGTH, UPPER, LOWER, CONCAT",
+            "Extracció de subcadenes: SUBSTRING, LEFT, RIGHT",
+            "Funcions de data: CURRENT_DATE, EXTRACT, DATE_TRUNC",
+            "Operacions entre dates"
         ]
     },
     {
         "numero": 8,
-        "titol": "Inserir, actualitzar i eliminar dades",
-        "dificultat": "Mitjà",
+        "titol": "CTE (Common Table Expressions) i modularització de consultes",
+        "dificultat": "Avançat",
         "temes": [
-            "INSERT INTO: inserir registres",
-            "UPDATE: modificar registres existents",
-            "DELETE: eliminar registres",
-            "Bones pràctiques per evitar errors catastròfics"
+            "Introducció a WITH",
+            "Construir consultes modulars",
+            "Millorar la llegibilitat amb CTEs",
+            "CTEs recursius bàsics"
         ]
     },
     {
         "numero": 9,
-        "titol": "Funcions de text, números i dates",
+        "titol": "Funcions analítiques (Window Functions)",
         "dificultat": "Avançat",
         "temes": [
-            "Funcions de text: CONCAT, SUBSTRING, UPPER, LOWER",
-            "Funcions numèriques: ROUND, FLOOR, CEIL",
-            "Funcions de dates: NOW, DATEADD, DATEDIFF",
-            "Aplicació pràctica en consultes reals"
+            "Introducció a OVER()",
+            "Funcions ROW_NUMBER, RANK, DENSE_RANK",
+            "PARTITION BY i ORDER BY dins funcions analítiques",
+            "SUM() OVER() i AVG() OVER() per anàlisi mòbil"
         ]
     },
     {
         "numero": 10,
-        "titol": "SQL per a l'anàlisi de dades",
+        "titol": "Optimització de consultes i millors pràctiques",
         "dificultat": "Avançat",
         "temes": [
-            "Càlculs de percentatges i ratios",
-            "Casos d'ús amb PIVOT i CASE",
-            "Agrupar dades per períodes (mes, any)",
-            "Exemples reals d'analítica amb SQL"
+            "Indexació bàsica i impacte en rendiment",
+            "Evitar consultes lentes: bones pràctiques",
+            "Evitar N+1 Queries",
+            "Lectura i interpretació de plans d'execució"
         ]
     }
 ]
 
 
 PROMPT_BASE = """
-Ets un professor expert en Data Analytics i Data Science. 
+Ets un professor expert en Data Analytics 
 El teu objectiu és crear capítols d'un curs pràctic amb EXACTAMENT 5 exercicis cadascun. Exercicis reals que utilitzin codi i fórmules 100% real, no inventat.
 
 Els exercicis poden ser de 4 tipus:
 - "codi": exercicis pràctics de programació curta (1-5 línies de codi).
 - "test": preguntes tipus test de 4 opcions (indicant quina és la correcta).
-- "exe": exercicis per completar o corregir fragments de codi pre-existents (només aplicable a cursos de Python).
-- "IA": exercicis complexos que impliquen respostes llargues de codi o respostes obertes que seran corregides mitjançant un LLM (simulant la correcció d’un professor).
+- "completar_codi": exercicis en que es dóna una part del codi i es demana completar-lo o afegir les parts que hi falten
+- "IA": exercicis complexos que impliquen respostes llargues de codi que seran corregides mitjançant un LLM (simulant la correcció d’un professor). 
+
+IMPORTANT: Les respostes sempre han de ser codi, exceptuant tipus test.
 
 Instruccions importants:
 - Tots els exercicis s'han de poder resoldre directament amb les dades generades (enunciat, resposta), no es pot fer referència a cap altre fitxer o base de dades externa.
@@ -192,13 +194,14 @@ context_estructura = r"""
     {
       "numero": 1,
       "titol": "Títol de l'exercici",
-      "tipus": "codi", (pot ser 'codi' o 'test'. Només per exercicis del curs Python pot ser 'exe' ja que el codi es pot executar)
+      "tipus": "codi",
       "descripcio": "Explicació didàctica del concepte, necessària perque l'alumne pugui resoldre l'exercici. Ha de ser completa com l'explicació d'un professor sobre un tema.",
       "enunciat": "Enunciat de l'exercici.",
       "solucio": "Resposta correcta a l'exercici, en cas que sigui tipus "exe" serà el resultat esperat del codi",
       "solucio_codi_1": "Codi de la solució, en tipus test serà null i en tipus codi i exe serà el codi de la solució. En cas d'excel, la solució en anlès, en altres cursos serà null",
       "solucio_codi_2": "En cas d'excel, la solució en castellà, en altres cursos serà null",
       "solucio_codi_2":null,
+      "codi_a_completar": codi a completar, s'afegeix el parametre "<placeholder>" per les parts que s'hagin de completar. Per exemple: x + <placeholder> = 5,
       "temps_estimat_minuts": 5,
       "respostes_test": [],
       "pista_1": "Primera pista. (Una frase)",

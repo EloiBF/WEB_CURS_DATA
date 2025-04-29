@@ -20,6 +20,7 @@
       "solucio": null,
       "solucio_codi_1": "=€(#,,##0.00)",
       "solucio_codi_2": "=€(#,,##0.00)",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 10,
       "respostes_test": [],
       "pista_1": "Asegúrate de definir el símbol del euro (€) en el format.",
@@ -38,6 +39,7 @@
       "solucio": null,
       "solucio_codi_1": "dddd, mmm yyyy",
       "solucio_codi_2": "dddd, mmm yyyy",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 10,
       "respostes_test": [],
       "pista_1": " Consulta la llista de especifiers de dates en ajuda d'Excel.",
@@ -56,6 +58,7 @@
       "solucio": null,
       "solucio_codi_1": "=",
       "solucio_codi_2": "=A1>100",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 5,
       "respostes_test": [
         {
@@ -91,6 +94,7 @@
       "solucio": "=ISALPHA(A1)",
       "solucio_codi_1": "=ISALPHA(A1)",
       "solucio_codi_2": "=ISALPHA(A1)",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 15,
       "respostes_test": [],
       "pista_1": "Utiliza la función ISALPHA() para comprobar si una cadena de texto contiene solo letras.",

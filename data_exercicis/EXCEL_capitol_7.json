@@ -20,6 +20,7 @@
       "solucio": "Un gràfic de barres amb tres categories i els seus respectius valors.",
       "solucio_codi_1": "=SELECT(A1:B3); INSERT > COLUMN CHART",
       "solucio_codi_2": "=SELECCIONAR(A1:B3); INSERTAR > GRÁFICO DE COLUMNAS",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 5,
       "respostes_test": [],
       "pista_1": "Recorda seleccionar les dades abans de crear el gràfic.",
@@ -38,6 +39,7 @@
       "solucio": "Gràfic circular",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 3,
       "respostes_test": [
         {
@@ -73,6 +75,7 @@
       "solucio": "Un gràfic amb barres per a les vendes mensuals i una línia per a la mitjana anual.",
       "solucio_codi_1": "=SELECT(A1:B12); INSERT > COMBO CHART; SELECT 'Clustered Column' for vendes and 'Line' for mitjana",
       "solucio_codi_2": "=SELECCIONAR(A1:B12); INSERTAR > GRÁFICO COMBINADO; SELECCIONAR 'Columna agrupada' para vendes y 'Línea' para mitjana",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 7,
       "respostes_test": [],
       "pista_1": "Utilitza l'opció 'Combinat' per fusionar diferents tipus de gràfics.",
@@ -91,6 +94,7 @@
       "solucio": "Petits gràfics dins d'una cel·la",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 2,
       "respostes_test": [
         {
@@ -126,6 +130,7 @@
       "solucio": "Un gràfic de barres amb barres blaves i el títol 'Vendes Mensuals'.",
       "solucio_codi_1": "SELECT CHART > FORMAT > SERIES 'Vendes' > FILL > BLUE; CHART TOOLS > LAYOUT > CHART TITLE > 'Vendes Mensuals'",
       "solucio_codi_2": "SELECCIONAR GRÁFICO > FORMATO > SERIE 'Vendes' > RELLENO > AZUL; HERRAMIENTAS DE GRÁFICOS > DISEÑO > TÍTULO DEL GRÁFICO > 'Vendes Mensuals'",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 6,
       "respostes_test": [],
       "pista_1": "Utilitza les opcions de 'Format' per canviar els colors de les barres.",

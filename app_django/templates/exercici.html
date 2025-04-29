@@ -50,6 +50,13 @@
                         </div>
                     {% elif exercici.tipus == 'ia' %}
                         <textarea name="resposta_usuari" class="exercise__text-input" rows="5" placeholder="Escriu la teva resposta aquí..."></textarea>
+                    {% elif exercici.tipus == 'completar_codi' %}
+                    <div class="exercise__code-completar">
+                        <h4>Completa el codi següent:</h4>
+                        <div class="exercise__code">
+                            {{ codi_a_completar_html | safe }}
+                        </div>
+                    </div>
                     {% endif %}
                     <button type="submit" class="exercise__submit-button">Comprova la resposta</button>
                 </form>
@@ -62,7 +69,7 @@
                 {% if resposta_ia %}
                     <div class="exercise__feedback-ia">
                         <h4>Resposta de la IA:</h4>
-                        <p>{{ resposta_ia }}</p>
+                        <p>{{ resposta_ia | safe}}</p>
                     </div>
                 {% endif %}
 

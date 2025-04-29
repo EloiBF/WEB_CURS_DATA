@@ -20,6 +20,7 @@
       "solucio": "La columna B hauria de contenir els valors 1 i 4.",
       "solucio_codi_1": "=A1",
       "solucio_codi_2": "=A1",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 5,
       "respostes_test": [],
       "pista_1": "Utilitza l'enganxar especial per enganxar només els valors.",
@@ -38,6 +39,7 @@
       "solucio": "Les fórmules es copien tal qual a la nova ubicació, però fan referència a noves cel·les, de forma relativa.",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 2,
       "respostes_test": [
         {
@@ -73,6 +75,7 @@
       "solucio": "La resposta correcta és 'Enganxar especial' > 'Valors'. Això enganxa només els valors sense les fórmules.",
       "solucio_codi_1": "Utilitza l'opció 'Enganxar especial' > 'Valors' per enganxar només els valors.",
       "solucio_codi_2": "Selecciona 'Enganxar especial' > 'Valors' per enganxar només els resultats calculats.",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 5,
       "respostes_test": [
         "Enganxar especial > Valors",
@@ -96,6 +99,7 @@
       "solucio": "Permet cercar patrons de text més flexibles.",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 2,
       "respostes_test": [
         {
@@ -131,6 +135,7 @@
       "solucio": "A???",
       "solucio_codi_1": "A???",
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 5,
       "respostes_test": [],
       "pista_1": "Utilitza el comodí '?' per representar una lletra individual.",

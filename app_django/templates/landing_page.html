@@ -68,7 +68,14 @@
         {% for curs in cursos %}
         <a href="{% url 'index_curs' curs.nom %}" class="landing_page__course-card">
             <img src="{% static 'images/'|add:curs.nom|lower|add:'.jpg' %}" alt="{{ curs.nom }}" class="landing_page__course-image">
-            <h4 class="landing_page__course-title">{{ curs.nom }}</h4>
+            <div class="course-block">
+                {% if curs.subnom %}
+                  <h4 class="landing_page__course-title-subtitle">{{ curs.nom|safe }}</h4>
+                  <h4 class="landing_page__course-subtitle">{{ curs.subnom|safe }}</h4>
+                {% else %}
+                  <h4 class="landing_page__course-title">{{ curs.nom|safe }}</h4>
+                {% endif %}
+              </div>
             <p class="landing_page__course-description">{{ curs.descripcio }}</p>
         </a>
         {% endfor %}

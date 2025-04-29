@@ -4,120 +4,88 @@ import os, json, groq
 DIRECTORI = "data_exercicis"
 os.makedirs(DIRECTORI, exist_ok=True)
 
-CURS = "XXXXXXXXXXXX"
+CURS = "PYTHON_LLM"
 
 CAPITOLS = [
     {
         "numero": 1,
-        "titol": "Variables, tipus de dades i operadors",
+        "titol": "Introducció a Machine Learning i Scikit-learn",
         "dificultat": "Fàcil",
         "temes": [
-            "Crear variables i constants",
-            "Tipus de dades bàsics: int, float, str, bool",
-            "Operadors aritmètics i lògics",
-            "Conversió de tipus i bones pràctiques de codi"
+            "Què és el Machine Learning?",
+            "Tipus de problemes: supervisat vs no supervisat",
+            "Pipeline bàsic amb Scikit-learn",
+            "Divisió de dades amb train_test_split"
         ]
     },
     {
         "numero": 2,
-        "titol": "Estructures de control i iteració",
-        "dificultat": "Fàcil",
+        "titol": "Regressió lineal i mètriques de regressió",
+        "dificultat": "Mitjà",
         "temes": [
-            "Condicionals: if, elif, else",
-            "Bucles: for i while",
-            "Ús de range(), enumerate(), zip()",
-            "Control del flux d'execució"
+            "Entrenar un model de regressió lineal amb sklearn",
+            "Interpretar coeficients i intercept",
+            "Mètriques de regressió: MAE, MSE, RMSE, R²",
+            "Visualització de resultats amb Matplotlib/Seaborn"
         ]
     },
     {
         "numero": 3,
-        "titol": "Funcions i estructures de dades",
+        "titol": "Classificació binària amb Logistic Regression",
         "dificultat": "Mitjà",
         "temes": [
-            "Definir funcions pròpies",
-            "Llistes, tuples, diccionaris i conjunts",
-            "Manipulació bàsica de col·leccions",
-            "Ús de funcions lambda"
+            "Problemes de classificació binària",
+            "LogisticRegression a sklearn",
+            "Mètriques de classificació: accuracy, precision, recall, f1",
+            "Matriu de confusió i classificació de probabilitats"
         ]
     },
     {
         "numero": 4,
-        "titol": "Introducció a Numpy",
-        "dificultat": "Mitjà",
+        "titol": "Models basats en arbres: Decision Trees i Random Forest",
+        "dificultat": "Avançat",
         "temes": [
-            "Crear arrays i vectors amb Numpy",
-            "Operacions vectoritzades",
-            "Slicing i indexació d'arrays",
-            "Funcions bàsiques: mean, sum, reshape"
+            "DecisionTreeClassifier i DecisionTreeRegressor",
+            "Overfitting i control de profunditat (max_depth, min_samples)",
+            "RandomForest per millorar generalització",
+            "Importància de variables"
         ]
     },
     {
         "numero": 5,
-        "titol": "Pandas I: Exploració de dades",
+        "titol": "Classificació amb K-Nearest Neighbors (KNN)",
         "dificultat": "Mitjà",
         "temes": [
-            "Crear Series i DataFrames",
-            "Llegir i escriure fitxers CSV",
-            "Accedir i filtrar dades",
-            "Explorar dades amb info(), describe()"
+            "Com funciona el KNN",
+            "Normalització de dades (StandardScaler)",
+            "Entrenament i predicció amb KNeighborsClassifier",
+            "Elecció òptima de K i corbes d'error"
         ]
     },
     {
         "numero": 6,
-        "titol": "Pandas II: Transformació i agrupació de dades",
-        "dificultat": "Mitjà",
+        "titol": "Clustering amb K-Means i t-SNE",
+        "dificultat": "Avançat",
         "temes": [
-            "Agrupar dades amb groupby",
-            "Merge i Join entre taules",
-            "Tractament de valors nuls i duplicats",
-            "Aplicar funcions: apply(), map(), lambda"
+            "Clustering no supervisat: KMeans",
+            "Detecció del nombre òptim de clústers (elbow method)",
+            "Visualització 2D amb t-SNE",
+            "Interpretació pràctica dels resultats"
         ]
     },
     {
         "numero": 7,
-        "titol": "Neteja i preparació de datasets",
-        "dificultat": "Mitjà",
-        "temes": [
-            "Detectar i corregir valors anòmals",
-            "Conversió de tipus de columnes",
-            "Normalització de formats de dades",
-            "Preparació de dades per modelatge"
-        ]
-    },
-    {
-        "numero": 8,
-        "titol": "Visualització de dades amb Matplotlib",
-        "dificultat": "Mitjà",
-        "temes": [
-            "Crear gràfics bàsics: plot, scatter, bar, hist",
-            "Customitzar gràfics: títols, llegendes i etiquetes",
-            "Disseny de figures i subplots",
-            "Guardar gràfics en fitxers"
-        ]
-    },
-    {
-        "numero": 9,
-        "titol": "Visualització avançada amb Seaborn",
-        "dificultat": "Mitjà",
-        "temes": [
-            "Gràfics estadístics: histplot, boxplot, heatmap",
-            "Visualització de correlacions",
-            "Pairplot i visualització multivariant",
-            "Estils visuals i integració amb Matplotlib"
-        ]
-    },
-    {
-        "numero": 10,
-        "titol": "Introducció a Machine Learning amb Scikit-learn",
+        "titol": "Selecció de models i validació creuada",
         "dificultat": "Avançat",
         "temes": [
-            "Preparació de datasets per modelar",
-            "Separació de dades: train_test_split",
-            "Entrenament d'un model de regressió lineal",
-            "Avaluació de models amb mètriques bàsiques"
+            "Cross-validation amb cross_val_score",
+            "GridSearchCV per optimització d’hiperparàmetres",
+            "Comparar models amb mètriques comunes",
+            "Pipeline amb transformadors + model final"
         ]
     }
 ]
+
 
 
 PROMPT_BASE = """

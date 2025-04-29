@@ -20,6 +20,7 @@
       "solucio": "15",
       "solucio_codi_1": "=SUM(A1:A5)",
       "solucio_codi_2": "=SUMA(A1:A5)",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 2,
       "respostes_test": [],
       "pista_1": "Utilitza la funció SUMA per sumar els valors.",
@@ -38,6 +39,7 @@
       "solucio": "Una referència absoluta",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 3,
       "respostes_test": [
         "Una referència relativa",
@@ -61,6 +63,7 @@
       "solucio": "=A1*B1",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 2,
       "respostes_test": [
         "=A1+B1",
@@ -84,6 +87,7 @@
       "solucio": "Blocatge de la fila i/o columna en una referència.",
       "solucio_codi_1": null,
       "solucio_codi_2": null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 3,
       "respostes_test": [
         "Bloqueja la referència a la fila i/o columna.",
@@ -107,6 +111,7 @@
       "solucio": "5",
       "solucio_codi_1": "=A1-B1",
       "solucio_codi_2": "=A1-B1",
+      "codi_a_completar":null,
       "temps_estimat_minuts": 2,
       "respostes_test": [],
       "pista_1": "Utilitza l'operador de resta.",

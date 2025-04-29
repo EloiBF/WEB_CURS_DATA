@@ -122,6 +122,23 @@ Digues si la resposta és correcta o no, començant la teva resposta amb "SI" o 
 
 
 
+def correccio_completar_codi(resposta_usuari, solucio_codi_1, solucio_codi_2=None):
+    """
+    Corregeix un exercici de completar codi, comparant el codi complet enviat per l'usuari amb les solucions possibles.
+    """
+    resposta_usuari_normalitzada = resposta_usuari.strip().replace(' ', '').replace('\n', '')
+    solucio_codi_1_normalitzada = solucio_codi_1.strip().replace(' ', '').replace('\n', '')
+    solucio_codi_2_normalitzada = solucio_codi_2.strip().replace(' ', '').replace('\n', '') if solucio_codi_2 else None
+
+    if resposta_usuari_normalitzada == solucio_codi_1_normalitzada:
+        return True, "✅ Codi correcte! Bona feina."
+    elif solucio_codi_2_normalitzada and resposta_usuari_normalitzada == solucio_codi_2_normalitzada:
+        return True, "✅ Codi correcte! Bona feina."
+    else:
+        return False, "❌ El codi no és correcte. Revisa la resposta."
+
+
+
 def exercici(request, curs_nom, capitol_num, exercici_num):
     print(f"⚙️ Inici de la vista 'exercici' per al curs: {curs_nom}, capítol: {capitol_num}, exercici: {exercici_num}")
 
@@ -139,14 +156,28 @@ def exercici(request, curs_nom, capitol_num, exercici_num):
     resposta_ia = ''
 
     if request.method == 'POST':
-        resposta_usuari = request.POST.get('resposta_usuari', '').strip()
+        tipus = exercici.tipus.lower().strip()
+
+        if tipus == 'completar_codi':
+            # Reconstruïm la resposta completa amb els inputs d'usuari
+            respostes_usuari = request.POST.getlist('respostes_completar')
+            print(f"📥 Respostes rebudes per completar_codi: {respostes_usuari}")
+            if not respostes_usuari:
+                resposta_usuari = ''
+            else:
+                codi_a_completar = exercici.codi_a_completar
+                resposta_usuari = codi_a_completar
+                for resposta in respostes_usuari:
+                    resposta_usuari = resposta_usuari.replace('<placeholder>', resposta.strip(), 1)
+        else:
+            resposta_usuari = request.POST.get('resposta_usuari', '').strip()
+
         if not resposta_usuari:
             missatge = "Si us plau, escriu una resposta abans d'enviar-la ✏️"
         else:
             solucio = exercici.solucio.strip() if exercici.solucio else ''
             solucio_codi_1 = exercici.solucio_codi_1.strip() if exercici.solucio_codi_1 else ''
             solucio_codi_2 = exercici.solucio_codi_2.strip() if exercici.solucio_codi_2 else ''
-            tipus = exercici.tipus
             enunciat = exercici.enunciat
             descripcio = exercici.descripcio
 
@@ -159,9 +190,9 @@ def exercici(request, curs_nom, capitol_num, exercici_num):
             if tipus == 'test':
                 print("🔍 Cridant correcció per a TEST")
                 resposta_correcta, missatge = correccio_test(resposta_usuari, solucio)
+
             elif tipus == 'codi':
                 print("🔍 Cridant correcció per a CODI")
-                # Comprovem tant solucio_codi_1 com solucio_codi_2
                 if solucio_codi_1:
                     resposta_correcta, missatge = correccio_codi(resposta_usuari, solucio_codi_1)
                 elif solucio_codi_2:
@@ -169,19 +200,44 @@ def exercici(request, curs_nom, capitol_num, exercici_num):
                 else:
                     resposta_correcta = False
                     missatge = "No s'ha trobat cap solució vàlida per al codi."
+
             elif tipus == 'exe':
                 print("🔍 Cridant correcció per a EXE amb execució i output")
                 print(f"📤 Resultat esperat: {solucio}")
                 resposta_correcta, missatge = correccio_exe(resposta_usuari, solucio, solucio_codi_1)
+
             elif tipus == 'ia':
                 print("🤖 Cridant correcció per a IA")
                 resposta_correcta, missatge, resposta_ia = correccio_ia(resposta_usuari, solucio, enunciat, descripcio)
+
+            elif tipus == 'completar_codi':
+                print("🧩 Cridant correcció per a COMPLETAR_CODI")
+                resposta_correcta, missatge = correccio_completar_codi(
+                    resposta_usuari,
+                    solucio_codi_1,
+                    solucio_codi_2
+                )
+
             else:
                 print(f"⚠️ Tipus d'exercici no reconegut: {tipus}")
 
     # Obtenir els exercicis següents i anteriors pel seu número dins del mateix capítol
     exercici_seguent = Exercici.objects.filter(capitol=capitol, numero=exercici.numero + 1).first()
     exercici_anterior = Exercici.objects.filter(capitol=capitol, numero=exercici.numero - 1).first()
+
+    # Preparar codi amb placeholders substituïts per inputs si és completar_codi
+    def reemplaçar_placeholders(codi):
+        count = 0
+        def replacer(match):
+            nonlocal count
+            count += 1
+            return f'<input type="text" name="respostes_completar" class="placeholder-input" data-index="{count}">'
+        return re.sub(r'<placeholder>', replacer, codi)
+
+    if exercici.tipus.lower().strip() == 'completar_codi' and exercici.codi_a_completar:
+        codi_a_completar_html = reemplaçar_placeholders(exercici.codi_a_completar)
+    else:
+        codi_a_completar_html = ''
 
     return render(request, 'exercici.html', {
         'curs': curs,
@@ -192,5 +248,6 @@ def exercici(request, curs_nom, capitol_num, exercici_num):
         'exercici_seguent': exercici_seguent,
         'exercici_anterior': exercici_anterior,
         'resposta_correcta': resposta_correcta,
+        'codi_a_completar_html': codi_a_completar_html,
         'resposta_ia': resposta_ia,
     })

@@ -67,6 +67,7 @@ context_estructura = r"""
       "solucio_codi_1": "Codi de la solució, en tipus test serà null i en tipus codi i exe serà el codi de la solució. En cas d'excel, la solució en anglès, en altres cursos serà null",
       "solucio_codi_2": "En cas d'excel, la solució en castellà, en altres cursos serà null",
       "solucio_codi_2":null,
+      "codi_a_completar":null,
       "temps_estimat_minuts": 5,
       "respostes_test": [],
       "pista_1": "Primera pista. (Una frase)",
