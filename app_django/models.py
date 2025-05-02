@@ -32,6 +32,7 @@ class Capitol(models.Model):
 class Exercici(models.Model):
     class Tipus(models.TextChoices):
         CODI = 'codi', _("Escriure codi")
+        COMPLETAR = 'completar', _("Completar codi")
         TEST = 'test', _("Tipus test")
         IA = 'ia', _("Correcció amb IA")
         EXE = 'exe', _("Execució de codi")
@@ -60,6 +61,9 @@ class Exercici(models.Model):
 
     pista_1 = models.TextField(_("Pista 1"), null=True, blank=True)
     pista_2 = models.TextField(_("Pista 2"), null=True, blank=True)
+
+    taula = models.JSONField(blank=True, null=True) 
+
 
     class Meta:
         ordering = ['capitol__numero', 'numero']

@@ -5,6 +5,7 @@ import groq
 import re
 from django.conf import settings
 from dotenv import load_dotenv
+from django.http import JsonResponse
 
 # Carregar les variables d'entorn des del fitxer .env
 load_dotenv()
@@ -55,13 +56,16 @@ def correccio_test(resposta_usuari: str, solucio: str) -> tuple:
     else:
         return False, "❌ Resposta incorrecta."
 
-def correccio_codi(resposta_usuari: str, solucio: str) -> tuple:
-    resposta_net = re.sub(r'\s+', '', resposta_usuari)
-    solucio_net = re.sub(r'\s+', '', solucio)
-    if resposta_net == solucio_net:
-        return True, "Resposta correcta!"
+def correccio_codi(resposta_usuari: str, solucio1: str, solucio2: str = None) -> tuple:
+    def normalitza(text): return re.sub(r'\s+', '', text)
+    resposta_net = normalitza(resposta_usuari)
+    solucio1_net = normalitza(solucio1)
+    solucio2_net = normalitza(solucio2) if solucio2 else None
+
+    if resposta_net == solucio1_net or resposta_net == solucio2_net:
+        return True, "✅ Resposta correcta!"
     else:
-        return False, "El codi no coincideix amb la solució esperada."
+        return False, "❌ El codi no coincideix amb la solució esperada."
 
 
 def correccio_exe(resposta_usuari: str, solucio: str, solucio_codi: str) -> tuple:
@@ -79,9 +83,9 @@ def correccio_exe(resposta_usuari: str, solucio: str, solucio_codi: str) -> tupl
         sys.stdout = stdout_original
 
         if resultat_obtingut == solucio.strip():
-            return True, "Resposta correcta!"
+            return True, "✅ Resposta correcta!"
         else:
-            return False, f"Resposta incorrecta. Esperat: {solucio!r}, Obtingut: {resultat_obtingut!r}."
+            return False, "❌ El codi no coincideix amb la solució esperada."
     except Exception as e:
         sys.stdout = stdout_original
         return False, "Error d'execució. Revisa el teu codi."
@@ -112,11 +116,11 @@ Digues si la resposta és correcta o no, començant la teva resposta amb "SI" o 
         inici = resposta[:4].strip().lower()
 
         if inici.startswith("si"):
-            return True, "Resposta correcta!", resposta
+            return True, "✅ Resposta correcta!", resposta
         elif inici.startswith("no"):
-            return False, "Resposta incorrecta!", resposta
+            return False, "❌ Resposta incorrecta!", resposta
         else:
-            return False, "Resposta incorrecta!", "Resposta de l'IA no reconeguda: " + resposta
+            return False, "❌ Resposta incorrecta!", "Resposta de l'IA no reconeguda: " + resposta
     except Exception as e:
         return False, "No s'ha pogut generar la correcció amb IA.", f"Error: {e}"
 
@@ -154,11 +158,11 @@ def exercici(request, curs_nom, capitol_num, exercici_num):
     missatge = ''
     resposta_correcta = False
     resposta_ia = ''
-
+    
     if request.method == 'POST':
         tipus = exercici.tipus.lower().strip()
 
-        if tipus == 'completar_codi':
+        if tipus == 'completar':
             # Reconstruïm la resposta completa amb els inputs d'usuari
             respostes_usuari = request.POST.getlist('respostes_completar')
             print(f"📥 Respostes rebudes per completar_codi: {respostes_usuari}")
@@ -193,10 +197,8 @@ def exercici(request, curs_nom, capitol_num, exercici_num):
 
             elif tipus == 'codi':
                 print("🔍 Cridant correcció per a CODI")
-                if solucio_codi_1:
-                    resposta_correcta, missatge = correccio_codi(resposta_usuari, solucio_codi_1)
-                elif solucio_codi_2:
-                    resposta_correcta, missatge = correccio_codi(resposta_usuari, solucio_codi_2)
+                if solucio_codi_1 or solucio_codi_2:
+                    resposta_correcta, missatge = correccio_codi(resposta_usuari, solucio_codi_1, solucio_codi_2)
                 else:
                     resposta_correcta = False
                     missatge = "No s'ha trobat cap solució vàlida per al codi."
@@ -210,16 +212,23 @@ def exercici(request, curs_nom, capitol_num, exercici_num):
                 print("🤖 Cridant correcció per a IA")
                 resposta_correcta, missatge, resposta_ia = correccio_ia(resposta_usuari, solucio, enunciat, descripcio)
 
-            elif tipus == 'completar_codi':
-                print("🧩 Cridant correcció per a COMPLETAR_CODI")
-                resposta_correcta, missatge = correccio_completar_codi(
-                    resposta_usuari,
-                    solucio_codi_1,
-                    solucio_codi_2
-                )
-
+            elif tipus == 'completar':
+                    print("🧩 Cridant correcció per a COMPLETAR_CODI")
+                    resposta_correcta, missatge = correccio_completar_codi(
+                        resposta_usuari,
+                        solucio_codi_1,
+                        solucio_codi_2
+                    )
             else:
                 print(f"⚠️ Tipus d'exercici no reconegut: {tipus}")
+
+            # ✅ Retornem JSON si és una petició AJAX
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                return JsonResponse({
+                    'resposta_correcta': resposta_correcta,
+                    'missatge': missatge,
+                    'resposta_ia': resposta_ia,
+                })
 
     # Obtenir els exercicis següents i anteriors pel seu número dins del mateix capítol
     exercici_seguent = Exercici.objects.filter(capitol=capitol, numero=exercici.numero + 1).first()
@@ -234,7 +243,7 @@ def exercici(request, curs_nom, capitol_num, exercici_num):
             return f'<input type="text" name="respostes_completar" class="placeholder-input" data-index="{count}">'
         return re.sub(r'<placeholder>', replacer, codi)
 
-    if exercici.tipus.lower().strip() == 'completar_codi' and exercici.codi_a_completar:
+    if exercici.tipus.lower().strip() == 'completar' and exercici.codi_a_completar:
         codi_a_completar_html = reemplaçar_placeholders(exercici.codi_a_completar)
     else:
         codi_a_completar_html = ''

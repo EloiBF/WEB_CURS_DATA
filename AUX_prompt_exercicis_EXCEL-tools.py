@@ -4,130 +4,87 @@ import os, json, groq, time
 DIRECTORI = "data_exercicis"
 os.makedirs(DIRECTORI, exist_ok=True)
 
-CURS = "Excel"
+CURS = "Excel - Tools"
 
 CAPITOLS = [
   {
-    "numero": 1,
-    "titol": "Fórmules bàsiques i operacions elementals",
-    "dificultat": "Fàcil",
-    "descripcio": "Aprèn a fer operacions bàsiques a Excel com sumar, restar, multiplicar o dividir, i descobreix com funcionen les referències de cel·les.",
-    "temes": [
-      "Referenciar una cel·la o rang (símbol = o + per començar una fórmula)",
-      "SUMA",
-      "CONTAR",
-      "Operadors matemàtics",
-      "Combinar fórmules i operadors matemàtics (ex: mitjana amb SUMA()/CONTAR())"
+    "titol": "Formats",
+    "punts": [
+      "Format de cel·les: número, moneda, data, personalitzat (amb patrons com \"0.00\", \"dd/mm/yyyy\", etc.)",
+      "Format condicional: regles bàsiques, escales de colors, icon sets, fórmules personalitzades",
+      "Format de taula (Ctrl+T): estils predefinits, opcions de capçalera, filtres activats"
     ]
   },
   {
-    "numero": 2,
-    "titol": "Referències absolutes i relatives amb $",
-    "dificultat": "Fàcil",
-    "descripcio": "Entén com funciona el símbol $ per fixar cel·les i construir fórmules més potents.",
-    "temes": [
-      "Referència absoluta o relativa (i impacte de $)",
-      "Fixar una cel·la o rang",
-      "Fixar només les files",
-      "Fixar només les columnes",
-      "Rang acumulatiu (ex: C$1:C1)"
+    "titol": "Validació de dades",
+    "punts": [
+      "Validació per número, data, llista desplegable, longitud",
+      "Missatges d’error i d’entrada",
+      "Validació dinàmica amb fórmules (INDIRECTE, NOM.PROPI, etc.)"
     ]
   },
   {
-    "numero": 3,
-    "titol": "Funcions numèriques útils",
-    "dificultat": "Fàcil",
-    "descripcio": "Descobreix funcions que t’ajuden a analitzar dades numèriques i fer càlculs ràpids.",
-    "temes": [
-      "MIN / MAX",
-      "PROMEDIO",
-      "REDONDEAR (MÁS / MENOS) i redondeig a desenes",
-      "SUMAPRODUCTO",
-      "ALEATORIO / ALEATORIO.ENTRE"
+    "titol": "Autocompleció i eines ràpides",
+    "punts": [
+      "Autocompletar sèries (nombres, dates, dies de la setmana)",
+      "Rellevància de patrons per “Sèries intel·ligents”",
+      "Flash Fill (Reemplaçar fórmules amb patrons automàtics)",
+      "Autosuma i auto fórmules (Ctrl+Maj+T, etc.)"
     ]
   },
   {
-    "numero": 4,
-    "titol": "Funcions condicionals",
-    "dificultat": "Mitjà",
-    "descripcio": "Aprèn a aplicar condicions a les fórmules per controlar els resultats segons criteris específics.",
-    "temes": [
-      "SI",
-      "SI.CONJUNTO",
-      "Anidar múltiples SI",
-      "Y i O amb SI",
-      "SUMAR.SI, CONTAR.SI, MAX.SI, i versions CONJUNTO",
-      "SI.ERROR"
+    "titol": "Eines d'anàlisi ràpida",
+    "punts": [
+      "Buscar Objectiu",
+      "Taules de dades (1 i 2 variables)",
+      "Gestor de noms",
+      "Format ràpid (Ctrl+Q)"
     ]
   },
   {
-    "numero": 5,
-    "titol": "Treballar amb dates i hores",
-    "dificultat": "Mitjà",
-    "descripcio": "Gestiona i transforma valors de data i hora amb funcions dedicades.",
-    "temes": [
-      "Hora com a número (sumar/restar dies)",
-      "HOY / AHORA",
-      "AÑO, MES, DIA",
-      "HORA, MINUTO, SEGUNDO",
-      "FECHA.MES",
-      "FRAC.AÑO (ex: càlcul de trimestre)"
+    "titol": "Macros i scripts",
+    "punts": [
+      "Gravació de macros bàsiques",
+      "Assignar una macro a un botó",
+      "Introducció a VBA (sense programar)",
+      "Scripts d’automatització amb Office Scripts (Excel Online)"
     ]
   },
   {
-    "numero": 6,
-    "titol": "Funcions de text i manipulació de cadenes",
-    "dificultat": "Mitjà",
-    "descripcio": "Manipula textos i extreu informació rellevant amb funcions de text potents.",
-    "temes": [
-      "TEXTO (formats com 'aaaa-dd')",
-      "Concatenar textos (ex: texto + 'kg')",
-      "IZQUIERDA, DERECHA",
-      "EXTRAER",
-      "LARGO",
-      "HALLAR",
-      "Combinació EXTRAER i HALLAR",
-      "SUSTITUIR"
+    "titol": "Filtres bàsics i avançats",
+    "punts": [
+      "Filtres bàsics i avançats",
+      "Filtres personalitzats per condicions",
+      "Segmentació (Slicers) i escales de temps (TimeLines)"
     ]
   },
   {
-    "numero": 7,
-    "titol": "Funcions matricials i llistes dinàmiques",
-    "dificultat": "Mitjà",
-    "descripcio": "Crea resultats dinàmics i automàtics amb funcions matricials modernes.",
-    "temes": [
-      "FILTRAR",
-      "UNICO",
-      "ORDENAR / TRANSPOSAR",
-      "SECUENCIA"
+    "titol": "Taules dinàmiques bàsiques",
+    "punts": [
+      "Crear una taula dinàmica a partir d'una taula de dades",
+      "Filtrar, agrupar i resumir dades",
+      "Ús de camps calculats i elements calculats"
     ]
   },
   {
-    "numero": 8,
-    "titol": "Funcions de cerca i referència",
-    "dificultat": "Mitjà",
-    "descripcio": "Cerca valors dins taules i treballa amb cel·les de forma dinàmica.",
-    "temes": [
-      "BUSCARX",
-      "INDICE / COINCIDIR",
-      "INDIRECTO",
-      "FILA/COLUMNA + INDIRECTO"
+    "titol": "Personalització de taules dinàmiques",
+    "punts": [
+      "Format de resum (mitjanes, comptes, màxims…)",
+      "Ordenació i filtres interns",
+      "Canvi de disseny i aspecte"
     ]
   },
   {
-    "numero": 9,
-    "titol": "Trucs avançats amb fórmules combinades",
-    "dificultat": "Avançat",
-    "descripcio": "Aprèn combinacions potents de funcions per resoldre problemes pràctics amb elegància.",
-    "temes": [
-      "SI + CONTAR.SI per identificar valors repetits",
-      "BUSCARX amb múltiples criteris concatenats",
-      "BUSCAR + HALLAR per classificar textos segons paraules clau",
-      "SUMAPRODUCTO per comptar amb múltiples condicions",
-      "Comptar valors únics (=SUMA(1/COMPTAR.SI(A2:A100, A2:A100)))"
+    "titol": "Introducció a Power Query i PivotTables",
+    "punts": [
+      "Què és Power Query i per a què serveix",
+      "Què és una taula dinàmica i quan s’utilitza",
+      "Casos d’ús: anàlisi mensual, comparació de vendes, segmentació per categories",
+      "Avançament del següent curs: Power Query i Taules Dinàmiques avançades"
     ]
   }
 ]
+
 
 
 PROMPT_BASE = """

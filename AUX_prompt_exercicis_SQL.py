@@ -4,9 +4,20 @@ import os, json, groq
 DIRECTORI = "data_exercicis"
 os.makedirs(DIRECTORI, exist_ok=True)
 
-CURS = "XXXXXXXXXXXXXXXX"
+CURS = "SQL"
 
 CAPITOLS = [
+    {
+        "numero": 0,
+        "titol": "Entorn de pràctica i creació de taules",
+        "dificultat": "Fàcil",
+        "temes": [
+            "Plataformes per practicar SQL: SQLite, PostgreSQL, SQL online",
+            "CREATE TABLE per definir estructures",
+            "INSERT INTO per afegir dades inicials",
+            "DROP i TRUNCATE per reiniciar dades"
+        ]
+    },
     {
         "numero": 1,
         "titol": "Introducció a SQL i selecció de dades",
@@ -86,6 +97,17 @@ CAPITOLS = [
     },
     {
         "numero": 8,
+        "titol": "Inserció, actualització i esborrat de dades",
+        "dificultat": "Mitjà",
+        "temes": [
+            "INSERT INTO amb valors i amb SELECT",
+            "UPDATE amb condicions",
+            "DELETE selectiu",
+            "TRUNCATE per buidar taules"
+        ]
+    },
+    {
+        "numero": 9,
         "titol": "CTE (Common Table Expressions) i modularització de consultes",
         "dificultat": "Avançat",
         "temes": [
@@ -96,7 +118,7 @@ CAPITOLS = [
         ]
     },
     {
-        "numero": 9,
+        "numero": 10,
         "titol": "Funcions analítiques (Window Functions)",
         "dificultat": "Avançat",
         "temes": [
@@ -107,7 +129,7 @@ CAPITOLS = [
         ]
     },
     {
-        "numero": 10,
+        "numero": 11,
         "titol": "Optimització de consultes i millors pràctiques",
         "dificultat": "Avançat",
         "temes": [
@@ -116,8 +138,20 @@ CAPITOLS = [
             "Evitar N+1 Queries",
             "Lectura i interpretació de plans d'execució"
         ]
+    },
+    {
+        "numero": 12,
+        "titol": "Permisos i seguretat a la base de dades",
+        "dificultat": "Avançat",
+        "temes": [
+            "Crear usuaris i rols",
+            "Concedir i revocar permisos",
+            "Evitar SQL injection amb bones pràctiques",
+            "Principi de mínim privilegi"
+        ]
     }
 ]
+
 
 
 PROMPT_BASE = """
@@ -127,25 +161,19 @@ El teu objectiu és crear capítols d'un curs pràctic amb EXACTAMENT 5 exercici
 Els exercicis poden ser de 4 tipus:
 - "codi": exercicis pràctics de programació curta (1-5 línies de codi).
 - "test": preguntes tipus test de 4 opcions (indicant quina és la correcta).
-- "completar_codi": exercicis en que es dóna una part del codi i es demana completar-lo o afegir les parts que hi falten
-- "IA": exercicis complexos que impliquen respostes llargues de codi que seran corregides mitjançant un LLM (simulant la correcció d’un professor). 
-
-IMPORTANT: Les respostes sempre han de ser codi, exceptuant tipus test.
+- "completar": exercicis en que es dóna una part del codi i es demana completar les parts que falten. La solució és el codi complet.
 
 Instruccions importants:
 - Tots els exercicis s'han de poder resoldre directament amb les dades generades (enunciat, resposta), no es pot fer referència a cap altre fitxer o base de dades externa.
 - Cap exercici pot fer referencia a que l'usuari ha de fer servir una eina externa (excel, etc.) per resoldre'l.
 - Fes els enunciats clars, directes i pràctics, adaptats al nivell de dificultat indicat (Fàcil, Mitjà, Avançat).
 - Si generes un exercici de tipus "test", recorda afegir 4 opcions amb la resposta correcta.
-- Per "IA", proposa casos pràctics més llargs i reals (com mini-projectes o anàlisi de casos).
 - Sempre segueix l'estructura JSON que et proporciono sense modificar-la.
 - El camp descripció és molt important, ja que és la part pedagògica del curs. Ha de ser clara i útil per a l'alumne.
 
 IMPORTANT: 
 - No saltis cap camp del JSON.
 - No afegeixis text fora del JSON.
-
-Ets un formador rigorós però optimista. El teu objectiu és ajudar l'alumne a avançar pas a pas cap a la seva màxima autonomia.
 """
 
 # ─── GROQ ─────────────────────────────────────────────────────────────
@@ -180,8 +208,8 @@ def desa(nom_fitxer: str, raw: str):
 context_estructura = r"""
 {
   "curs": {
-    "nom": "Excel", (pot ser SQL, PYTHON, EXCEL o DAX, segons el que es demani)
-    "descripcio": "Aprèn a dominar Excel des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
+    "nom": "SQL", 
+    "descripcio": "Aprèn a dominar SQL des de zero fins a nivell avançat, aplicat a l'anàlisi de dades.",
     "color_fons": "#F4F8F4"
   },
   "capitol": {
@@ -194,22 +222,23 @@ context_estructura = r"""
     {
       "numero": 1,
       "titol": "Títol de l'exercici",
-      "tipus": "codi",
-      "descripcio": "Explicació didàctica del concepte, necessària perque l'alumne pugui resoldre l'exercici. Ha de ser completa com l'explicació d'un professor sobre un tema.",
-      "enunciat": "Enunciat de l'exercici.",
-      "solucio": "Resposta correcta a l'exercici, en cas que sigui tipus "exe" serà el resultat esperat del codi",
+      "tipus": "codi", (pot ser 'codi' o 'test')
+      "descripcio": "Explicació didàctica del concepte, necessària perque l'alumne pugui resoldre l'exercici. Ha de ser completa com l'explicació d'un professor sobre un tema. Dóna exemples però que no siguin exactament iguals que la solució.",
+      "enunciat": "Enunciat de l'exercici. Si vols incloure un exemple de taula, utilitza el camp 'taula'.",
+      "solucio": "Resposta correcta a l'exercici per tipus test, en la resta null",
       "solucio_codi_1": "Codi de la solució, en tipus test serà null i en tipus codi i exe serà el codi de la solució. En cas d'excel, la solució en anlès, en altres cursos serà null",
       "solucio_codi_2": "En cas d'excel, la solució en castellà, en altres cursos serà null",
       "solucio_codi_2":null,
-      "codi_a_completar": codi a completar, s'afegeix el parametre "<placeholder>" per les parts que s'hagin de completar. Per exemple: x + <placeholder> = 5,
+      "codi_a_completar":"Només en exercicis tipus completar_codi, el codi a completar per l'alumne. En altres tipus serà null",
       "temps_estimat_minuts": 5,
-      "respostes_test": [],
+      "respostes_test": ["Resposta 1", "Resposta 2", "Resposta 3", "Resposta 4"], (només si és tipus test, sino null)
       "pista_1": "Primera pista. (Una frase)",
       "pista_2": "Segona pista. (Una frase",
       "imatge_1": null,
       "descripcio_imatge_1": null,
       "imatge_2": null,
       "descripcio_imatge_2": null
+      "taula": {"Camp1": ["Valor1","Valor2"], "Camp2": ["Valor3","Valor4"]}, (En cas de que es vulgui incloure una taula a l'enunciat, en format JSON. En cas contrari, null)
     }
   ]
 }
