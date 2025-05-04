@@ -198,6 +198,13 @@
            style="pointer-events: none; opacity: 0.5; cursor: default;">
            Exercici següent ➡️
         </a>
+    {% else %}
+        <a href="{% url 'cas_practic' exercici.curs.nom exercici.capitol.numero %}"
+           class="exercise__nav-button disabled"
+           id="next-button"
+           style="pointer-events: none; opacity: 0.5; cursor: default;">
+           🧩 Cas pràctic
+        </a>
     {% endif %}
     </div>
 </div>

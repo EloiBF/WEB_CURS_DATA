@@ -26,6 +26,17 @@
                     {% empty %}
                         <p class="course__no-exercises">No hi ha exercicis per aquest capítol.</p>
                     {% endfor %}
+
+                    {% if capitol.cas_practic %}
+                        <div class="course__case-study">
+                            <a href="{% url 'cas_practic' curs.nom capitol.numero %}" class="course__exercise-link">
+                                <div class="course__exercise-card case-study-card">
+                                    <h3 class="course__exercise-title">📘 Cas Pràctic: {{ capitol.cas_practic.titol }}</h3>
+                                    <p>{{ capitol.cas_practic.descripcio }}</p>
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
                 </div>
             </section>
         {% endfor %}
@@ -38,10 +49,10 @@ function toggleChapter(titleElement) {
     const icon = titleElement.querySelector('.toggle-icon');
     if (exercisesDiv.style.display === "none") {
         exercisesDiv.style.display = "block";
-        icon.textContent = "▼";  // cap avall quan està obert
+        icon.textContent = "▼";
     } else {
         exercisesDiv.style.display = "none";
-        icon.textContent = "▶️"; // cap a la dreta quan està tancat
+        icon.textContent = "▶️";
     }
 }
 </script>

@@ -62,8 +62,7 @@ class Exercici(models.Model):
     pista_1 = models.TextField(_("Pista 1"), null=True, blank=True)
     pista_2 = models.TextField(_("Pista 2"), null=True, blank=True)
 
-    taula = models.JSONField(blank=True, null=True) 
-
+    taula = models.JSONField(blank=True, null=True)
 
     class Meta:
         ordering = ['capitol__numero', 'numero']
@@ -72,4 +71,29 @@ class Exercici(models.Model):
         verbose_name_plural = _("Exercicis")
 
     def __str__(self):
-        return f'Exercici {self.numero} - {self.titol or _("Sense títol")} (Capítol {self.capitol.numero})'
+        return f'{self.capitol.curs.nom} - Capítol {self.capitol.numero} - Exercici {self.numero}'  # Model Exercici
+
+
+class CasPractic(models.Model):
+    capitol = models.OneToOneField(
+        Capitol,
+        on_delete=models.CASCADE,
+        related_name='cas_practic',
+        verbose_name=_("Capítol")
+    )
+    titol = models.CharField(_("Títol del cas pràctic"), max_length=255, default="Cas pràctic")
+    descripcio = models.TextField(_("Descripció"), blank=True, null=True)
+    enllac = models.URLField(_("Enllaç"))
+    enllac_resultat = models.URLField(_("Enllaç del resultat"))
+    text_boto = models.CharField(_("Text del botó"), max_length=100, default="Accedir al cas pràctic")
+
+    class Meta:
+        verbose_name = _("Cas pràctic")
+        verbose_name_plural = _("Casos pràctics")
+
+    def __str__(self):
+        return f'{self.capitol.curs.nom} - Capítol {self.capitol.numero} - Cas pràctic'
+
+    @property
+    def curs(self):
+        return self.capitol.curs

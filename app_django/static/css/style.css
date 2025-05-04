@@ -697,6 +697,124 @@ body {
   font-weight: 600;
 }
 
+
+
+
+/* Pantalla cas pràctic */
+
+.case__container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.case__header h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.case__intro {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.case__enunciat h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.case__text {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-left: 4px solid #007bff;
+  margin-bottom: 2rem;
+}
+
+.case__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.case__table th,
+.case__table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.case__form {
+  margin-top: 2rem;
+}
+
+.case__textarea {
+  width: 100%;
+  font-family: monospace;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+}
+
+.case__submit {
+  margin-top: 1rem;
+}
+
+.case__button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.case__button:hover {
+  background-color: #0056b3;
+}
+
+.case__feedback {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.case__feedback.correcta {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.case__feedback.incorrecta {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.case__feedback-ia {
+  margin-top: 1.5rem;
+  background-color: #e2e3e5;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.case__nav-button {
+  display: inline-block;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.case__nav-button:hover {
+  text-decoration: underline;
+}
+
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .exercise__container {
@@ -770,6 +888,4 @@ body {
         padding: var(--spacing-sm);
     }
 }
-
-
 

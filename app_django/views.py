@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Curs, Capitol, Exercici
+from .models import Curs, Capitol, Exercici, CasPractic
 import os
 import groq
 import re
@@ -259,4 +259,20 @@ def exercici(request, curs_nom, capitol_num, exercici_num):
         'resposta_correcta': resposta_correcta,
         'codi_a_completar_html': codi_a_completar_html,
         'resposta_ia': resposta_ia,
+    })
+
+
+
+
+def cas_practic(request, curs_nom, capitol_num):
+    print(f"🧪 Vista 'cas_practic' per al curs: {curs_nom}, capítol: {capitol_num}")
+
+    curs = get_object_or_404(Curs, nom=curs_nom)
+    capitol = get_object_or_404(Capitol, numero=capitol_num, curs=curs)
+    cas = get_object_or_404(CasPractic, capitol=capitol)
+
+    return render(request, 'cas_practic.html', {
+        'curs': curs,
+        'capitol': capitol,
+        'cas': cas,
     })

@@ -1,0 +1,154 @@
+{
+  "curs": {
+    "nom": "Python",
+    "subnom": "Data Analytics",
+    "descripcio": "Aprèn a dominar Python per l'anàlisi de dades amb aquest curs pràctic.",
+    "color_fons": "#F4F8F4"
+  },
+  "capitol": {
+    "titol": "Primer contacte amb Pandas",
+    "numero": 7,
+    "dificultat": "Mitjà",
+    "preu": 0.0
+  },
+  "exercicis": [
+    {
+      "numero": 1,
+      "titol": "Crear una Sèrie de Pandas",
+      "tipus": "codi",
+      "descripcio": "En aquest exercici, aprendràs a crear una Sèrie de Pandas a partir d'una llista de valors. Les Series són una estructura de dades unidimensionals que poden contenir una varietat de valors. Per crear una Sèrie, es pot utilitzar la funció pd.Series() i passar-li una llista de valors com a argument.",
+      "enunciat": "Crea una Sèrie de Pandas a partir de la llista [1, 2, 3, 4, 5].",
+      "solucio": null,
+      "solucio_codi_1": "import pandas as pd\ns = pd.Series([1, 2, 3, 4, 5])",
+      "solucio_codi_2": null,
+      "codi_a_completar": null,
+      "temps_estimat_minuts": 5,
+      "respostes_test": null,
+      "pista_1": "Importa la llibreria pandas amb import pandas as pd.",
+      "pista_2": "Utilitza la funció pd.Series() per crear la Sèrie.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "taula": null
+    },
+    {
+      "numero": 2,
+      "titol": "Llegir dades d'un fitxer CSV",
+      "tipus": "codi",
+      "descripcio": "En aquest exercici, aprendràs a llegir dades d'un fitxer CSV utilitzant la funció pd.read_csv(). Aquesta funció permet llegir dades d'un fitxer CSV i convertir-les en un DataFrame de Pandas.",
+      "enunciat": "Llegeix les dades del fitxer 'dades.csv' i crea un DataFrame.",
+      "solucio": null,
+      "solucio_codi_1": "import pandas as pd\ndf = pd.read_csv('dades.csv')",
+      "solucio_codi_2": null,
+      "codi_a_completar": null,
+      "temps_estimat_minuts": 5,
+      "respostes_test": null,
+      "pista_1": "Importa la llibreria pandas amb import pandas as pd.",
+      "pista_2": "Utilitza la funció pd.read_csv() per llegir les dades del fitxer CSV.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "taula": null
+    },
+    {
+      "numero": 3,
+      "titol": "Accedir a files i columnes d'un DataFrame",
+      "tipus": "codi",
+      "descripcio": "En aquest exercici, aprendràs a accedir a files i columnes d'un DataFrame de Pandas. Per accedir a una fila o columna específica, es pot utilitzar la notació de fila i columna.",
+      "enunciat": "Accedeix a la fila 0 i la columna 'nom' del següent DataFrame: {'nom': ['Joan', 'Maria', 'Pere'], 'edat': [25, 30, 35]}",
+      "solucio": null,
+      "solucio_codi_1": "import pandas as pd\ndf = pd.DataFrame({'nom': ['Joan', 'Maria', 'Pere'], 'edat': [25, 30, 35]})\nprint(df.loc[0, 'nom'])",
+      "solucio_codi_2": null,
+      "codi_a_completar": null,
+      "temps_estimat_minuts": 5,
+      "respostes_test": null,
+      "pista_1": "Importa la llibreria pandas amb import pandas as pd.",
+      "pista_2": "Utilitza la notació de fila i columna amb df.loc[] per accedir a la fila i columna desitjades.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "taula": {
+        "nom": [
+          "Joan",
+          "Maria",
+          "Pere"
+        ],
+        "edat": [
+          25,
+          30,
+          35
+        ]
+      }
+    },
+    {
+      "numero": 4,
+      "titol": "Filtrar dades en un DataFrame",
+      "tipus": "codi",
+      "descripcio": "En aquest exercici, aprendràs a filtrar dades en un DataFrame de Pandas. Per filtrar dades, es pot utilitzar la notació de condició i els operadors de comparació.",
+      "enunciat": "Filtra les files del següent DataFrame on l'edat és major de 30: {'nom': ['Joan', 'Maria', 'Pere'], 'edat': [25, 30, 35]}",
+      "solucio": null,
+      "solucio_codi_1": "import pandas as pd\ndf = pd.DataFrame({'nom': ['Joan', 'Maria', 'Pere'], 'edat': [25, 30, 35]})\nprint(df[df['edat'] > 30])",
+      "solucio_codi_2": null,
+      "codi_a_completar": null,
+      "temps_estimat_minuts": 5,
+      "respostes_test": null,
+      "pista_1": "Importa la llibreria pandas amb import pandas as pd.",
+      "pista_2": "Utilitza la notació de condició amb df[] per filtrar les files que compleixin la condició.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "taula": {
+        "nom": [
+          "Joan",
+          "Maria",
+          "Pere"
+        ],
+        "edat": [
+          25,
+          30,
+          35
+        ]
+      }
+    },
+    {
+      "numero": 5,
+      "titol": "Realitza una operació bàsica amb dades",
+      "tipus": "test",
+      "descripcio": "En aquest exercici, aprendràs a realitzar una operació bàsica amb dades en un DataFrame de Pandas. Les operacions bàsiques inclouen la suma, la mitjana i el compte de valors.",
+      "enunciat": "Quina és la suma de les edats del següent DataFrame: {'nom': ['Joan', 'Maria', 'Pere'], 'edat': [25, 30, 35]}?",
+      "solucio": "90",
+      "solucio_codi_1": null,
+      "solucio_codi_2": null,
+      "codi_a_completar": null,
+      "temps_estimat_minuts": 5,
+      "respostes_test": [
+        "80",
+        "85",
+        "90",
+        "95"
+      ],
+      "pista_1": "Importa la llibreria pandas amb import pandas as pd.",
+      "pista_2": "Utilitza la funció sum() per calcular la suma de les edats.",
+      "imatge_1": null,
+      "descripcio_imatge_1": null,
+      "imatge_2": null,
+      "descripcio_imatge_2": null,
+      "taula": {
+        "nom": [
+          "Joan",
+          "Maria",
+          "Pere"
+        ],
+        "edat": [
+          25,
+          30,
+          35
+        ]
+      }
+    }
+  ]
+}
