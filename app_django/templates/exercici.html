@@ -81,19 +81,6 @@
                             <figcaption class="exercise__image-caption">{{ exercici.desc_imatge_1 }}</figcaption>
                         </figure>
                     {% endif %}
-                    {% if exercici.enunciat_2 %}
-                        <div class="exercise__statement">
-                            <h3 class="exercise__statement-title">Enunciat 2:</h3>
-                            <p>{{ exercici.enunciat_2 | safe }}</p>
-                        </div>
-                    {% endif %}
-
-                    {% if exercici.imatge_2 %}
-                        <figure class="exercise__figure">
-                            <img src="{{ exercici.imatge_2.url }}" alt="{{ exercici.desc_imatge_2 }}" class="exercise__image">
-                            <figcaption class="exercise__image-caption">{{ exercici.desc_imatge_2 }}</figcaption>
-                        </figure>
-                    {% endif %}
                     {% if exercici.imatge_2 %}
                         <figure class="exercise__figure">
                             <img src="{{ exercici.imatge_2.url }}" alt="{{ exercici.desc_imatge_2 }}" class="exercise__image">
@@ -104,14 +91,12 @@
                   <form method="post" class="exercise__form" id="exerciciForm">
                         {% csrf_token %}
                         <h3 class="exercise__response-title">Resposta:</h3>
-                        {% if exercici.tipus == completar %}
-                            <div class="exercise__code-completar">
-                                <h4>Completa el codi següent:</h4>
-                                <div class="exercise__code">
-                                    {{ codi_a_completar_html | safe }}
-                                </div>
+                        {% if exercici.tipus == 'completar' %}
+                            <h4>Completa el codi següent:</h4>
+                            <div class="exercise__code">
+                                <pre style="white-space: pre; font-family: monospace; background: #eee; padding: 1em;"><code>{{ codi_a_completar_html | safe }}</code></pre>
                             </div>
-                        {% endif %}  
+                        {% endif %}
                         {% if exercici.tipus == 'codi' %}
                             <textarea name="resposta_usuari" class="exercise__code-input" rows="5" placeholder="Escriu el teu codi aquí..."></textarea>
                         {% elif exercici.tipus == 'exe' %}
@@ -130,14 +115,8 @@
                             </div>
                         {% elif exercici.tipus == 'ia' %}
                             <textarea name="resposta_usuari" class="exercise__text-input" rows="5" placeholder="Escriu la teva resposta aquí..."></textarea>
-                        {% elif exercici.tipus == 'completar' %}
-                            <div class="exercise__code-completar">
-                                <h4>Completa el codi següent:</h4>
-                                <div class="exercise__code">
-                                    {{ codi_a_completar_html | safe }}
-                                </div>
-                            </div>
                         {% endif %}
+
 
                         <div class="exercise__hints">
                             {% if exercici.pista_1 %}

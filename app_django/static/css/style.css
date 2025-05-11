@@ -658,6 +658,18 @@ body {
   margin-top: var(--spacing-md);
 }
 
+.exercise__code pre, 
+.exercise__code code {
+    white-space: pre; /* respecta espais i salts de línia */
+    font-family: monospace;
+    background-color: #f9f9f9;
+    padding: 1em;
+    border-radius: 4px;
+    overflow-x: auto;
+    display: block;
+}
+
+
 .exercise__code-input,
 .exercise__text-input {
   width: 100%;
@@ -679,7 +691,9 @@ body {
   cursor: pointer;
 }
 
-
+.exercise__description {
+  white-space: pre-wrap;
+}
 
 .exercise__hints {
   margin-top: var(--spacing-sm);
