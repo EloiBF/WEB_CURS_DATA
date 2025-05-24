@@ -48,28 +48,15 @@
                 </div>
             {% endif %}
 
-            <form method="post" class="case__form">
-                {% csrf_token %}
-                <h4>Escriu la teva proposta de solució:</h4>
-                <textarea name="resposta_usuari" class="case__textarea" rows="10" placeholder="Explica el teu raonament o adjunta codi si cal..."></textarea>
-
-                <div class="case__submit">
-                    <button type="submit" class="case__button">Envia la resposta</button>
-                </div>
-            </form>
-
-            {% if missatge %}
-                <div class="case__feedback {% if resposta_correcta %}correcta{% else %}incorrecta{% endif %}">
-                    {{ missatge }}
-                </div>
-            {% endif %}
-
-            {% if resposta_ia %}
-                <div class="case__feedback-ia">
-                    <h4>Comentari de la IA:</h4>
-                    <p>{{ resposta_ia | safe }}</p>
-                </div>
-            {% endif %}
+            <div class="case__download">
+                {% if curs.nom == "Excel" %}
+                    <a href="/static/fitxers_practica/Excel/DataPractik_Excel_{{ capitol.numero }}.xlsx" download class="case__button">📥 Descarrega l’arxiu Excel</a>
+                {% elif curs.nom == "Python" and cas.enllac %}
+                    <a href="{{ cas.enllac }}" target="_blank" class="case__button">🚀 Obre a Google Colab</a>
+                {% elif curs.nom == "SQL" and cas.enllac %}
+                    <a href="{{ cas.enllac }}" class="case__button">🧾 Accedeix al cas pràctic SQL</a>
+                {% endif %}
+            </div>
         </section>
 
         <footer class="case__footer">

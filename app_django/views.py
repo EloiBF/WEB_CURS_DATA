@@ -270,7 +270,7 @@ def cas_practic(request, curs_nom, capitol_num):
     curs = get_object_or_404(Curs, nom=curs_nom)
     capitol = get_object_or_404(Capitol, numero=capitol_num, curs=curs)
     cas = get_object_or_404(CasPractic, capitol=capitol)
-
+    
     return render(request, 'cas_practic.html', {
         'curs': curs,
         'capitol': capitol,
